@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/AuditoriaExamen.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlAdministrador.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlAuditoriaExamen.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/AuditoriaPregunta.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlCategoria.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Recursos/final.sql</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmGestionAdmin.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/AuditoriaUsuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Recursos/final%20base.jpg</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlUsuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Categoria.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Conexion.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmRegistroAdmin.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Solucion.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmEditarAdmin.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlExamen.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlAuditoriaUsuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlSolucion.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlPregunta.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Usuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmRegistroUsuario.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Pregunta.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Examen.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmGestionPreguntas.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlAuditoriaPregunta.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Modelo/Administrador.java</file>
+            <file>file:/C:/Users/XgioserX/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmEditarUsuario.java</file>
+        </group>
+        <group name="NetBeansProjects">
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmRegistroUsuario.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/DAO/GenericoDAO.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmGestionPreguntas.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlAdministrador.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Controlador/CtlUsuario.java</file>
+            <file>file:/C:/Users/Julian/Dropbox/UFF%20MEN%20QUE%20SAD%20V_V/ProyectoJuego/src/Vista/FrmGestionAdmin.java</file>
+        </group>
+    </open-files>
+</project-private>
