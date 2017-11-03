@@ -4,7 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="NetBeansProjects"/>
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/XgioserX/Documents/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+=======
+            <file>file:/C:/Users/Cristian%20Cruz/Documents/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+>>>>>>> f77edc4014f2800f03762ba900ac87799a944c2d
         </group>
     </open-files>
 </project-private>
