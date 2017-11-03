@@ -114,4 +114,4 @@ CREATE TABLE auditoriaPregunta(
 insert into tipoUsuario (descripcion) values ('Administrador');
 insert into tipoUsuario (descripcion) values ('Usuario');
 
-insert into administrador values ('admin','00000','1509','Julian','Espinosa','gmail','1');
+insert into administrador values ('admin','00000','1509','Main Yasuo','Cojo','gmail','1');
