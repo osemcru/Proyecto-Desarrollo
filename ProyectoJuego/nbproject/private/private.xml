@@ -2,9 +2,16 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group name="NetBeansProjects"/>
         <group>
             <file>file:/C:/Users/Cristian%20Cruz/Documents/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+=======
+        <group/>
+        <group name="NetBeansProjects">
+            <file>file:/C:/Users/Julian/Documents/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmPrueba.java</file>
+            <file>file:/C:/Users/Julian/Documents/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionPreguntas.java</file>
+>>>>>>> be5097a965743a0c4d2feb8a8bf20d2c27f60ea3
         </group>
     </open-files>
 </project-private>
