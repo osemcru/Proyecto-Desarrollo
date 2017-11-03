@@ -5,13 +5,20 @@
 <<<<<<< HEAD
         <group name="NetBeansProjects"/>
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/XgioserX/Documents/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+=======
             <file>file:/C:/Users/Cristian%20Cruz/Documents/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+<<<<<<< HEAD
 =======
         <group/>
         <group name="NetBeansProjects">
             <file>file:/C:/Users/Julian/Documents/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmPrueba.java</file>
             <file>file:/C:/Users/Julian/Documents/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionPreguntas.java</file>
 >>>>>>> be5097a965743a0c4d2feb8a8bf20d2c27f60ea3
+=======
+>>>>>>> f77edc4014f2800f03762ba900ac87799a944c2d
+>>>>>>> ae4e299e2b3408fdb4b9dd0569fc7886aa7e997d
         </group>
     </open-files>
 </project-private>
