@@ -44,15 +44,15 @@ CREATE TABLE administrador(
 CREATE TABLE examen(
   idExamen INT NOT NULL AUTO_INCREMENT,
   participantes INT NOT NULL,
-  administrador INT NOT NULL,
+  usuario INT NOT NULL,
   fecha DATE NOT NULL,
   constraint pk_examen PRIMARY KEY (idExamen),
-  constraint fk_examen_administrador FOREIGN KEY (administrador) REFERENCES administrador (idCodigo)
+  constraint fk_examen_usuario FOREIGN KEY (usuario) REFERENCES usuario (idCodigo)
 );
 
 CREATE TABLE pregunta(
   idPregunta INT NOT NULL AUTO_INCREMENT,
-  descripcion VARCHAR(45) NOT NULL,
+  descripcion VARCHAR(250) NOT NULL,
   categoria INT NOT NULL,
   examen INT NOT NULL,
   constraint pk_pregunta PRIMARY KEY (idPregunta),
