@@ -2,4 +2,8 @@
 /ProyectoJuego/build/
 ProyectoJuego/nbproject/private/private.properties
 *.properties
+<<<<<<< HEAD
+*.xml
+=======
 ProyectoJuego/nbproject/private/private.properties
+>>>>>>> 5dd15f3d64391481f8aea3fa0c8596d703dbce13

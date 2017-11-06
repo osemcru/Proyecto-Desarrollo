@@ -6,6 +6,9 @@
 <<<<<<< HEAD
         <group/>
 =======
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Controlador/CtlAuditoriaPregunta.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Recursos/final.sql</file>
@@ -14,5 +17,6 @@
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmEditarUsuario.java</file>
         </group>
 >>>>>>> 1fcdde466705c9bfa3f3d13dffb97119af3add6b
+>>>>>>> 5dd15f3d64391481f8aea3fa0c8596d703dbce13
     </open-files>
 </project-private>
