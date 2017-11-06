@@ -472,7 +472,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
     private void tfSemestreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSemestreKeyTyped
         // TODO add your handling code here:
-        if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')) {
+        if (!(evt.getKeyChar() >= '1' && evt.getKeyChar() <= '9')) {
             evt.consume();
         }
         
