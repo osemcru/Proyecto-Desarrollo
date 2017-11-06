@@ -121,7 +121,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Pregunta :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, -1, -1));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -132,45 +132,45 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("A)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
         jLabel4.setText("B)");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 0, 0));
         jLabel6.setText("C)");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, -1, -1));
-        getContentPane().add(TxtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 280, -1));
-        getContentPane().add(TxtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 280, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, -1, -1));
+        getContentPane().add(TxtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 280, -1));
+        getContentPane().add(TxtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 280, -1));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 0, 0));
         jLabel7.setText("D)");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, -1, 20));
-        getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 280, -1));
-        getContentPane().add(TxtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 280, -1));
-        getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 280, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
+        getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 280, -1));
+        getContentPane().add(TxtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 280, -1));
+        getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 280, -1));
 
         cbPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
-        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
-        getContentPane().add(rdA, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, -1, -1));
-        getContentPane().add(rdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
-        getContentPane().add(rdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
-        getContentPane().add(rdD, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
+        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, -1, -1));
+        getContentPane().add(rdA, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
+        getContentPane().add(rdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
+        getContentPane().add(rdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, -1, -1));
+        getContentPane().add(rdD, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
         jLabel5.setOpaque(true);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
