@@ -9,7 +9,6 @@ import Controlador.CtlUsuario;
 import Modelo.Administrador;
 import Modelo.Usuario;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -53,16 +52,17 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         tfClave = new javax.swing.JTextField();
         tfNickname = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTabUsuario = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         tfCodigoEditar = new javax.swing.JTextField();
         jbBuscarUsuario = new javax.swing.JButton();
         jbEliminarUsuario = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jbRegistrarUsuario1 = new javax.swing.JButton();
         jbAtras = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -90,12 +90,12 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfSemestreKeyTyped(evt);
             }
         });
-        getContentPane().add(tfSemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, 200, -1));
+        getContentPane().add(tfSemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, 200, -1));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 255, 255));
         jLabel10.setText("Semestre:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 460, -1, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, 20));
 
         jbEditarUsuario.setBackground(new java.awt.Color(0, 51, 51));
         jbEditarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
@@ -106,12 +106,12 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 jbEditarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jbEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
+        getContentPane().add(jbEditarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 39, 130, 40));
 
         jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 255, 255));
         jLabel11.setText("Correo Electronico:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, -1, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, 20));
 
         tfCorreo.setBackground(new java.awt.Color(0, 0, 0));
         tfCorreo.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -129,12 +129,12 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfCorreoActionPerformed(evt);
             }
         });
-        getContentPane().add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 200, -1));
+        getContentPane().add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 200, -1));
 
         jLabel13.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 255, 255));
         jLabel13.setText("Apellidos:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, -1, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, 20));
 
         tfApellidos.setBackground(new java.awt.Color(0, 0, 0));
         tfApellidos.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -157,7 +157,7 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfApellidosKeyTyped(evt);
             }
         });
-        getContentPane().add(tfApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 200, -1));
+        getContentPane().add(tfApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 200, -1));
 
         tfNombres.setBackground(new java.awt.Color(0, 0, 0));
         tfNombres.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -180,17 +180,17 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfNombresKeyTyped(evt);
             }
         });
-        getContentPane().add(tfNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 200, -1));
+        getContentPane().add(tfNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 200, -1));
 
         jLabel14.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 255, 255));
         jLabel14.setText("Nombres:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 20));
 
         jLabel15.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 255, 255));
         jLabel15.setText("Clave:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 290, -1, 20));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, 20));
 
         tfClave.setBackground(new java.awt.Color(0, 0, 0));
         tfClave.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -208,7 +208,7 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfClaveActionPerformed(evt);
             }
         });
-        getContentPane().add(tfClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 200, -1));
+        getContentPane().add(tfClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, -1));
 
         tfNickname.setBackground(new java.awt.Color(0, 0, 0));
         tfNickname.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -226,17 +226,32 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfNicknameActionPerformed(evt);
             }
         });
-        getContentPane().add(tfNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, 200, -1));
+        getContentPane().add(tfNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 200, -1));
+
+        jTabUsuario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Codigo", "Nombres", "Apellidos"
+            }
+        ));
+        jScrollPane1.setViewportView(jTabUsuario);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 310));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
         jLabel16.setText("NickName:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, 20));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, 20));
 
         jLabel17.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(204, 255, 255));
         jLabel17.setText("Codigo:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, -1, 20));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, 20));
 
         tfCodigoEditar.setBackground(new java.awt.Color(0, 0, 0));
         tfCodigoEditar.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -259,7 +274,7 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 tfCodigoEditarKeyTyped(evt);
             }
         });
-        getContentPane().add(tfCodigoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 180, 200, -1));
+        getContentPane().add(tfCodigoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 200, -1));
 
         jbBuscarUsuario.setBackground(new java.awt.Color(0, 51, 51));
         jbBuscarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
@@ -270,7 +285,7 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 jbBuscarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jbBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, -1, -1));
+        getContentPane().add(jbBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, -1, -1));
 
         jbEliminarUsuario.setBackground(new java.awt.Color(0, 51, 51));
         jbEliminarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
@@ -281,27 +296,23 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
                 jbEliminarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jbEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, -1, -1));
+        getContentPane().add(jbEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, -1, -1));
 
-        jLabel18.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel18.setText("Actulizar");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 100, -1));
-
-        jLabel20.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel20.setText("Buscar");
-        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 70, -1));
-
-        jLabel21.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel21.setText("Eliminar");
-        getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 90, -1));
-
-        jLabel22.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel22.setText("Usuario");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 120, -1));
+        jLabel22.setText("Usuarios");
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 190, -1));
+
+        jbRegistrarUsuario1.setBackground(new java.awt.Color(0, 51, 51));
+        jbRegistrarUsuario1.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
+        jbRegistrarUsuario1.setForeground(new java.awt.Color(204, 255, 255));
+        jbRegistrarUsuario1.setText("Registrar");
+        jbRegistrarUsuario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRegistrarUsuario1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbRegistrarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, -1, -1));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -314,9 +325,14 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setText("Lista de Usuario");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
 
         jLabel5.setText("jLabel1");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));
@@ -470,6 +486,12 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
         if (!(evt.getKeyChar() >= '0' && evt.getKeyChar() <= '9')) {
             evt.consume();
         }
+
+        int semestre = Integer.parseInt(tfSemestre.getText());
+
+        if (semestre >= 10) {
+            evt.consume();
+        }
     }//GEN-LAST:event_tfSemestreKeyTyped
 
     private void tfNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNombresKeyTyped
@@ -490,21 +512,38 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tfApellidosKeyTyped
 
+    private void jbRegistrarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarUsuario1ActionPerformed
+
+        try {
+            String nickname = tfNickname.getText();
+            String clave = tfClave.getText();
+            String nombres = tfNombres.getText();
+            String apellidos = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigoEditar.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+            int idTipo = 2;
+
+            if (ctlUsuario.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
+                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+                new FrmGestionAdmin(administrador).setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
+    }//GEN-LAST:event_jbRegistrarUsuario1ActionPerformed
+
     private void limpiar() {
         tfCodigoEditar.setText("");
-        tfCodigoEditar.setEnabled(true);
         tfNickname.setText("");
-        tfNickname.setEnabled(false);
         tfClave.setText("");
-        tfClave.setEnabled(false);
         tfNombres.setText("");
-        tfNombres.setEnabled(false);
         tfApellidos.setText("");
-        tfApellidos.setEnabled(false);
         tfCorreo.setText("");
-        tfCorreo.setEnabled(false);
         tfSemestre.setText("");
-        tfSemestre.setEnabled(false);
         jbEliminarUsuario.setEnabled(false);
         jbEditarUsuario.setEnabled(false);
     }
@@ -517,16 +556,17 @@ public class FrmEditarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTabUsuario;
     private javax.swing.JButton jbAtras;
     private javax.swing.JButton jbBuscarUsuario;
     private javax.swing.JButton jbEditarUsuario;
     private javax.swing.JButton jbEliminarUsuario;
+    private javax.swing.JButton jbRegistrarUsuario1;
     private javax.swing.JTextField tfApellidos;
     private javax.swing.JTextField tfClave;
     private javax.swing.JTextField tfCodigoEditar;
