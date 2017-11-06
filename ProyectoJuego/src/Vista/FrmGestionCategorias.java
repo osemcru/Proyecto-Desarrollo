@@ -33,6 +33,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         ctlCategoria = new CtlCategoria();
         DAOCategoria = new GenericoDAO();
         limpiar();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**

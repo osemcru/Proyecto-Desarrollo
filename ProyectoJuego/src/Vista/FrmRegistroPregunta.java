@@ -32,6 +32,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
           administrador = admin;
         ctlCategoria = new CtlCategoria();
         DAOCategoria = new GenericoDAO();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**
