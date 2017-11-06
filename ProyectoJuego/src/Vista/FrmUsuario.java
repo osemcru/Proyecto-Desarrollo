@@ -56,7 +56,7 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jbMostrarJuegos.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarJuegos.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbMostrarJuegos.setForeground(new java.awt.Color(204, 255, 255));
+        jbMostrarJuegos.setForeground(new java.awt.Color(255, 0, 51));
         jbMostrarJuegos.setText("Mostrar Juegos Disponibles");
         jbMostrarJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,7 +67,7 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jbMostrarHistorial.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarHistorial.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbMostrarHistorial.setForeground(new java.awt.Color(204, 255, 255));
+        jbMostrarHistorial.setForeground(new java.awt.Color(255, 0, 0));
         jbMostrarHistorial.setText("Mostrar Historial");
         jbMostrarHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

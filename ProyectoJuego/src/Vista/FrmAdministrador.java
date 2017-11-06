@@ -53,7 +53,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
         btnUsuarios.setBackground(new java.awt.Color(0, 51, 51));
         btnUsuarios.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        btnUsuarios.setForeground(new java.awt.Color(204, 255, 255));
+        btnUsuarios.setForeground(new java.awt.Color(255, 0, 0));
         btnUsuarios.setText("Administrar Usuarios");
         btnUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +64,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
         btnJuegos.setBackground(new java.awt.Color(0, 51, 51));
         btnJuegos.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        btnJuegos.setForeground(new java.awt.Color(204, 255, 255));
+        btnJuegos.setForeground(new java.awt.Color(255, 0, 0));
         btnJuegos.setText("Juegos Creados");
         btnJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +88,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
         btnPreguntas.setBackground(new java.awt.Color(0, 51, 51));
         btnPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        btnPreguntas.setForeground(new java.awt.Color(204, 255, 255));
+        btnPreguntas.setForeground(new java.awt.Color(255, 0, 0));
         btnPreguntas.setText("Administrar Preguntas");
         btnPreguntas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
