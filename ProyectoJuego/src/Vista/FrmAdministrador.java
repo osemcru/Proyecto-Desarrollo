@@ -99,7 +99,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jbAtras.setForeground(new java.awt.Color(204, 255, 255));
+        jbAtras.setForeground(new java.awt.Color(255, 0, 0));
         jbAtras.setText("Atras");
         jbAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

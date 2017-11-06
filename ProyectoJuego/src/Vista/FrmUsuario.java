@@ -56,7 +56,7 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jbMostrarJuegos.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarJuegos.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbMostrarJuegos.setForeground(new java.awt.Color(255, 0, 51));
+        jbMostrarJuegos.setForeground(new java.awt.Color(255, 0, 0));
         jbMostrarJuegos.setText("Mostrar Juegos Disponibles");
         jbMostrarJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,7 +78,7 @@ public class FrmUsuario extends javax.swing.JFrame {
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbAtras.setForeground(new java.awt.Color(204, 255, 255));
+        jbAtras.setForeground(new java.awt.Color(255, 0, 0));
         jbAtras.setText("Atras");
         jbAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {

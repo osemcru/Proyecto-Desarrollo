@@ -89,13 +89,13 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
         BtnRegistrarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnRegistrarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnRegistrarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnRegistrarPregunta.setForeground(new java.awt.Color(255, 0, 0));
         BtnRegistrarPregunta.setText("Registrar Pregunta");
         getContentPane().add(BtnRegistrarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnModificarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnModificarPregunta.setForeground(new java.awt.Color(255, 0, 0));
         BtnModificarPregunta.setText("Modificar Pregunta");
         BtnModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,13 +106,13 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
         BtnEliminarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnEliminarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnEliminarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnEliminarPregunta.setForeground(new java.awt.Color(255, 0, 0));
         BtnEliminarPregunta.setText("Eliminar Pregunta");
         getContentPane().add(BtnEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         BtnBuscarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnBuscarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnBuscarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnBuscarPregunta.setForeground(new java.awt.Color(255, 0, 0));
         BtnBuscarPregunta.setText("Buscar Pregunta");
         getContentPane().add(BtnBuscarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
@@ -255,7 +255,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jbAtras.setForeground(new java.awt.Color(204, 255, 255));
+        jbAtras.setForeground(new java.awt.Color(255, 0, 0));
         jbAtras.setText("Atras");
         jbAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
