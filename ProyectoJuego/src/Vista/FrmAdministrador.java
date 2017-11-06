@@ -89,7 +89,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
         btnPreguntas.setBackground(new java.awt.Color(0, 51, 51));
         btnPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
         btnPreguntas.setForeground(new java.awt.Color(255, 0, 0));
-        btnPreguntas.setText("Administrar Preguntas");
+        btnPreguntas.setText("Administrar Preguntas y Categorias");
         btnPreguntas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPreguntasActionPerformed(evt);

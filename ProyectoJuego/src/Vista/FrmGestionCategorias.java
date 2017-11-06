@@ -57,7 +57,9 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         BtnBuscarCategoria = new javax.swing.JButton();
         BtnEliminarCategoria = new javax.swing.JButton();
         jbAtras = new javax.swing.JButton();
+        BtnIrPreguntas = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -202,10 +204,34 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         });
         getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
 
+        BtnIrPreguntas.setBackground(new java.awt.Color(0, 51, 51));
+        BtnIrPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        BtnIrPreguntas.setForeground(new java.awt.Color(255, 0, 0));
+        BtnIrPreguntas.setText("Gestionar Preguntas");
+        BtnIrPreguntas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIrPreguntasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnIrPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 340));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -288,6 +314,10 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
         // TODO add your handling code here:
+         new FrmAdministrador(administrador).setVisible(true);
+        this.dispose();
+    
+        
     }//GEN-LAST:event_jbAtrasActionPerformed
 
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
@@ -311,6 +341,13 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
+    private void BtnIrPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIrPreguntasActionPerformed
+        // TODO add your handling code here:
+        
+         new FrmRegistroPregunta(administrador).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnIrPreguntasActionPerformed
+
     private void listar() {
         TblCategorias.setModel(ctlCategoria.SolicitudListar());
     }
@@ -326,6 +363,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarCategoria;
     private javax.swing.JButton BtnEliminarCategoria;
+    private javax.swing.JButton BtnIrPreguntas;
     private javax.swing.JButton BtnModificarCategoria;
     private javax.swing.JButton BtnRegistrarCategoria;
     private javax.swing.JTable TblCategorias;
@@ -334,6 +372,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jbAtras;

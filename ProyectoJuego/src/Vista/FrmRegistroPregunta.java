@@ -5,17 +5,33 @@
  */
 package Vista;
 
+import Controlador.CtlCategoria;
+import DAO.GenericoDAO;
+import Modelo.Administrador;
+
 /**
  *
  * @author Julian
  */
 public class FrmRegistroPregunta extends javax.swing.JFrame {
 
+    
+     GenericoDAO DAOCategoria;
+    CtlCategoria ctlCategoria;
+    Administrador administrador;
+    
+    
+    
     /**
+     * 
      * Creates new form FrmRegistroPregunta
      */
-    public FrmRegistroPregunta() {
+    public FrmRegistroPregunta(Administrador admin) {
         initComponents();
+        
+          administrador = admin;
+        ctlCategoria = new CtlCategoria();
+        DAOCategoria = new GenericoDAO();
     }
 
     /**
