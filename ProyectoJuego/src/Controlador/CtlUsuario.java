@@ -70,7 +70,7 @@ public class CtlUsuario {
     public DefaultTableModel solicitudListar() {
         GenericoDAO usuarioDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
-        String nombreColumnas[] = {"NickName", "Clave", "Codigo", "Nombres", "Apellidos", "Correo", "Semestre"};
+        String nombreColumnas[] = {"Codigo", "Nombres", "Apellidos"};
 
         modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
 
@@ -78,13 +78,9 @@ public class CtlUsuario {
         try {
             while (atributos.next()) {
                 modelTabla.addRow(new Object[]{
-                    atributos.getString("nickname"),
-                    atributos.getString("clave"),
                     atributos.getString("idCodigo"),
                     atributos.getString("nombre"),
-                    atributos.getString("apellido"),
-                    atributos.getString("correo"),
-                    atributos.getString("semestre")
+                    atributos.getString("apellido")
                 });
             }
         } catch (Exception e) {
