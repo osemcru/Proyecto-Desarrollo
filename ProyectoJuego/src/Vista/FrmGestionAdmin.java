@@ -150,7 +150,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
 
     private void btnBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUsuarioActionPerformed
         // TODO add your handling code here:
-        new FrmEditarUsuario(administrador).setVisible(true);
+        new FrmGestionUsuarios(administrador).setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_btnBuscarUsuarioActionPerformed
