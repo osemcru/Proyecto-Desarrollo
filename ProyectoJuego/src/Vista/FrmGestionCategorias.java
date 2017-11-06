@@ -16,7 +16,7 @@ import java.util.ArrayList;
  *
  * @author Krull
  */
-public class FrmGestionPreguntas extends javax.swing.JFrame {
+public class FrmGestionCategorias extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmGestionPreguntas
@@ -27,7 +27,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
     int categoriaID = 0;
 
-    public FrmGestionPreguntas(Administrador admin) {
+    public FrmGestionCategorias(Administrador admin) {
         initComponents();
         administrador = admin;
         ctlCategoria = new CtlCategoria();
@@ -44,13 +44,6 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        BtnRegistrarPregunta = new javax.swing.JButton();
-        BtnModificarPregunta = new javax.swing.JButton();
-        BtnEliminarPregunta = new javax.swing.JButton();
-        BtnBuscarPregunta = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -63,63 +56,11 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
         BtnModificarCategoria = new javax.swing.JButton();
         BtnBuscarCategoria = new javax.swing.JButton();
         BtnEliminarCategoria = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
         jbAtras = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setBackground(new java.awt.Color(0, 102, 153));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "IdPregunta", "Descripcion", "idCategoria ", "idExamen"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 370, 600, 150));
-
-        BtnRegistrarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnRegistrarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnRegistrarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnRegistrarPregunta.setText("Registrar Pregunta");
-        getContentPane().add(BtnRegistrarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
-
-        BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnModificarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnModificarPregunta.setText("Modificar Pregunta");
-        BtnModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnModificarPreguntaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BtnModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-
-        BtnEliminarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnEliminarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnEliminarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnEliminarPregunta.setText("Eliminar Pregunta");
-        getContentPane().add(BtnEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
-
-        BtnBuscarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnBuscarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnBuscarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnBuscarPregunta.setText("Buscar Pregunta");
-        getContentPane().add(BtnBuscarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel3.setText("Preguntas");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 153));
 
@@ -155,7 +96,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
         jScrollPane3.setViewportView(TblCategorias);
 
         BtnRegistrarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnRegistrarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnRegistrarCategoria.setForeground(new java.awt.Color(255, 0, 0));
         BtnRegistrarCategoria.setText("Registrar Categoria");
         BtnRegistrarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +105,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
         });
 
         BtnModificarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnModificarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnModificarCategoria.setForeground(new java.awt.Color(255, 0, 0));
         BtnModificarCategoria.setText("Modificar Categoria");
         BtnModificarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,7 +114,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
         });
 
         BtnBuscarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnBuscarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnBuscarCategoria.setForeground(new java.awt.Color(255, 0, 0));
         BtnBuscarCategoria.setText("Buscar Categoria");
         BtnBuscarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +123,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
         });
 
         BtnEliminarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnEliminarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnEliminarCategoria.setForeground(new java.awt.Color(255, 0, 0));
         BtnEliminarCategoria.setText("Eliminar Categoria");
         BtnEliminarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -231,7 +172,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(BtnRegistrarCategoria)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BtnBuscarCategoria)
@@ -246,12 +187,7 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
                 .addGap(36, 36, 36))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 500, 270));
-
-        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel6.setText("Lista de Preguntas");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 500, 270));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -262,18 +198,12 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, -1, -1));
-
-        jButton10.setBackground(new java.awt.Color(0, 51, 51));
-        jButton10.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(204, 255, 255));
-        jButton10.setText("Mostrar Soluciones");
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 320, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 350, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 690, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -354,10 +284,6 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BtnEliminarCategoriaActionPerformed
 
-    private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnModificarPreguntaActionPerformed
-
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbAtrasActionPerformed
@@ -397,26 +323,17 @@ public class FrmGestionPreguntas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarCategoria;
-    private javax.swing.JButton BtnBuscarPregunta;
     private javax.swing.JButton BtnEliminarCategoria;
-    private javax.swing.JButton BtnEliminarPregunta;
     private javax.swing.JButton BtnModificarCategoria;
-    private javax.swing.JButton BtnModificarPregunta;
     private javax.swing.JButton BtnRegistrarCategoria;
-    private javax.swing.JButton BtnRegistrarPregunta;
     private javax.swing.JTable TblCategorias;
-    private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbAtras;
     private javax.swing.JTextPane txtNombreCategoria;
     // End of variables declaration//GEN-END:variables

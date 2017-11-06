@@ -2,21 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="NetBeansProjects"/>
-<<<<<<< HEAD
-        <group/>
-=======
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Controlador/CtlAuditoriaPregunta.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Recursos/final.sql</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Imagenes/fondo2.jpg</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Controlador/CtlCategoria.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmEditarUsuario.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionPreguntas.java</file>
         </group>
->>>>>>> 1fcdde466705c9bfa3f3d13dffb97119af3add6b
->>>>>>> 5dd15f3d64391481f8aea3fa0c8596d703dbce13
     </open-files>
 </project-private>

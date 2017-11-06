@@ -130,7 +130,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void btnPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntasActionPerformed
         // TODO add your handling code here:
-        new FrmGestionPreguntas(administrador).setVisible(true);
+        new FrmGestionCategorias(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnPreguntasActionPerformed
 
