@@ -434,7 +434,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbCancelar.setVisible(true);
                 tfCodigoEditar.setEnabled(false);
             } else {
-                JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
+                JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
             }
         } catch (Exception e) {
 
@@ -473,13 +473,8 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
     private void tfSemestreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSemestreKeyTyped
         // TODO add your handling code here:
-        if (!(evt.getKeyChar() >= '1' && evt.getKeyChar() <= '9')) {
-            evt.consume();
-        }
-
-        int semestre = Integer.parseInt(tfSemestre.getText());
-
-        if (semestre >= 10) {
+        int semestre = (!tfSemestre.getText().isEmpty()) ? Integer.parseInt(tfSemestre.getText()) : 0;
+        if (!(evt.getKeyChar() >= '1' && evt.getKeyChar() <= '9') || semestre >= 10) {
             evt.consume();
         }
     }//GEN-LAST:event_tfSemestreKeyTyped
