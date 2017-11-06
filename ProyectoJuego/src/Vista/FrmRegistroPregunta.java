@@ -201,7 +201,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
         // TODO add your handling code here:
-        new FrmInicio().setVisible(true);
+        new FrmGestionCategorias(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
