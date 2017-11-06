@@ -242,7 +242,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 310));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 90));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
