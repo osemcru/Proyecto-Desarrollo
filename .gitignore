@@ -10,3 +10,4 @@ ProyectoJuego/nbproject/private/private.properties
 *.properties
 *.properties
 *.xml
+/ProyectoJuego/dist/
