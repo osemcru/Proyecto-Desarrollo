@@ -22,13 +22,14 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
      */
     CtlUsuario ctlUsuario;
     Administrador administrador;
-    
+
     public FrmGestionUsuarios(Administrador admin) {
         initComponents();
         setLocationRelativeTo(this);
         administrador = admin;
         ctlUsuario = new CtlUsuario();
         limpiar();
+        listar();
     }
 
     /**
@@ -413,13 +414,13 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_tfCodigoEditarActionPerformed
 
     private void jbBuscarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarUsuarioActionPerformed
-        
+
         int codigo;
         try {
-            
+
             codigo = Integer.parseInt(tfCodigoEditar.getText());
             Usuario usuario = ctlUsuario.SolicitudBuscar(codigo);
-            
+
             if (usuario != null) {
                 JOptionPane.showMessageDialog(null, "El usuario ha sido encontrado");
                 tfNickname.setText(usuario.getNickname());
@@ -433,10 +434,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbCancelar.setVisible(true);
                 tfCodigoEditar.setEnabled(false);
             } else {
-                JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
+                JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
             }
         } catch (Exception e) {
-            
+
             JOptionPane.showMessageDialog(this, "Error al cargar los datos");
             limpiar();
         }
@@ -446,7 +447,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             int codigo = Integer.parseInt(tfCodigoEditar.getText());
-            
+
             if (ctlUsuario.SolicitudEliminar(codigo)) {
                 JOptionPane.showMessageDialog(this, "Se ha eliminado correctamente el usuario");
                 limpiar();
@@ -472,13 +473,8 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
     private void tfSemestreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfSemestreKeyTyped
         // TODO add your handling code here:
-        if (!(evt.getKeyChar() >= '1' && evt.getKeyChar() <= '9')) {
-            evt.consume();
-        }
-        
-        int semestre = Integer.parseInt(tfSemestre.getText());
-        
-        if (semestre >= 10) {
+        int semestre = (!tfSemestre.getText().isEmpty()) ? Integer.parseInt(tfSemestre.getText()) : 0;
+        if (!(evt.getKeyChar() >= '1' && evt.getKeyChar() <= '9') || semestre >= 10) {
             evt.consume();
         }
     }//GEN-LAST:event_tfSemestreKeyTyped
@@ -486,7 +482,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     private void tfNombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNombresKeyTyped
         // TODO add your handling code here:
         Character c = evt.getKeyChar();
-        
+
         if (!Character.isLetter(c) && c != KeyEvent.VK_SPACE) {
             evt.consume();
         }
@@ -495,14 +491,14 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     private void tfApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfApellidosKeyTyped
         // TODO add your handling code here:
         Character c = evt.getKeyChar();
-        
+
         if (!Character.isLetter(c) && c != KeyEvent.VK_SPACE) {
             evt.consume();
         }
     }//GEN-LAST:event_tfApellidosKeyTyped
 
     private void jbRegistrarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegistrarUsuario1ActionPerformed
-        
+
         try {
             String nickname = tfNickname.getText();
             String clave = tfClave.getText();
@@ -512,7 +508,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             String correo = tfCorreo.getText();
             int semestre = Integer.parseInt(tfSemestre.getText());
             int idTipo = 2;
-            
+
             if (ctlUsuario.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
                 new FrmGestionAdmin(administrador).setVisible(true);
@@ -528,7 +524,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     private void jbEditarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarUsuario1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbEditarUsuario1ActionPerformed
-    
+
     private void limpiar() {
         tfCodigoEditar.setText("");
         tfNickname.setText("");
@@ -542,6 +538,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jbCancelar.setEnabled(false);
         jbRegistrarUsuario1.setEnabled(true);
         jbCancelar.setVisible(false);
+    }
+
+    private void listar() {
+        jTabUsuario.setModel(ctlUsuario.solicitudListar());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
