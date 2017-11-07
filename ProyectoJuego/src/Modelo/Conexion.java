@@ -16,18 +16,18 @@ import java.sql.Statement;
  * @author Cristian Cruz
  */
 public class Conexion {
-    
-     protected String driver = "org.gjt.mm.mysql.Driver"; //nombre del driver
+
+    protected String driver = "org.gjt.mm.mysql.Driver"; //nombre del driver
     protected String connectString = "jdbc:mysql://localhost:3306/juegodesarrollo"; //ubicacion de la base de datos, para postgres esta es por defecto
     protected String user = "root"; //usuario de la base de datos
     protected String password = ""; //password de la base de datos
     protected Connection conexionDB; // variable que permite la conexion
     protected Statement sentenciaSQL; //permite la ejecucion de sentencias SQL
     protected ResultSet resultadoDB;//almacena el resultado de una consulta
-    
-       /**
+
+    /**
      * Permite la conexion de la base de datos
-    */
+     */
     public void conectar() {
         try {
             Class.forName(driver); //se carga el driver en memoria
@@ -54,7 +54,7 @@ public class Conexion {
         try {
             conectar();
             sentenciaSQL.executeUpdate(sentencia);
-           
+
         } catch (Exception e) {
             return false;
         }
@@ -65,10 +65,10 @@ public class Conexion {
         try {
             conectar();
             resultadoDB = sentenciaSQL.executeQuery(sentencia);
-            
+
         } catch (Exception e) {
 
         }
     }
-    
+
 }

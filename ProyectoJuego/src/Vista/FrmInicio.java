@@ -9,6 +9,7 @@ import Controlador.CtlAdministrador;
 import Controlador.CtlUsuario;
 import Modelo.Administrador;
 import Modelo.Usuario;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -119,6 +120,11 @@ public class FrmInicio extends javax.swing.JFrame {
                 tfUsuarioActionPerformed(evt);
             }
         });
+        tfUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfUsuarioKeyTyped(evt);
+            }
+        });
         getContentPane().add(tfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 200, -1));
 
         jLabel2.setFont(new java.awt.Font("Orator Std", 0, 36)); // NOI18N
@@ -162,6 +168,11 @@ public class FrmInicio extends javax.swing.JFrame {
         tfPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tfPasswordMouseEntered(evt);
+            }
+        });
+        tfPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfPasswordKeyTyped(evt);
             }
         });
         getContentPane().add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 200, -1));
@@ -270,6 +281,20 @@ public class FrmInicio extends javax.swing.JFrame {
     private void jLBotonRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBotonRegistrarMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLBotonRegistrarMouseClicked
+
+    private void tfUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfUsuarioKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            jLBotonInicioMouseReleased(null);
+        }
+    }//GEN-LAST:event_tfUsuarioKeyTyped
+
+    private void tfPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfPasswordKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyChar() == KeyEvent.VK_ENTER) {
+            jLBotonInicioMouseReleased(null);
+        }
+    }//GEN-LAST:event_tfPasswordKeyTyped
 
     /**
      * @param args the command line arguments

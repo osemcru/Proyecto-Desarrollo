@@ -1,6 +1,6 @@
-CREATE database JuegoDesarrollo;
+CREATE database juegodesarrollo;
 
-USE juegoDesarrollo;
+USE juegodesarrollo;
 
 CREATE TABLE tipoUsuario(
   idTipoUsuario INT NOT NULL AUTO_INCREMENT,
