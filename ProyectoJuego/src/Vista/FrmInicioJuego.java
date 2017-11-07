@@ -84,7 +84,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         BtnSiguiente.setText("SIGUIENTE");
         getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, 32));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/orig_309452.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10-abstract-fractal-modern-color-illustration-space-geometry-textures-backgrounds.gif"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
 
         pack();
