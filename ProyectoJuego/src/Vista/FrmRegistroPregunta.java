@@ -64,10 +64,13 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         TxtC = new javax.swing.JTextField();
         TxtD = new javax.swing.JTextField();
         cbPregunta = new javax.swing.JComboBox<>();
-        rdA = new javax.swing.JRadioButton();
-        rdB = new javax.swing.JRadioButton();
-        rdC = new javax.swing.JRadioButton();
-        rdD = new javax.swing.JRadioButton();
+        cbCategoriaPregunta = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        ChbA = new javax.swing.JCheckBox();
+        ChbB = new javax.swing.JCheckBox();
+        ChbC = new javax.swing.JCheckBox();
+        ChbD = new javax.swing.JCheckBox();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -177,11 +180,24 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 280, -1));
 
         cbPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
-        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, -1, -1));
-        getContentPane().add(rdA, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
-        getContentPane().add(rdB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
-        getContentPane().add(rdC, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, -1, -1));
-        getContentPane().add(rdD, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
+        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+
+        cbCategoriaPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion..." }));
+        getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel8.setText("Categorias");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel9.setText("Tipo Pregunta");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
+        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, -1, -1));
+        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
@@ -212,11 +228,16 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JButton BtnEliminarPregunta;
     private javax.swing.JButton BtnModificarPregunta;
     private javax.swing.JButton BtnRegistrarPregunta;
+    private javax.swing.JCheckBox ChbA;
+    private javax.swing.JCheckBox ChbB;
+    private javax.swing.JCheckBox ChbC;
+    private javax.swing.JCheckBox ChbD;
     private javax.swing.JTextField TxtA;
     private javax.swing.JTextField TxtB;
     private javax.swing.JTextField TxtC;
     private javax.swing.JTextField TxtD;
     private javax.swing.JTextField TxtPregunta;
+    private javax.swing.JComboBox<String> cbCategoriaPregunta;
     private javax.swing.JComboBox<String> cbPregunta;
     private javax.swing.JButton jButton10;
     private javax.swing.JLabel jLabel1;
@@ -226,12 +247,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbAtras;
-    private javax.swing.JRadioButton rdA;
-    private javax.swing.JRadioButton rdB;
-    private javax.swing.JRadioButton rdC;
-    private javax.swing.JRadioButton rdD;
     // End of variables declaration//GEN-END:variables
 }
