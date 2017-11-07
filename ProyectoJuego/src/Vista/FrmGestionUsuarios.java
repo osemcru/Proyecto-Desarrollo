@@ -243,7 +243,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 90));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 100));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
@@ -418,7 +418,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         int codigo;
         try {
 
-            codigo = Integer.parseInt(tfCodigoEditar.getText());
+            codigo = (!tfCodigoEditar.getText().isEmpty()) ? Integer.parseInt(tfCodigoEditar.getText()) : 0;
             Usuario usuario = ctlUsuario.SolicitudBuscar(codigo);
 
             if (usuario != null) {
@@ -511,8 +511,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
             if (ctlUsuario.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-                new FrmGestionAdmin(administrador).setVisible(true);
-                this.dispose();
+                limpiar();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al guardar");
             }
