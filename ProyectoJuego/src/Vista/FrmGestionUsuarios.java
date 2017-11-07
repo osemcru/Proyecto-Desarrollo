@@ -430,6 +430,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfCorreo.setText(usuario.getCorreo());
                 tfSemestre.setText(usuario.getSemestre() + "");
                 jbCancelar.setEnabled(true);
+                jbEditarUsuario1.setEnabled(true);
                 jbEliminarUsuario.setEnabled(true);
                 jbCancelar.setVisible(true);
                 tfCodigoEditar.setEnabled(false);
@@ -552,6 +553,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         tfSemestre.setText("");
         tfCodigoEditar.setEnabled(true);
         jbEliminarUsuario.setEnabled(false);
+        jbEditarUsuario1.setEnabled(false);
         jbCancelar.setEnabled(false);
         jbRegistrarUsuario1.setEnabled(true);
         jbCancelar.setVisible(false);
