@@ -243,7 +243,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 90));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 100));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
@@ -418,7 +418,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         int codigo;
         try {
 
-            codigo = Integer.parseInt(tfCodigoEditar.getText());
+            codigo = (!tfCodigoEditar.getText().isEmpty()) ? Integer.parseInt(tfCodigoEditar.getText()) : 0;
             Usuario usuario = ctlUsuario.SolicitudBuscar(codigo);
 
             if (usuario != null) {
@@ -430,6 +430,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfCorreo.setText(usuario.getCorreo());
                 tfSemestre.setText(usuario.getSemestre() + "");
                 jbCancelar.setEnabled(true);
+                jbEditarUsuario1.setEnabled(true);
                 jbEliminarUsuario.setEnabled(true);
                 jbCancelar.setVisible(true);
                 tfCodigoEditar.setEnabled(false);
@@ -511,8 +512,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
             if (ctlUsuario.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-                new FrmGestionAdmin(administrador).setVisible(true);
-                this.dispose();
+                limpiar();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al guardar");
             }
@@ -523,6 +523,24 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
     private void jbEditarUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarUsuario1ActionPerformed
         // TODO add your handling code here:
+        try {
+            String nickname = tfNickname.getText();
+            String clave = tfClave.getText();
+            String nombre = tfNombres.getText();
+            String apellido = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigoEditar.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+
+            if (ctlUsuario.SolicitudModificar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
+                JOptionPane.showMessageDialog(this, "Modificado exitosamente");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al modificar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
     }//GEN-LAST:event_jbEditarUsuario1ActionPerformed
 
     private void limpiar() {
@@ -535,6 +553,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         tfSemestre.setText("");
         tfCodigoEditar.setEnabled(true);
         jbEliminarUsuario.setEnabled(false);
+        jbEditarUsuario1.setEnabled(false);
         jbCancelar.setEnabled(false);
         jbRegistrarUsuario1.setEnabled(true);
         jbCancelar.setVisible(false);
