@@ -47,9 +47,9 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         LbPregunta.setFont(new java.awt.Font("Wide Latin", 3, 18)); // NOI18N
         LbPregunta.setForeground(new java.awt.Color(255, 255, 255));
         LbPregunta.setText("ddsd");
-        LbPregunta.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 0, 0), new java.awt.Color(255, 0, 0), new java.awt.Color(0, 153, 153), new java.awt.Color(0, 204, 204)));
+        LbPregunta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         LbPregunta.setOpaque(true);
-        getContentPane().add(LbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 290, 70));
+        getContentPane().add(LbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 290, 70));
 
         Chb1.setBackground(new java.awt.Color(0, 0, 0));
         Chb1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -88,15 +88,16 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         BtnSiguiente.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         BtnSiguiente.setForeground(new java.awt.Color(255, 0, 0));
         BtnSiguiente.setText("SIGUIENTE");
-        getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, 32));
+        getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 390, -1, 32));
 
         LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
         LbCategoria.setText("jLabel2");
+        LbCategoria.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         LbCategoria.setOpaque(true);
-        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 220, 30));
+        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 220, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10-abstract-fractal-modern-color-illustration-space-geometry-textures-backgrounds.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/light-1443836_960_720.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-140, -190, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
