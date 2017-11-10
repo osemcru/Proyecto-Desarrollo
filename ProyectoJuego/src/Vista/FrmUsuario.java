@@ -57,13 +57,13 @@ public class FrmUsuario extends javax.swing.JFrame {
         jbMostrarJuegos.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarJuegos.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jbMostrarJuegos.setForeground(new java.awt.Color(255, 0, 0));
-        jbMostrarJuegos.setText("Mostrar Juegos Disponibles");
+        jbMostrarJuegos.setText("Iniciar Juego");
         jbMostrarJuegos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbMostrarJuegosActionPerformed(evt);
             }
         });
-        getContentPane().add(jbMostrarJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+        getContentPane().add(jbMostrarJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
         jbMostrarHistorial.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarHistorial.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -129,6 +129,10 @@ public class FrmUsuario extends javax.swing.JFrame {
         //        } catch (Exception e) {
         //            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
         //        }
+        
+         new FrmInicioJuego().setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
 
     private void jbMostrarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarHistorialActionPerformed
