@@ -37,7 +37,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         Chb3 = new javax.swing.JCheckBox();
         Chb4 = new javax.swing.JCheckBox();
         BtnSiguiente = new javax.swing.JButton();
-        LbCategoria = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -90,11 +89,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         BtnSiguiente.setText("SIGUIENTE");
         getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, 32));
 
-        LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
-        LbCategoria.setText("jLabel2");
-        LbCategoria.setOpaque(true);
-        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 220, 30));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/10-abstract-fractal-modern-color-illustration-space-geometry-textures-backgrounds.gif"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
 
@@ -120,7 +114,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private javax.swing.JCheckBox Chb2;
     private javax.swing.JCheckBox Chb3;
     private javax.swing.JCheckBox Chb4;
-    private javax.swing.JLabel LbCategoria;
     private javax.swing.JLabel LbPregunta;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
