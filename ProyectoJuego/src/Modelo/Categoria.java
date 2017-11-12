@@ -10,17 +10,18 @@ package Modelo;
  * @author XgioserX
  */
 public class Categoria {
-  int idCategoria;
-  String nombre;
 
-    public Categoria(int idCategoria, String nombre) {
-        this.idCategoria = idCategoria;
+    String nombre;
+    int idCategoria;
+
+    public Categoria(String nombre, int idCategoria) {
         this.nombre = nombre;
+        this.idCategoria = idCategoria;
     }
 
     public Categoria(String nombre) {
         this.nombre = nombre;
-    }    
+    }
 
     public Categoria() {
     }
@@ -40,5 +41,5 @@ public class Categoria {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-  
+
 }
