@@ -68,20 +68,20 @@ public class FrmUsuario extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
 
         tfUsuario.setBackground(new java.awt.Color(0, 0, 0));
         tfUsuario.setFont(new java.awt.Font("Orator Std", 1, 36)); // NOI18N
         tfUsuario.setForeground(new java.awt.Color(204, 255, 255));
         tfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 255), 2));
+        tfUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 255), 2));
         tfUsuario.setCaretColor(new java.awt.Color(51, 255, 255));
         tfUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(tfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 330, -1));
+        getContentPane().add(tfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 340, -1));
 
         jbMostrarHistorial.setBackground(new java.awt.Color(0, 51, 51));
         jbMostrarHistorial.setFont(new java.awt.Font("Monotype Corsiva", 3, 30)); // NOI18N
@@ -105,10 +105,10 @@ public class FrmUsuario extends javax.swing.JFrame {
                 jbMostrarJuegosActionPerformed(evt);
             }
         });
-        getContentPane().add(jbMostrarJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        getContentPane().add(jbMostrarJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Usuario.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 790, 540));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

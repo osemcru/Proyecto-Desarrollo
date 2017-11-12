@@ -44,79 +44,40 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BtnRegistrarPregunta = new javax.swing.JButton();
-        BtnModificarPregunta = new javax.swing.JButton();
-        BtnEliminarPregunta = new javax.swing.JButton();
-        BtnBuscarPregunta = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        TxtA = new javax.swing.JTextField();
-        TxtB = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        TxtPregunta = new javax.swing.JTextField();
-        TxtC = new javax.swing.JTextField();
-        TxtD = new javax.swing.JTextField();
         cbPregunta = new javax.swing.JComboBox<>();
         cbCategoriaPregunta = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         ChbA = new javax.swing.JCheckBox();
         ChbB = new javax.swing.JCheckBox();
         ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
         jbAtras1 = new javax.swing.JButton();
+        BtnModificarPregunta = new javax.swing.JButton();
+        BtnEliminarPregunta = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        BtnBuscarPregunta1 = new javax.swing.JButton();
+        BtnRegistrarPregunta = new javax.swing.JButton();
+        jBMostrarSoluciones = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        TxtD = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        TxtB = new javax.swing.JTextField();
+        TxtA = new javax.swing.JTextField();
+        TxtC = new javax.swing.JTextField();
+        TxtPregunta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BtnRegistrarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnRegistrarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnRegistrarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnRegistrarPregunta.setText("Registrar Pregunta");
-        getContentPane().add(BtnRegistrarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 230, -1));
-
-        BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnModificarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnModificarPregunta.setText("Modificar Pregunta");
-        BtnModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnModificarPreguntaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(BtnModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 230, -1));
-
-        BtnEliminarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnEliminarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnEliminarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnEliminarPregunta.setText("Eliminar Pregunta");
-        getContentPane().add(BtnEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 230, -1));
-
-        BtnBuscarPregunta.setBackground(new java.awt.Color(0, 51, 51));
-        BtnBuscarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnBuscarPregunta.setForeground(new java.awt.Color(255, 0, 0));
-        BtnBuscarPregunta.setText("Buscar Pregunta");
-        getContentPane().add(BtnBuscarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 230, -1));
-
-        jButton10.setBackground(new java.awt.Color(0, 51, 51));
-        jButton10.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jButton10.setForeground(new java.awt.Color(255, 0, 0));
-        jButton10.setText("Mostrar Soluciones");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, -1, -1));
-
         jTable1.setBackground(new java.awt.Color(0, 102, 153));
+        jTable1.setFont(new java.awt.Font("Monotype Corsiva", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -131,57 +92,36 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jTable1.setOpaque(false);
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 460, 110));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 460, 130));
 
-        jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel1.setText("Pregunta :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("A)");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("B)");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel6.setText("C)");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 400, -1, -1));
-        getContentPane().add(TxtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 280, -1));
-        getContentPane().add(TxtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 280, -1));
-
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setText("D)");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, -1, 20));
-        getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 280, -1));
-        getContentPane().add(TxtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, 280, -1));
-        getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 430, 280, -1));
-
+        cbPregunta.setBackground(new java.awt.Color(204, 255, 255));
+        cbPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
+        cbPregunta.setForeground(new java.awt.Color(204, 255, 255));
         cbPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
-        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 220, -1));
 
+        cbCategoriaPregunta.setBackground(new java.awt.Color(204, 255, 255));
+        cbCategoriaPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
+        cbCategoriaPregunta.setForeground(new java.awt.Color(204, 255, 255));
         cbCategoriaPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion..." }));
-        getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, -1));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel8.setText("Categorias");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, -1, -1));
+        ChbA.setBackground(new java.awt.Color(0, 204, 204));
+        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, 20));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel9.setText("Tipo Pregunta");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
-        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, -1, -1));
-        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, -1, -1));
-        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, -1, -1));
-        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, -1, -1));
+        ChbB.setBackground(new java.awt.Color(0, 204, 204));
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+
+        ChbC.setBackground(new java.awt.Color(0, 204, 204));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 20, 20));
+
+        ChbD.setBackground(new java.awt.Color(0, 204, 204));
+        ChbD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Orator Std", 1, 60)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,24 +142,206 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 jbAtras1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, -1));
+        getContentPane().add(jbAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+
+        BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
+        BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        BtnModificarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnModificarPregunta.setText("Modificar Pregunta");
+        BtnModificarPregunta.setActionCommand("Iniciar Juego");
+        BtnModificarPregunta.setAlignmentY(0.1F);
+        BtnModificarPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarPreguntaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnModificarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        BtnEliminarPregunta.setBackground(new java.awt.Color(0, 51, 51));
+        BtnEliminarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        BtnEliminarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnEliminarPregunta.setText("Eliminar Pregunta");
+        BtnEliminarPregunta.setActionCommand("Iniciar Juego");
+        BtnEliminarPregunta.setAlignmentY(0.1F);
+        BtnEliminarPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarPreguntaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnEliminarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 220, -1));
+
+        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("C)");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 40, -1));
+
+        BtnBuscarPregunta1.setBackground(new java.awt.Color(0, 51, 51));
+        BtnBuscarPregunta1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        BtnBuscarPregunta1.setForeground(new java.awt.Color(204, 255, 255));
+        BtnBuscarPregunta1.setText("Buscar Pregunta");
+        BtnBuscarPregunta1.setActionCommand("Iniciar Juego");
+        BtnBuscarPregunta1.setAlignmentY(0.1F);
+        BtnBuscarPregunta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBuscarPregunta1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnBuscarPregunta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 220, -1));
+
+        BtnRegistrarPregunta.setBackground(new java.awt.Color(0, 51, 51));
+        BtnRegistrarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        BtnRegistrarPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        BtnRegistrarPregunta.setText("Registrar Pregunta");
+        BtnRegistrarPregunta.setActionCommand("Iniciar Juego");
+        BtnRegistrarPregunta.setAlignmentY(0.1F);
+        BtnRegistrarPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRegistrarPreguntaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnRegistrarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 220, -1));
+
+        jBMostrarSoluciones.setBackground(new java.awt.Color(0, 51, 51));
+        jBMostrarSoluciones.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        jBMostrarSoluciones.setForeground(new java.awt.Color(204, 255, 255));
+        jBMostrarSoluciones.setText("Mostrar Soluciones");
+        jBMostrarSoluciones.setActionCommand("Iniciar Juego");
+        jBMostrarSoluciones.setAlignmentY(0.1F);
+        jBMostrarSoluciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMostrarSolucionesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBMostrarSoluciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
+
+        jLabel12.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("A)");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 30, -1));
+
+        jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Pregunta:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 240, 140, -1));
+
+        jLabel14.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("D)");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 40, -1));
+
+        jLabel15.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Tipo Pregunta:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 150, -1));
+
+        jLabel17.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("B)");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 30, -1));
+
+        TxtD.setBackground(new java.awt.Color(0, 0, 0));
+        TxtD.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        TxtD.setForeground(new java.awt.Color(255, 255, 255));
+        TxtD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TxtD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        TxtD.setCaretColor(new java.awt.Color(51, 255, 255));
+        TxtD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtDMouseEntered(evt);
+            }
+        });
+        TxtD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtDActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 340, -1));
+
+        jLabel13.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Categoria:");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 110, -1));
+
+        TxtB.setBackground(new java.awt.Color(0, 0, 0));
+        TxtB.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        TxtB.setForeground(new java.awt.Color(255, 255, 255));
+        TxtB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TxtB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        TxtB.setCaretColor(new java.awt.Color(51, 255, 255));
+        TxtB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtBMouseEntered(evt);
+            }
+        });
+        TxtB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtBActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 340, -1));
+
+        TxtA.setBackground(new java.awt.Color(0, 0, 0));
+        TxtA.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        TxtA.setForeground(new java.awt.Color(255, 255, 255));
+        TxtA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TxtA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        TxtA.setCaretColor(new java.awt.Color(51, 255, 255));
+        TxtA.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtAMouseEntered(evt);
+            }
+        });
+        TxtA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtAActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 340, -1));
+
+        TxtC.setBackground(new java.awt.Color(0, 0, 0));
+        TxtC.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        TxtC.setForeground(new java.awt.Color(255, 255, 255));
+        TxtC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TxtC.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        TxtC.setCaretColor(new java.awt.Color(51, 255, 255));
+        TxtC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtCMouseEntered(evt);
+            }
+        });
+        TxtC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtCActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 340, -1));
+
+        TxtPregunta.setBackground(new java.awt.Color(0, 0, 0));
+        TxtPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        TxtPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        TxtPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TxtPregunta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        TxtPregunta.setCaretColor(new java.awt.Color(51, 255, 255));
+        TxtPregunta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TxtPreguntaMouseEntered(evt);
+            }
+        });
+        TxtPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtPreguntaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 460, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
         jLabel5.setOpaque(true);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 790, 480));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BtnModificarPreguntaActionPerformed
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
 
@@ -232,9 +354,89 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbAtras1ActionPerformed
 
+    private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
+        //        try {
+            //            String nickname = txtNickName.getText();
+            //            String clave = txtClave.getText();
+            //            String nombre = txtNombre.getText();
+            //            String apellido = txtApellido.getText();
+            //            int codigo = Integer.p  arseInt(txtCodigo.getText());
+            //            String correo = txtCorreo.getText();
+            //            int semestre = Integer.parseInt(txtSemestre.getText());
+            //
+            //            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
+                //                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+                //            } else {
+                //                JOptionPane.showMessageDialog(this, "Error al guardar");
+                //            }
+            //        } catch (Exception e) {
+            //            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+            //        }
+    }//GEN-LAST:event_BtnModificarPreguntaActionPerformed
+
+    private void BtnBuscarPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarPregunta1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnBuscarPregunta1ActionPerformed
+
+    private void BtnEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEliminarPreguntaActionPerformed
+
+    private void BtnRegistrarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarPreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnRegistrarPreguntaActionPerformed
+
+    private void jBMostrarSolucionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMostrarSolucionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBMostrarSolucionesActionPerformed
+
+    private void TxtDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtDMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtDMouseEntered
+
+    private void TxtDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtDActionPerformed
+
+    private void TxtBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtBMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBMouseEntered
+
+    private void TxtBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBActionPerformed
+
+    private void TxtAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtAMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtAMouseEntered
+
+    private void TxtAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtAActionPerformed
+
+    private void TxtCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtCMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtCMouseEntered
+
+    private void TxtCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtCActionPerformed
+
+    private void TxtPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtPreguntaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtPreguntaMouseEntered
+
+    private void TxtPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtPreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtPreguntaActionPerformed
+
+    private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ChbDActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnBuscarPregunta;
+    private javax.swing.JButton BtnBuscarPregunta1;
     private javax.swing.JButton BtnEliminarPregunta;
     private javax.swing.JButton BtnModificarPregunta;
     private javax.swing.JButton BtnRegistrarPregunta;
@@ -249,16 +451,16 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JTextField TxtPregunta;
     private javax.swing.JComboBox<String> cbCategoriaPregunta;
     private javax.swing.JComboBox<String> cbPregunta;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jBMostrarSoluciones;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbAtras1;
