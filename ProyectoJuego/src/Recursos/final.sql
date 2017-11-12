@@ -44,6 +44,7 @@ CREATE TABLE administrador(
 CREATE TABLE examen(
   idExamen INT NOT NULL AUTO_INCREMENT,
   participantes INT NOT NULL,
+  usuario INT NOT NULL,
   fecha DATE NOT NULL,
   constraint pk_examen PRIMARY KEY (idExamen),
   constraint fk_examen_usuario FOREIGN KEY (usuario) REFERENCES usuario (idCodigo)
