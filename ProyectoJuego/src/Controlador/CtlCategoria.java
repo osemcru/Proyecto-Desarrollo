@@ -35,7 +35,7 @@ public class CtlCategoria {
     }
 
     public ArrayList<Categoria> SolicitudBuscar(String nombre) {
-        Categoria categoria = new Categoria(0, "");
+        Categoria categoria = new Categoria("", 0);
         GenericoDAO catDAO = new GenericoDAO();
         String objeto = convertirGson(categoria);
         ResultSet atributos = catDAO.buscar(objeto, tabla, nombre);
@@ -53,7 +53,7 @@ public class CtlCategoria {
     }
 
     public boolean SolicitudModificar(int idCategoria, String nombre) {
-        Categoria categoria = new Categoria(idCategoria, nombre);
+        Categoria categoria = new Categoria(nombre, idCategoria);
         GenericoDAO catDAO = new GenericoDAO();
         String objeto = convertirGson(categoria);
         return catDAO.modificar(objeto, tabla);

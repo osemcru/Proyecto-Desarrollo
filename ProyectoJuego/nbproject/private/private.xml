@@ -3,26 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGuardarUsuario.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistrarUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Administrador.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Examen.java</file>
-=======
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Modelo/Conexion.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmInicio.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlUsuario.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/DAO/GenericoDAO.java</file>
->>>>>>> cbab25921919133f74cfe860298ef08f94e1c21c
->>>>>>> f86defe271f8bfecd84bac650b73aa51acb1f04b
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
         </group>
     </open-files>
 </project-private>
