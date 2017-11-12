@@ -33,6 +33,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         ctlCategoria = new CtlCategoria();
         DAOCategoria = new GenericoDAO();
         limpiar();
+        listar();
         setLocationRelativeTo(this);
         setResizable(false);
     }
@@ -220,7 +221,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 340));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 520));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
