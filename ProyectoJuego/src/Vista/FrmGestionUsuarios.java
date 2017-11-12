@@ -243,7 +243,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 340, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 340, 100));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
@@ -318,7 +318,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jbAtras.setForeground(new java.awt.Color(204, 255, 255));
+        jbAtras.setForeground(new java.awt.Color(255, 255, 255));
         jbAtras.setText("Atras");
         jbAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,10 +327,9 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         });
         getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Orator Std", 1, 30)); // NOI18N
         jLabel2.setText("Lista de Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         jbEditarUsuario1.setBackground(new java.awt.Color(0, 51, 51));
         jbEditarUsuario1.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
