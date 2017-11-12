@@ -92,15 +92,15 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfSemestreKeyTyped(evt);
             }
         });
-        getContentPane().add(tfSemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, 200, -1));
+        getContentPane().add(tfSemestre, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 200, -1));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 255, 255));
         jLabel10.setText("Semestre:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, -1, 20));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, -1, 20));
 
         jbCancelar.setBackground(new java.awt.Color(0, 51, 51));
-        jbCancelar.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
+        jbCancelar.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jbCancelar.setForeground(new java.awt.Color(204, 255, 255));
         jbCancelar.setText("Cancelar");
         jbCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -108,12 +108,12 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbCancelarActionPerformed(evt);
             }
         });
-        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, 30));
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 500, -1, 30));
 
         jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 255, 255));
         jLabel11.setText("Correo Electronico:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 440, -1, 20));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 20));
 
         tfCorreo.setBackground(new java.awt.Color(0, 0, 0));
         tfCorreo.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -131,12 +131,12 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfCorreoActionPerformed(evt);
             }
         });
-        getContentPane().add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 430, 200, -1));
+        getContentPane().add(tfCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 200, -1));
 
         jLabel13.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(204, 255, 255));
         jLabel13.setText("Apellidos:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, -1, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, -1, 20));
 
         tfApellidos.setBackground(new java.awt.Color(0, 0, 0));
         tfApellidos.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -159,7 +159,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfApellidosKeyTyped(evt);
             }
         });
-        getContentPane().add(tfApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 380, 200, -1));
+        getContentPane().add(tfApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 200, -1));
 
         tfNombres.setBackground(new java.awt.Color(0, 0, 0));
         tfNombres.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -182,17 +182,17 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfNombresKeyTyped(evt);
             }
         });
-        getContentPane().add(tfNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 200, -1));
+        getContentPane().add(tfNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 200, -1));
 
         jLabel14.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 255, 255));
         jLabel14.setText("Nombres:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, 20));
 
         jLabel15.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(204, 255, 255));
         jLabel15.setText("Clave:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, -1, 20));
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, 20));
 
         tfClave.setBackground(new java.awt.Color(0, 0, 0));
         tfClave.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -210,7 +210,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfClaveActionPerformed(evt);
             }
         });
-        getContentPane().add(tfClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 200, -1));
+        getContentPane().add(tfClave, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 200, -1));
 
         tfNickname.setBackground(new java.awt.Color(0, 0, 0));
         tfNickname.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -228,7 +228,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfNicknameActionPerformed(evt);
             }
         });
-        getContentPane().add(tfNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 200, -1));
+        getContentPane().add(tfNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 200, -1));
 
         jTabUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -243,23 +243,23 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTabUsuario);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 340, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 340, 310));
 
         jLabel16.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(204, 255, 255));
         jLabel16.setText("NickName:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, -1, 20));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, -1, 20));
 
         jLabel17.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(204, 255, 255));
         jLabel17.setText("Codigo:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, -1, 20));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, 20));
 
         tfCodigoEditar.setBackground(new java.awt.Color(0, 0, 0));
         tfCodigoEditar.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
         tfCodigoEditar.setForeground(new java.awt.Color(255, 255, 255));
         tfCodigoEditar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfCodigoEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 2));
+        tfCodigoEditar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 204), 2));
         tfCodigoEditar.setCaretColor(new java.awt.Color(51, 255, 255));
         tfCodigoEditar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -276,10 +276,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 tfCodigoEditarKeyTyped(evt);
             }
         });
-        getContentPane().add(tfCodigoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 200, -1));
+        getContentPane().add(tfCodigoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 200, -1));
 
         jbBuscarUsuario.setBackground(new java.awt.Color(0, 51, 51));
-        jbBuscarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
+        jbBuscarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jbBuscarUsuario.setForeground(new java.awt.Color(204, 255, 255));
         jbBuscarUsuario.setText("Buscar");
         jbBuscarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -287,10 +287,10 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbBuscarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jbBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 140, 50));
+        getContentPane().add(jbBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 90, 100, 40));
 
         jbEliminarUsuario.setBackground(new java.awt.Color(0, 51, 51));
-        jbEliminarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
+        jbEliminarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jbEliminarUsuario.setForeground(new java.awt.Color(204, 255, 255));
         jbEliminarUsuario.setText("Eliminar");
         jbEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -298,12 +298,12 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbEliminarUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(jbEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, -1, -1));
+        getContentPane().add(jbEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, -1, -1));
 
-        jLabel22.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel22.setFont(new java.awt.Font("Monotype Corsiva", 1, 52)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(153, 204, 255));
         jLabel22.setText("Usuarios");
-        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 190, -1));
+        getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 30, 200, 40));
 
         jbRegistrarUsuario1.setBackground(new java.awt.Color(0, 51, 51));
         jbRegistrarUsuario1.setFont(new java.awt.Font("Monotype Corsiva", 3, 36)); // NOI18N
@@ -314,7 +314,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbRegistrarUsuario1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbRegistrarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 480, -1, -1));
+        getContentPane().add(jbRegistrarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 470, -1, -1));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -325,14 +325,15 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Orator Std", 1, 30)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Lista de Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 50));
 
         jbEditarUsuario1.setBackground(new java.awt.Color(0, 51, 51));
-        jbEditarUsuario1.setFont(new java.awt.Font("Monotype Corsiva", 3, 18)); // NOI18N
+        jbEditarUsuario1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         jbEditarUsuario1.setForeground(new java.awt.Color(204, 255, 255));
         jbEditarUsuario1.setText("Editar");
         jbEditarUsuario1.addActionListener(new java.awt.event.ActionListener() {
@@ -340,11 +341,11 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 jbEditarUsuario1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbEditarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, 30));
+        getContentPane().add(jbEditarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 100, 40));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 550));
 
         jLabel5.setText("jLabel1");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, -1, -1));

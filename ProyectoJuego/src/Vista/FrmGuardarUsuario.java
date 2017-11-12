@@ -235,12 +235,12 @@ public class FrmGuardarUsuario extends javax.swing.JFrame {
         getContentPane().add(tfNickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 200, -1));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel10.setForeground(new java.awt.Color(153, 204, 255));
         jLabel10.setText("Registro");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, 190, -1));
 
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(153, 204, 255));
         jLabel2.setText("Usuario");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 40, 290, -1));
 
