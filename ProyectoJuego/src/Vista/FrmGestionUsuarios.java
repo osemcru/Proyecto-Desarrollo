@@ -513,6 +513,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             if (ctlUsuario.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
                 limpiar();
+                listar();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al guardar");
             }

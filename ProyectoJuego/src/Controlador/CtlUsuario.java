@@ -42,7 +42,7 @@ public class CtlUsuario {
         try {
             usuario.setIdCodigo(Integer.parseInt(atributos.getString("idCodigo")));
             usuario.setNickname(atributos.getString("nickname"));
-            usuario.setNombre(atributos.getString("clave"));
+            usuario.setClave(atributos.getString("clave"));
             usuario.setNombre(atributos.getString("nombre"));
             usuario.setApellido(atributos.getString("apellido"));
             usuario.setCorreo(atributos.getString("correo"));
