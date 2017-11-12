@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import DAO.GenericoDAO;
 import Modelo.Administrador;
 import Modelo.Categoria;
+import Modelo.Usuario;
 import java.util.ArrayList;
 
 /**
@@ -36,6 +37,10 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         listar();
         setLocationRelativeTo(this);
         setResizable(false);
+    }
+
+    FrmGestionCategorias(Usuario usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
