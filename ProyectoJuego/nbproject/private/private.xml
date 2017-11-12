@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGuardarUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistrarUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
-=======
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
->>>>>>> 8d2c108c0993882047b2439c95360c48c26742d7
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Administrador.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Examen.java</file>
         </group>
     </open-files>
 </project-private>
