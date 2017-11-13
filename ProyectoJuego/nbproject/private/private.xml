@@ -3,15 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistrarUsuario.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionAdmin.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
-            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlCategoria.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/DAO/GenericoDAO.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
         </group>
     </open-files>
 </project-private>
