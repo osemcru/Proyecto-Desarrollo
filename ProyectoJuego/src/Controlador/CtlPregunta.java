@@ -54,7 +54,7 @@ public class CtlPregunta {
         Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, idExamen);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
-        return preguntaDAO.modificar(objeto, tabla);
+        return preguntaDAO.modificar(objeto, tabla, "idPregunta", idPregunta);
     }
 
     public boolean SolicitudEliminar(int idPregunta) {

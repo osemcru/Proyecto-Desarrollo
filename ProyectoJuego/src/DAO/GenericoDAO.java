@@ -20,7 +20,7 @@ import javax.swing.JComboBox;
  * @author Cristian Cruz
  */
 public class GenericoDAO extends Conexion {
-    
+
     public boolean guardar(String objeto, String tabla) {
 
         JsonParser parser = new JsonParser();
@@ -70,7 +70,7 @@ public class GenericoDAO extends Conexion {
         return resultadoDB;
     }
 
-    public boolean modificar(String objeto, String tabla) {
+    public boolean modificar(String objeto, String tabla, String variable, Object contenido) {
         String consulta = "update " + tabla + " set ";
 
         JsonParser parser = new JsonParser();
@@ -95,7 +95,8 @@ public class GenericoDAO extends Conexion {
                 consulta += ",";
             }
         }
-        consulta += " where " + listCampos.get(0) + "='" + listValores.get(0) + "';";
+        consulta += " where " + variable + "='" + contenido + "';";
+        System.out.println(consulta);
         return super.ejecutar(consulta);
     }
 
@@ -136,7 +137,7 @@ public class GenericoDAO extends Conexion {
 
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "select * from " + tabla + " where " + variable1 + "='" + nickname + "' and " + variable2 + "='" + clave + "';";
-      super.ejecutarRetorno(consulta);
+        super.ejecutarRetorno(consulta);
         ArrayList<String> dao = new ArrayList<>();
         try {
             if (resultadoDB.next()) {
