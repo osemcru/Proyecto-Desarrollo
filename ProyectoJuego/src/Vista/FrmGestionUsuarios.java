@@ -30,6 +30,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         ctlUsuario = new CtlUsuario();
         limpiar();
         listar();
+        setResizable(false);
     }
 
     /**

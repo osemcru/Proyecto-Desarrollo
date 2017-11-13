@@ -33,6 +33,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jLOjos1.setVisible(false);
         jLOjos2.setVisible(false);
         jLOjos3.setVisible(false);
+        setResizable(false);
 
     }
 

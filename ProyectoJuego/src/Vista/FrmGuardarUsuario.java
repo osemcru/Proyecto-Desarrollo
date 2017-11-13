@@ -23,6 +23,8 @@ public class FrmGuardarUsuario extends javax.swing.JFrame {
     Administrador administrador;
 
     public FrmGuardarUsuario(Administrador admin) {
+        setLocationRelativeTo(this);
+        setResizable(false);
         initComponents();
         administrador = admin;
         controlador = new CtlUsuario();
@@ -74,7 +76,7 @@ public class FrmGuardarUsuario extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         tfSemestre.setBackground(new java.awt.Color(0, 0, 0));
         tfSemestre.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
@@ -276,7 +278,7 @@ public class FrmGuardarUsuario extends javax.swing.JFrame {
                 jbRegistrarUsuario1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jbRegistrarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
+        getContentPane().add(jbRegistrarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Registro.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

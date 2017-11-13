@@ -21,6 +21,7 @@ public class FrmUsuario extends javax.swing.JFrame {
     public FrmUsuario(Usuario user) {
         initComponents();
         setLocationRelativeTo(this);
+        setResizable(false);
         usuario = user;
         tfUsuario.setEditable(false);
         tfUsuario.setText(user.getNombre() + "");
@@ -68,7 +69,7 @@ public class FrmUsuario extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
 
         tfUsuario.setBackground(new java.awt.Color(0, 0, 0));
         tfUsuario.setFont(new java.awt.Font("Orator Std", 1, 36)); // NOI18N
