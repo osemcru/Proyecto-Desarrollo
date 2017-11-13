@@ -150,7 +150,8 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbMostrarHistorialActionPerformed
 
     private void jbMostrarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarJuegosActionPerformed
-        // TODO add your handling code here:
+       new FrmInicioJuego().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
 
 

@@ -26,11 +26,12 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
     public FrmGestionUsuarios(Administrador admin) {
         initComponents();
         setLocationRelativeTo(this);
+        setResizable(false);
         administrador = admin;
         ctlUsuario = new CtlUsuario();
         limpiar();
         listar();
-        setResizable(false);
+        
     }
 
     /**

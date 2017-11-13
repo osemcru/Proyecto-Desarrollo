@@ -52,7 +52,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        jbAtras1 = new javax.swing.JButton();
+        jbAtras = new javax.swing.JButton();
         BtnModificarPregunta = new javax.swing.JButton();
         BtnEliminarPregunta = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -106,13 +106,13 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, -1));
 
         ChbA.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, 20));
+        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 20, 20));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 204, 204));
         ChbD.addActionListener(new java.awt.event.ActionListener() {
@@ -120,28 +120,28 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 ChbDActionPerformed(evt);
             }
         });
-        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
+        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 65)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Preguntas");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, 70));
 
-        jbAtras1.setBackground(new java.awt.Color(0, 51, 51));
-        jbAtras1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbAtras1.setForeground(new java.awt.Color(255, 255, 255));
-        jbAtras1.setText("Atras");
-        jbAtras1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbAtras.setBackground(new java.awt.Color(0, 51, 51));
+        jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        jbAtras.setForeground(new java.awt.Color(255, 255, 255));
+        jbAtras.setText("Atras");
+        jbAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jbAtras1MouseReleased(evt);
+                jbAtrasMouseReleased(evt);
             }
         });
-        jbAtras1.addActionListener(new java.awt.event.ActionListener() {
+        jbAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAtras1ActionPerformed(evt);
+                jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -342,16 +342,17 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
-
-        new FrmInicio().setVisible(true);
+    private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
+new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jbAtras1MouseReleased
+     
+    }//GEN-LAST:event_jbAtrasMouseReleased
 
-    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
+
+    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jbAtras1ActionPerformed
+    }                                        
 
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         //        try {
@@ -433,6 +434,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ChbDActionPerformed
 
+    private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
+       new FrmAdministrador(administrador).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbAtrasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPregunta1;
@@ -462,6 +468,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton jbAtras1;
+    private javax.swing.JButton jbAtras;
     // End of variables declaration//GEN-END:variables
 }
