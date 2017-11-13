@@ -18,6 +18,11 @@ public class Categoria {
         this.nombre = nombre;
         this.idCategoria = idCategoria;
     }
+    
+    public Categoria(int idCategoria, String nombre) {
+        this.idCategoria = idCategoria;
+        this.nombre = nombre;
+    }
 
     public Categoria(String nombre) {
         this.nombre = nombre;

@@ -25,6 +25,7 @@ CREATE TABLE usuario(
 CREATE TABLE categoria(
   idCategoria INT NOT NULL AUTO_INCREMENT,
   nombre VARCHAR(45) NOT NULL,
+  constraint un_categoria_nombre UNIQUE(nombre),
   constraint pk_categoria PRIMARY KEY (idCategoria)
 );
 
