@@ -46,7 +46,6 @@ CREATE TABLE examen(
   idExamen INT NOT NULL AUTO_INCREMENT,
   participantes INT NOT NULL,
   usuario INT NOT NULL,
-  fecha DATE NOT NULL,
   constraint pk_examen PRIMARY KEY (idExamen),
   constraint fk_examen_usuario FOREIGN KEY (usuario) REFERENCES usuario (idCodigo)
 );
@@ -71,7 +70,7 @@ CREATE TABLE examenPregunta(
 
 CREATE TABLE solucion(
   idSolucion INT NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(45) NOT NULL,
+  nombre VARCHAR(50) NOT NULL,
   estado INT NOT NULL,
   pregunta INT NOT NULL,
   constraint pk_solucion_idSolucion PRIMARY KEY (idSolucion),

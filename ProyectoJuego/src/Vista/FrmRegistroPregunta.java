@@ -7,18 +7,21 @@ package Vista;
 
 import Controlador.CtlCategoria;
 import Controlador.CtlPregunta;
-import DAO.GenericoDAO;
+import Controlador.CtlSolucion;
 import Modelo.Administrador;
+import Modelo.Categoria;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Julian
  */
 public class FrmRegistroPregunta extends javax.swing.JFrame {
-
+    
     CtlCategoria ctlCategoria;
     Administrador administrador;
     CtlPregunta ctlPregunta;
+    CtlSolucion ctlSolucion;
 
     /**
      *
@@ -29,6 +32,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         administrador = admin;
         ctlCategoria = new CtlCategoria();
         ctlPregunta = new CtlPregunta();
+        ctlSolucion = new CtlSolucion();
         ctlPregunta.SolicitudCargarInformacion(cbCategoriaPregunta);
         setLocationRelativeTo(this);
         setResizable(false);
@@ -45,7 +49,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        cbPregunta = new javax.swing.JComboBox<>();
+        cbTipoPregunta = new javax.swing.JComboBox<>();
         cbCategoriaPregunta = new javax.swing.JComboBox<>();
         ChbA = new javax.swing.JCheckBox();
         ChbB = new javax.swing.JCheckBox();
@@ -58,7 +62,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         BtnBuscarPregunta1 = new javax.swing.JButton();
         BtnRegistrarPregunta = new javax.swing.JButton();
-        jBMostrarSoluciones = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -93,11 +96,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 460, 130));
 
-        cbPregunta.setBackground(new java.awt.Color(204, 255, 255));
-        cbPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
-        cbPregunta.setForeground(new java.awt.Color(204, 255, 255));
-        cbPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
-        getContentPane().add(cbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 220, -1));
+        cbTipoPregunta.setBackground(new java.awt.Color(204, 255, 255));
+        cbTipoPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
+        cbTipoPregunta.setForeground(new java.awt.Color(204, 255, 255));
+        cbTipoPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
+        getContentPane().add(cbTipoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 220, -1));
 
         cbCategoriaPregunta.setBackground(new java.awt.Color(204, 255, 255));
         cbCategoriaPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
@@ -200,19 +203,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         });
         getContentPane().add(BtnRegistrarPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 220, -1));
 
-        jBMostrarSoluciones.setBackground(new java.awt.Color(0, 51, 51));
-        jBMostrarSoluciones.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jBMostrarSoluciones.setForeground(new java.awt.Color(204, 255, 255));
-        jBMostrarSoluciones.setText("Mostrar Soluciones");
-        jBMostrarSoluciones.setActionCommand("Iniciar Juego");
-        jBMostrarSoluciones.setAlignmentY(0.1F);
-        jBMostrarSoluciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBMostrarSolucionesActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBMostrarSoluciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
-
         jLabel12.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("A)");
@@ -254,6 +244,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 TxtDActionPerformed(evt);
             }
         });
+        TxtD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtDKeyTyped(evt);
+            }
+        });
         getContentPane().add(TxtD, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 340, -1));
 
         jLabel13.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -277,6 +272,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 TxtBActionPerformed(evt);
             }
         });
+        TxtB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtBKeyTyped(evt);
+            }
+        });
         getContentPane().add(TxtB, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 340, -1));
 
         TxtA.setBackground(new java.awt.Color(0, 0, 0));
@@ -293,6 +293,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         TxtA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TxtAActionPerformed(evt);
+            }
+        });
+        TxtA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtAKeyTyped(evt);
             }
         });
         getContentPane().add(TxtA, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 340, -1));
@@ -313,6 +318,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 TxtCActionPerformed(evt);
             }
         });
+        TxtC.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtCKeyTyped(evt);
+            }
+        });
         getContentPane().add(TxtC, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 430, 340, -1));
 
         TxtPregunta.setBackground(new java.awt.Color(0, 0, 0));
@@ -331,6 +341,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 TxtPreguntaActionPerformed(evt);
             }
         });
+        TxtPregunta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TxtPreguntaKeyTyped(evt);
+            }
+        });
         getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 460, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
@@ -343,17 +358,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-new FrmAdministrador(administrador).setVisible(true);
-        this.dispose();
-     
-    }//GEN-LAST:event_jbAtrasMouseReleased
-
-
-    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
-    }                                        
 
+    }//GEN-LAST:event_jbAtrasMouseReleased
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         //        try {
         //            String nickname = txtNickName.getText();
@@ -384,11 +392,44 @@ new FrmAdministrador(administrador).setVisible(true);
 
     private void BtnRegistrarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarPreguntaActionPerformed
         // TODO add your handling code here:
+        if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
+                || TxtC.getText().isEmpty() || TxtD.getText().isEmpty() || cbCategoriaPregunta.getSelectedIndex() == 0
+                || cbTipoPregunta.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Completa todos los campos");
+        } else {
+            
+            Categoria categoria = ctlCategoria.SolicitudBuscarUno((String) cbCategoriaPregunta.getSelectedItem());
+            int idCategoria = categoria.getIdCategoria();
+            int tipoPregunta = cbTipoPregunta.getSelectedIndex();
+            String descripcion = TxtPregunta.getText();
+            
+            if (ctlPregunta.SolicitudGuardar(descripcion, tipoPregunta, idCategoria)) {
+                
+                int idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+                
+                String nombreA = TxtA.getText();
+                int estadoA = (ChbA.isSelected()) ? 1 : 0;
+                
+                String nombreB = TxtB.getText();
+                int estadoB = (ChbB.isSelected()) ? 1 : 0;
+                
+                String nombreC = TxtC.getText();
+                int estadoC = (ChbC.isSelected()) ? 1 : 0;
+                
+                String nombreD = TxtD.getText();
+                int estadoD = (ChbD.isSelected()) ? 1 : 0;
+                
+                if (ctlSolucion.SolicitudGuardar(nombreA, estadoA, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(nombreB, estadoB, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(nombreC, estadoC, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(nombreD, estadoD, idPregunta)) {
+                    
+                    JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+                    limpiar();
+                }
+            }
+        }
     }//GEN-LAST:event_BtnRegistrarPreguntaActionPerformed
-
-    private void jBMostrarSolucionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMostrarSolucionesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBMostrarSolucionesActionPerformed
 
     private void TxtDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TxtDMouseEntered
         // TODO add your handling code here:
@@ -435,10 +476,68 @@ new FrmAdministrador(administrador).setVisible(true);
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-       new FrmAdministrador(administrador).setVisible(true);
+        new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
+    private void TxtPreguntaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtPreguntaKeyTyped
+        // TODO add your handling code here:
+        String pregunta = TxtPregunta.getText();
+        
+        if (pregunta.length() > 250) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TxtPreguntaKeyTyped
+
+    private void TxtAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtAKeyTyped
+        // TODO add your handling code here:
+        String solucion = TxtA.getText();
+        
+        if (solucion.length() > 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TxtAKeyTyped
+
+    private void TxtBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtBKeyTyped
+        // TODO add your handling code here:
+        String solucion = TxtB.getText();
+        
+        if (solucion.length() > 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TxtBKeyTyped
+
+    private void TxtCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtCKeyTyped
+        // TODO add your handling code here:
+        String solucion = TxtC.getText();
+        
+        if (solucion.length() > 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TxtCKeyTyped
+
+    private void TxtDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtDKeyTyped
+        // TODO add your handling code here:
+        String solucion = TxtD.getText();
+        
+        if (solucion.length() > 50) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_TxtDKeyTyped
+    
+    public void limpiar() {
+        TxtPregunta.setText("");
+        TxtA.setText("");
+        TxtB.setText("");
+        TxtC.setText("");
+        TxtD.setText("");
+        cbCategoriaPregunta.setSelectedIndex(0);
+        cbTipoPregunta.setSelectedIndex(0);
+        ChbA.setSelected(false);
+        ChbB.setSelected(false);
+        ChbC.setSelected(false);
+        ChbD.setSelected(false);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarPregunta1;
@@ -455,8 +554,7 @@ new FrmAdministrador(administrador).setVisible(true);
     private javax.swing.JTextField TxtD;
     private javax.swing.JTextField TxtPregunta;
     private javax.swing.JComboBox<String> cbCategoriaPregunta;
-    private javax.swing.JComboBox<String> cbPregunta;
-    private javax.swing.JButton jBMostrarSoluciones;
+    private javax.swing.JComboBox<String> cbTipoPregunta;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

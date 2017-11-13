@@ -23,10 +23,6 @@ public class Examen {
     public Examen() {
     }
 
-    public Examen(int participantes, int idAdministrador) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public int getIdExamen() {
         return idExamen;
     }
