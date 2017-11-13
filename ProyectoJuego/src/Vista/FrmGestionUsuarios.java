@@ -440,7 +440,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
             }
         } catch (Exception e) {
-
+            
             JOptionPane.showMessageDialog(this, "Error al cargar los datos");
             limpiar();
         }
