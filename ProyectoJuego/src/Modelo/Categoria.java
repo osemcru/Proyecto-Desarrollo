@@ -13,11 +13,6 @@ public class Categoria {
 
     String nombre;
     int idCategoria;
-
-    public Categoria(String nombre, int idCategoria) {
-        this.nombre = nombre;
-        this.idCategoria = idCategoria;
-    }
     
     public Categoria(int idCategoria, String nombre) {
         this.idCategoria = idCategoria;
@@ -26,6 +21,7 @@ public class Categoria {
 
     public Categoria(String nombre) {
         this.nombre = nombre;
+        this.idCategoria = 0;
     }
 
     public Categoria() {

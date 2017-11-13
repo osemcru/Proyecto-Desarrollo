@@ -25,7 +25,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     GenericoDAO DAOCategoria;
     CtlCategoria ctlCategoria;
     Administrador administrador;
-
+    
     public FrmGestionCategorias(Administrador admin) {
         initComponents();
         administrador = admin;
@@ -185,7 +185,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
     private void jbAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras2ActionPerformed
-      new FrmAdministrador(administrador).setVisible(true);
+        new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtras2ActionPerformed
 
@@ -195,7 +195,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         } else {
             String nombre = txtNombreCategoria.getText();
             ArrayList<Categoria> categoria = ctlCategoria.SolicitudBuscar(nombre);
-
+            
             if (categoria.size() > 0) {
                 JOptionPane.showMessageDialog(this, "La categoria ha sido encontrada");
                 for (int i = 0; i < categoria.size(); i++) {
@@ -204,7 +204,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
             }
-
+            
             limpiar();
         }
 
@@ -215,14 +215,14 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llena el campo");
         } else {
             String nombre = txtNombreCategoria.getText();
-
+            
             if (ctlCategoria.SolicitudGuardar(nombre)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al guardar");
             }
-
+            
             listar();
         }
     }//GEN-LAST:event_BtnRegistrarCategoriaActionPerformed
@@ -232,13 +232,13 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llena el campo");
         } else {
             String nombre = txtNombreCategoria.getText();
-
+            
             Categoria categoria = ctlCategoria.SolicitudBuscarUno(nombre);
             if (categoria != null) {
                 try {
                     JOptionPane.showMessageDialog(this, "Se ha encontrado la categoria");
                     nombre = JOptionPane.showInputDialog(this, "Ingresa el nuevo nombre para la categoria");
-                    if (ctlCategoria.SolicitudModificar(categoria.getIdCategoria(), nombre)) {
+                    if (ctlCategoria.SolicitudModificar(categoria.getIdCategoria(), nombre) || nombre.equals("")) {
                         JOptionPane.showMessageDialog(this, "Modificado exitosamente");
                         limpiar();
                     } else {
@@ -276,11 +276,11 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     private void txtNombreCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreCategoriaActionPerformed
-
+    
     private void listar() {
         TblCategorias.setModel(ctlCategoria.SolicitudListar());
     }
-
+    
     private void limpiar() {
         txtNombreCategoria.setText("");
     }
