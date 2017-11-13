@@ -9,6 +9,7 @@ import DAO.GenericoDAO;
 import Modelo.Usuario;
 import com.google.gson.Gson;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 

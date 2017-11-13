@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -65,10 +66,14 @@ public class Conexion {
         try {
             conectar();
             resultadoDB = sentenciaSQL.executeQuery(sentencia);
-
+       
+           
+            
         } catch (Exception e) {
-
-        }
+      JOptionPane.showMessageDialog(null, "Se ha producido un error en la consulta");
+      
+     
     }
 
+}
 }
