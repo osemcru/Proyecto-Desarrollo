@@ -187,24 +187,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
-        // TODO add your handling code here:
-        int pos = TblCategorias.getSelectedRow();
-
-        if (pos >= 0) {
-            Categoria categoria = ctlCategoria.CategoriaSeleccionada(pos);
-
-            if (categoria != null) {
-                txtNombreCategoria.setText(categoria.getNombre());
-                categoriaID = categoria.getIdCategoria();
-                jbAtras4.setEnabled(true);
-                jbAtras5.setEnabled(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "No se encuentra la categoria seleccionada");
-            }
-
-        } else {
-            JOptionPane.showMessageDialog(this, "Debe seleccionar un registro");
-        }
+      
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
     private void jbAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras2ActionPerformed
@@ -213,106 +196,21 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
 
     private void BtnBuscarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarCategoriaActionPerformed
 
-        try {
-            String nickname = txtNombreCategoria.getText();
-            String clave = tfClaves.getText();
-            String nombres = tfNombres.getText();
-            String apellidos = tfApellidos.getText();
-            int codigo = Integer.parseInt(tfCodigo.getText());
-            String correo = tfCorreo.getText();
-            int semestre = Integer.parseInt(tfSemestre.getText());
-            int idTipo = 2;
-
-            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
-
-                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        }
-
-        new FrmInicio().setVisible(true);
-        this.dispose();
+      
     }//GEN-LAST:event_BtnBuscarCategoriaActionPerformed
 
     private void BtnRegistrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarCategoriaActionPerformed
 
-        try {
-            String nickname = txtNombreCategoria.getText();
-            String clave = tfClaves.getText();
-            String nombres = tfNombres.getText();
-            String apellidos = tfApellidos.getText();
-            int codigo = Integer.parseInt(tfCodigo.getText());
-            String correo = tfCorreo.getText();
-            int semestre = Integer.parseInt(tfSemestre.getText());
-            int idTipo = 2;
-
-            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
-
-                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        }
-
-        new FrmInicio().setVisible(true);
-        this.dispose();
+       
     }//GEN-LAST:event_BtnRegistrarCategoriaActionPerformed
 
     private void BtnModificarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarCategoriaActionPerformed
 
-        try {
-            String nickname = txtNombreCategoria.getText();
-            String clave = tfClaves.getText();
-            String nombres = tfNombres.getText();
-            String apellidos = tfApellidos.getText();
-            int codigo = Integer.parseInt(tfCodigo.getText());
-            String correo = tfCorreo.getText();
-            int semestre = Integer.parseInt(tfSemestre.getText());
-            int idTipo = 2;
-
-            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
-
-                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        }
-
-        new FrmInicio().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_BtnModificarCategoriaActionPerformed
 
     private void BtnEliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarCategoriaActionPerformed
 
-        try {
-            String nickname = txtNombreCategoria.getText();
-            String clave = tfClaves.getText();
-            String nombres = tfNombres.getText();
-            String apellidos = tfApellidos.getText();
-            int codigo = Integer.parseInt(tfCodigo.getText());
-            String correo = tfCorreo.getText();
-            int semestre = Integer.parseInt(tfSemestre.getText());
-            int idTipo = 2;
-
-            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
-
-                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        }
-
-        new FrmInicio().setVisible(true);
-        this.dispose();
+      
     }//GEN-LAST:event_BtnEliminarCategoriaActionPerformed
 
     private void txtNombreCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreCategoriaMouseEntered
@@ -330,8 +228,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     private void limpiar() {
         txtNombreCategoria.setText("");
         categoriaID = 0;
-        jbAtras4.setEnabled(false);
-        jbAtras5.setEnabled(false);
+        
     }
 
 
