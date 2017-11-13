@@ -58,7 +58,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 Chb1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Chb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 60, 30));
+        getContentPane().add(Chb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 20, 30));
 
         Chb2.setBackground(new java.awt.Color(0, 0, 0));
         Chb2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -68,22 +68,22 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 Chb2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Chb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 60, 30));
+        getContentPane().add(Chb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 20, 30));
 
         Chb3.setBackground(new java.awt.Color(0, 0, 0));
         Chb3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         Chb3.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(Chb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 60, 30));
+        getContentPane().add(Chb3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 20, 20));
 
         Chb4.setBackground(new java.awt.Color(0, 0, 0));
         Chb4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         Chb4.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(Chb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 60, 30));
+        getContentPane().add(Chb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 20, 30));
 
         BtnSiguiente.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
         BtnSiguiente.setForeground(new java.awt.Color(255, 0, 0));
         BtnSiguiente.setText("SIGUIENTE");
-        getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, 32));
+        getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, -1, 32));
 
         LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
         LbCategoria.setText("jLabel2");
@@ -93,7 +93,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/light-1443836_960_720.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, -80, 760, 500));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -24,6 +24,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
     public FrmGestionAdmin(Administrador admin) {
         initComponents();
         setLocationRelativeTo(this);
+        setResizable(false);
         ctlUsu = new CtlUsuario();
         administrador = admin;
         listar();
@@ -85,7 +86,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
                 btnBuscarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        jPanel1.add(btnBuscarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
         btnRegistrarUsuario.setBackground(new java.awt.Color(0, 51, 51));
         btnRegistrarUsuario.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
@@ -101,7 +102,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
                 btnRegistrarUsuarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, -1));
+        jPanel1.add(btnRegistrarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,7 +112,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Gestion de Usuarios");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, -1, -1));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -122,7 +123,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
                 jbAtrasActionPerformed(evt);
             }
         });
-        jPanel1.add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, -1, -1));
+        jPanel1.add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
@@ -140,7 +141,7 @@ public class FrmGestionAdmin extends javax.swing.JFrame {
 
     private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
         // TODO add your handling code here:
-        new FrmGuardarUsuario(administrador).setVisible(true);
+        new FrmGestionUsuarios(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 

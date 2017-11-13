@@ -10,6 +10,7 @@ import Modelo.Pregunta;
 import com.google.gson.Gson;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -83,5 +84,10 @@ public class CtlPregunta {
 
         }
         return modelTabla;
+    }
+    
+    public void SolicitudCargarInformacion(JComboBox<String> cbCategorias) {
+        GenericoDAO DAO = new GenericoDAO();
+        DAO.cargarInformacion(cbCategorias, "categoria", "nombre");
     }
 }
