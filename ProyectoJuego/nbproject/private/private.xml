@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmInicio.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlCategoria.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlPregunta.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/DAO/GenericoDAO.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
         </group>
     </open-files>
