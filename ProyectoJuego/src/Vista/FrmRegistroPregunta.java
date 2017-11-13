@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.CtlCategoria;
+import Controlador.CtlPregunta;
 import DAO.GenericoDAO;
 import Modelo.Administrador;
 
@@ -15,22 +16,20 @@ import Modelo.Administrador;
  */
 public class FrmRegistroPregunta extends javax.swing.JFrame {
 
-    
-     GenericoDAO DAOCategoria;
     CtlCategoria ctlCategoria;
     Administrador administrador;
-    
-    
-    
+    CtlPregunta ctlPregunta;
+
     /**
-     * 
+     *
      * Creates new form FrmRegistroPregunta
      */
     public FrmRegistroPregunta(Administrador admin) {
         initComponents();
         administrador = admin;
         ctlCategoria = new CtlCategoria();
-        DAOCategoria = new GenericoDAO();
+        ctlPregunta = new CtlPregunta();
+        ctlPregunta.SolicitudCargarInformacion(cbCategoriaPregunta);
         setLocationRelativeTo(this);
         setResizable(false);
     }
@@ -350,28 +349,28 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAtras1MouseReleased
 
     private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
-         new FrmAdministrador(administrador).setVisible(true);
+        new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtras1ActionPerformed
 
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         //        try {
-            //            String nickname = txtNickName.getText();
-            //            String clave = txtClave.getText();
-            //            String nombre = txtNombre.getText();
-            //            String apellido = txtApellido.getText();
-            //            int codigo = Integer.p  arseInt(txtCodigo.getText());
-            //            String correo = txtCorreo.getText();
-            //            int semestre = Integer.parseInt(txtSemestre.getText());
-            //
-            //            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
-                //                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-                //            } else {
-                //                JOptionPane.showMessageDialog(this, "Error al guardar");
-                //            }
-            //        } catch (Exception e) {
-            //            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-            //        }
+        //            String nickname = txtNickName.getText();
+        //            String clave = txtClave.getText();
+        //            String nombre = txtNombre.getText();
+        //            String apellido = txtApellido.getText();
+        //            int codigo = Integer.p  arseInt(txtCodigo.getText());
+        //            String correo = txtCorreo.getText();
+        //            int semestre = Integer.parseInt(txtSemestre.getText());
+        //
+        //            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
+        //                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+        //            } else {
+        //                JOptionPane.showMessageDialog(this, "Error al guardar");
+        //            }
+        //        } catch (Exception e) {
+        //            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        //        }
     }//GEN-LAST:event_BtnModificarPreguntaActionPerformed
 
     private void BtnBuscarPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarPregunta1ActionPerformed
