@@ -42,6 +42,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
         btnPreguntas = new javax.swing.JButton();
         btnJuegos = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
+        btnPreguntas1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -50,20 +51,20 @@ public class FrmAdministrador extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nickname");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         tfUsuario.setBackground(new java.awt.Color(0, 0, 0));
-        tfUsuario.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        tfUsuario.setFont(new java.awt.Font("Orator Std", 1, 36)); // NOI18N
         tfUsuario.setForeground(new java.awt.Color(153, 204, 255));
         tfUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 255, 255), 2));
+        tfUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 2));
         tfUsuario.setCaretColor(new java.awt.Color(51, 255, 255));
         tfUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsuarioActionPerformed(evt);
             }
         });
-        getContentPane().add(tfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 200, -1));
+        getContentPane().add(tfUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 300, -1));
 
         jbAtras1.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -84,13 +85,13 @@ public class FrmAdministrador extends javax.swing.JFrame {
         btnPreguntas.setBackground(new java.awt.Color(0, 51, 51));
         btnPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
         btnPreguntas.setForeground(new java.awt.Color(204, 255, 255));
-        btnPreguntas.setText("Administrar Preguntas y Categorias");
+        btnPreguntas.setText("Administrar Preguntas");
         btnPreguntas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPreguntasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, -1, 40));
+        getContentPane().add(btnPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, -1, 40));
 
         btnJuegos.setBackground(new java.awt.Color(0, 51, 51));
         btnJuegos.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -101,7 +102,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnJuegosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 180, 40));
+        getContentPane().add(btnJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 180, 40));
 
         btnUsuarios.setBackground(new java.awt.Color(0, 51, 51));
         btnUsuarios.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -112,7 +113,18 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, 240, 40));
+        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 240, 40));
+
+        btnPreguntas1.setBackground(new java.awt.Color(0, 51, 51));
+        btnPreguntas1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        btnPreguntas1.setForeground(new java.awt.Color(204, 255, 255));
+        btnPreguntas1.setText("Administrar Categorias");
+        btnPreguntas1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreguntas1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, -1));
@@ -137,33 +149,6 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void btnPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntasActionPerformed
 
-        int codigo;
-        try {
-
-            codigo = (!tfCodigoEditar.getText().isEmpty()) ? Integer.parseInt(tfCodigoEditar.getText()) : 0;
-            Usuario usuario = ctlUsuario.SolicitudBuscar(codigo);
-
-            if (usuario != null) {
-                JOptionPane.showMessageDialog(null, "El usuario ha sido encontrado");
-                tfNickname.setText(usuario.getNickname());
-                tfClave.setText(usuario.getClave());
-                tfNombres.setText(usuario.getNombre());
-                tfApellidos.setText(usuario.getApellido());
-                tfCorreo.setText(usuario.getCorreo());
-                tfSemestre.setText(usuario.getSemestre() + "");
-                jbCancelar.setEnabled(true);
-                jbEditarUsuario1.setEnabled(true);
-                jbEliminarUsuario.setEnabled(true);
-                jbCancelar.setVisible(true);
-                tfCodigoEditar.setEnabled(false);
-            } else {
-                JOptionPane.showMessageDialog(null, "El usuario no ha sido encontrado");
-            }
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(this, "Error al cargar los datos");
-            limpiar();
-        }
     }//GEN-LAST:event_btnPreguntasActionPerformed
 
     private void btnJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJuegosActionPerformed
@@ -174,10 +159,15 @@ public class FrmAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
+    private void btnPreguntas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntas1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPreguntas1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJuegos;
     private javax.swing.JButton btnPreguntas;
+    private javax.swing.JButton btnPreguntas1;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

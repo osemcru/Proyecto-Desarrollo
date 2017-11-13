@@ -286,23 +286,8 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-//        try {
-//            String nickname = txtNickName.getText();
-//            String clave = txtClave.getText();
-//            String nombre = txtNombre.getText();
-//            String apellido = txtApellido.getText();
-//            int codigo = Integer.p  arseInt(txtCodigo.getText());
-//            String correo = txtCorreo.getText();
-//            int semestre = Integer.parseInt(txtSemestre.getText());
-//
-//            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
-//                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-//            } else {
-//                JOptionPane.showMessageDialog(this, "Error al guardar");
-//            }
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-//        }
+ new FrmInicio().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
     private void tfSemestreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfSemestreMouseEntered

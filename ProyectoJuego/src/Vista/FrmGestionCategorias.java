@@ -52,41 +52,24 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        txtNombreCategoria = new javax.swing.JTextPane();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TblCategorias = new javax.swing.JTable();
+        jbAtras2 = new javax.swing.JButton();
+        BtnBuscarCategoria = new javax.swing.JButton();
         BtnRegistrarCategoria = new javax.swing.JButton();
         BtnModificarCategoria = new javax.swing.JButton();
-        BtnBuscarCategoria = new javax.swing.JButton();
         BtnEliminarCategoria = new javax.swing.JButton();
-        jbAtras = new javax.swing.JButton();
-        BtnIrPreguntas = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtNombreCategoria = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 153));
-
-        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jLabel2.setText("Lista de Categorias");
-
-        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        jLabel4.setText("Categorias");
-
-        txtNombreCategoria.setFont(new java.awt.Font("Tekton Pro", 0, 14)); // NOI18N
-        jScrollPane2.setViewportView(txtNombreCategoria);
-
-        jLabel1.setFont(new java.awt.Font("Tekton Pro", 0, 18)); // NOI18N
-        jLabel1.setText("Nombre:");
-
         TblCategorias.setBackground(new java.awt.Color(0, 102, 153));
+        TblCategorias.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
         TblCategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -105,235 +88,103 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(TblCategorias);
 
-        BtnRegistrarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnRegistrarCategoria.setForeground(new java.awt.Color(255, 0, 0));
-        BtnRegistrarCategoria.setText("Registrar Categoria");
-        BtnRegistrarCategoria.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, 290, 250));
+
+        jbAtras2.setBackground(new java.awt.Color(0, 51, 51));
+        jbAtras2.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jbAtras2.setForeground(new java.awt.Color(255, 255, 255));
+        jbAtras2.setText("Atras");
+        jbAtras2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnRegistrarCategoriaActionPerformed(evt);
+                jbAtras2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jbAtras2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, -1, -1));
 
-        BtnModificarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnModificarCategoria.setForeground(new java.awt.Color(255, 0, 0));
-        BtnModificarCategoria.setText("Modificar Categoria");
-        BtnModificarCategoria.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnModificarCategoriaActionPerformed(evt);
-            }
-        });
-
-        BtnBuscarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnBuscarCategoria.setForeground(new java.awt.Color(255, 0, 0));
+        BtnBuscarCategoria.setBackground(new java.awt.Color(0, 51, 51));
+        BtnBuscarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 3, 28)); // NOI18N
+        BtnBuscarCategoria.setForeground(new java.awt.Color(204, 255, 255));
         BtnBuscarCategoria.setText("Buscar Categoria");
         BtnBuscarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnBuscarCategoriaActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnBuscarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 280, -1));
 
-        BtnEliminarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
-        BtnEliminarCategoria.setForeground(new java.awt.Color(255, 0, 0));
+        BtnRegistrarCategoria.setBackground(new java.awt.Color(0, 51, 51));
+        BtnRegistrarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 3, 28)); // NOI18N
+        BtnRegistrarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnRegistrarCategoria.setText("Registrar Categoria");
+        BtnRegistrarCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRegistrarCategoriaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnRegistrarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 280, -1));
+
+        BtnModificarCategoria.setBackground(new java.awt.Color(0, 51, 51));
+        BtnModificarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 3, 30)); // NOI18N
+        BtnModificarCategoria.setForeground(new java.awt.Color(204, 255, 255));
+        BtnModificarCategoria.setText("Modificar Categoria");
+        BtnModificarCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnModificarCategoriaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnModificarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
+
+        BtnEliminarCategoria.setBackground(new java.awt.Color(0, 51, 51));
+        BtnEliminarCategoria.setFont(new java.awt.Font("Monotype Corsiva", 3, 30)); // NOI18N
+        BtnEliminarCategoria.setForeground(new java.awt.Color(204, 255, 255));
         BtnEliminarCategoria.setText("Eliminar Categoria");
         BtnEliminarCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnEliminarCategoriaActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnEliminarCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 290, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnModificarCategoria)
-                            .addComponent(BtnRegistrarCategoria)
-                            .addComponent(BtnBuscarCategoria)
-                            .addComponent(BtnEliminarCategoria))
-                        .addGap(40, 40, 40))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel2)
-                        .addContainerGap(26, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(BtnRegistrarCategoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnBuscarCategoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnModificarCategoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnEliminarCategoria)
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
-        );
+        jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Nombre");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 80, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 500, 270));
+        jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Lista de Categorias");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, -1, 70));
 
-        jbAtras.setBackground(new java.awt.Color(0, 51, 51));
-        jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        jbAtras.setForeground(new java.awt.Color(255, 0, 0));
-        jbAtras.setText("Atras");
-        jbAtras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAtrasActionPerformed(evt);
+        jLabel12.setFont(new java.awt.Font("Monotype Corsiva", 1, 65)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Categorias");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, 70));
+
+        txtNombreCategoria.setBackground(new java.awt.Color(0, 0, 0));
+        txtNombreCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        txtNombreCategoria.setForeground(new java.awt.Color(255, 255, 255));
+        txtNombreCategoria.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombreCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        txtNombreCategoria.setCaretColor(new java.awt.Color(51, 255, 255));
+        txtNombreCategoria.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                txtNombreCategoriaMouseEntered(evt);
             }
         });
-        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
-
-        BtnIrPreguntas.setBackground(new java.awt.Color(0, 51, 51));
-        BtnIrPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        BtnIrPreguntas.setForeground(new java.awt.Color(255, 0, 0));
-        BtnIrPreguntas.setText("Gestionar Preguntas");
-        BtnIrPreguntas.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnIrPreguntasActionPerformed(evt);
+                txtNombreCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnIrPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, -1, -1));
+        getContentPane().add(txtNombreCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 220, -1));
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 520));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BtnRegistrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarCategoriaActionPerformed
-        // TODO add your handling code here:
-
-        try {
-            String nombre = txtNombreCategoria.getText();
-
-            if (ctlCategoria.SolicitudGuardar(nombre)) {
-                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-                limpiar();
-            } else {
-                JOptionPane.showMessageDialog(this, "Error al guardar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        }
-        listar();
-
-
-    }//GEN-LAST:event_BtnRegistrarCategoriaActionPerformed
-
-    private void BtnBuscarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarCategoriaActionPerformed
-        // TODO add your handling code here
-        try {
-
-            String nombre = txtNombreCategoria.getText();
-
-            if (!nombre.equals("")) {
-                ArrayList<Categoria> categoria = ctlCategoria.SolicitudBuscar(nombre);
-
-                if (categoria.size() > 0) {
-                    JOptionPane.showMessageDialog(null, "La categoria ha sido encontrada");
-                    for (int i = 0; i < categoria.size(); i++) {
-                        TblCategorias.setModel(ctlCategoria.ListarBusqueda(categoria));
-                    }
-                } else {
-                    JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Escribe un nombre");
-            }
-        } catch (Exception e) {
-
-            JOptionPane.showMessageDialog(this, "Error al cargar los datos");
-            limpiar();
-        }
-
-    }//GEN-LAST:event_BtnBuscarCategoriaActionPerformed
-
-    private void BtnModificarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarCategoriaActionPerformed
-        // TODO add your handling code here:
-
-        try {
-            String nombre = txtNombreCategoria.getText();
-
-            if (ctlCategoria.SolicitudModificar(categoriaID, nombre)) {
-                JOptionPane.showMessageDialog(this, "Modificado exitosamente");
-                limpiar();
-            } else {
-                JOptionPane.showMessageDialog(this, "No se encontro la categoria a modificar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al cargar los datos");
-        }
-        listar();
-
-    }//GEN-LAST:event_BtnModificarCategoriaActionPerformed
-
-    private void BtnEliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarCategoriaActionPerformed
-        // TODO add your handling code here:
-        try {
-            categoriaID = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la categoria:"));
-            if (ctlCategoria.SolicitudEliminar(categoriaID)) {
-                JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
-                limpiar();
-            } else {
-                JOptionPane.showMessageDialog(this, "No se encontro categoria a eliminar");
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Valores invalidos");
-        }
-        listar();
-
-    }//GEN-LAST:event_BtnEliminarCategoriaActionPerformed
-
-    private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-        // TODO add your handling code here:
-        new FrmAdministrador(administrador).setVisible(true);
-        this.dispose();
-
-    }//GEN-LAST:event_jbAtrasActionPerformed
 
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
         // TODO add your handling code here:
@@ -345,8 +196,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             if (categoria != null) {
                 txtNombreCategoria.setText(categoria.getNombre());
                 categoriaID = categoria.getIdCategoria();
-                BtnEliminarCategoria.setEnabled(true);
-                BtnModificarCategoria.setEnabled(true);
+                jbAtras4.setEnabled(true);
+                jbAtras5.setEnabled(true);
             } else {
                 JOptionPane.showMessageDialog(this, "No se encuentra la categoria seleccionada");
             }
@@ -356,12 +207,121 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
-    private void BtnIrPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIrPreguntasActionPerformed
+    private void jbAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras2ActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_jbAtras2ActionPerformed
 
-        new FrmRegistroPregunta(administrador).setVisible(true);
+    private void BtnBuscarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarCategoriaActionPerformed
+
+        try {
+            String nickname = txtNombreCategoria.getText();
+            String clave = tfClaves.getText();
+            String nombres = tfNombres.getText();
+            String apellidos = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigo.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+            int idTipo = 2;
+
+            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
+
+                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
+
+        new FrmInicio().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_BtnIrPreguntasActionPerformed
+    }//GEN-LAST:event_BtnBuscarCategoriaActionPerformed
+
+    private void BtnRegistrarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarCategoriaActionPerformed
+
+        try {
+            String nickname = txtNombreCategoria.getText();
+            String clave = tfClaves.getText();
+            String nombres = tfNombres.getText();
+            String apellidos = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigo.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+            int idTipo = 2;
+
+            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
+
+                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
+
+        new FrmInicio().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnRegistrarCategoriaActionPerformed
+
+    private void BtnModificarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarCategoriaActionPerformed
+
+        try {
+            String nickname = txtNombreCategoria.getText();
+            String clave = tfClaves.getText();
+            String nombres = tfNombres.getText();
+            String apellidos = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigo.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+            int idTipo = 2;
+
+            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
+
+                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
+
+        new FrmInicio().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnModificarCategoriaActionPerformed
+
+    private void BtnEliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarCategoriaActionPerformed
+
+        try {
+            String nickname = txtNombreCategoria.getText();
+            String clave = tfClaves.getText();
+            String nombres = tfNombres.getText();
+            String apellidos = tfApellidos.getText();
+            int codigo = Integer.parseInt(tfCodigo.getText());
+            String correo = tfCorreo.getText();
+            int semestre = Integer.parseInt(tfSemestre.getText());
+            int idTipo = 2;
+
+            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombres, apellidos, correo, semestre, idTipo)) {
+
+                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al guardar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+        }
+
+        new FrmInicio().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_BtnEliminarCategoriaActionPerformed
+
+    private void txtNombreCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreCategoriaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreCategoriaMouseEntered
+
+    private void txtNombreCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreCategoriaActionPerformed
 
     private void listar() {
         TblCategorias.setModel(ctlCategoria.SolicitudListar());
@@ -370,27 +330,23 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     private void limpiar() {
         txtNombreCategoria.setText("");
         categoriaID = 0;
-        BtnEliminarCategoria.setEnabled(false);
-        BtnModificarCategoria.setEnabled(false);
+        jbAtras4.setEnabled(false);
+        jbAtras5.setEnabled(false);
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnBuscarCategoria;
     private javax.swing.JButton BtnEliminarCategoria;
-    private javax.swing.JButton BtnIrPreguntas;
     private javax.swing.JButton BtnModificarCategoria;
     private javax.swing.JButton BtnRegistrarCategoria;
     private javax.swing.JTable TblCategorias;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton jbAtras;
-    private javax.swing.JTextPane txtNombreCategoria;
+    private javax.swing.JButton jbAtras2;
+    private javax.swing.JTextField txtNombreCategoria;
     // End of variables declaration//GEN-END:variables
 }

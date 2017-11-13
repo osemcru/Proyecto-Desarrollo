@@ -121,8 +121,8 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-//     new FrmGestionCategorias(administrador).setVisible(true);
-//        this.dispose();
+     new FrmInicio().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
     private void tfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsuarioActionPerformed
