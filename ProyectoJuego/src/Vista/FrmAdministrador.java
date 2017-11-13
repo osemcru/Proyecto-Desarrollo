@@ -148,7 +148,8 @@ public class FrmAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAtras1ActionPerformed
 
     private void btnPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntasActionPerformed
-
+       new FrmRegistroPregunta(administrador).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnPreguntasActionPerformed
 
     private void btnJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJuegosActionPerformed
@@ -156,14 +157,20 @@ public class FrmAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnJuegosActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
          new FrmGestionUsuarios(administrador).setVisible(true);
         this.dispose();
         
+=======
+       new FrmGestionUsuarios(administrador).setVisible(true);
+        this.dispose();
+>>>>>>> 1b28a255b747f7bcaf77cc14145f604a54fb077b
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnPreguntas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntas1ActionPerformed
-        // TODO add your handling code here:
+       new FrmGestionCategorias(administrador).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnPreguntas1ActionPerformed
 
 

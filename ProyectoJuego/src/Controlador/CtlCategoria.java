@@ -35,7 +35,7 @@ public class CtlCategoria {
     }
 
     public ArrayList<Categoria> SolicitudBuscar(String nombre) {
-        Categoria categoria = new Categoria("", 0);
+        Categoria categoria = new Categoria("");
         GenericoDAO catDAO = new GenericoDAO();
         String objeto = convertirGson(categoria);
         ResultSet atributos = catDAO.buscar(objeto, tabla, nombre);
@@ -52,11 +52,33 @@ public class CtlCategoria {
         return listaCategorias;
     }
 
-    public boolean SolicitudModificar(int idCategoria, String nombre) {
-        Categoria categoria = new Categoria(nombre, idCategoria);
+    public Categoria SolicitudBuscarUno(String nombre) {
+        Categoria categoria = new Categoria("");
         GenericoDAO catDAO = new GenericoDAO();
         String objeto = convertirGson(categoria);
-        return catDAO.modificar(objeto, tabla);
+        ResultSet atributos = catDAO.buscar(objeto, tabla, nombre);
+        boolean comprobar = false;
+        try {
+            while (atributos.next()) {
+                categoria.setIdCategoria(Integer.parseInt(atributos.getString("idCategoria")));
+                categoria.setNombre(atributos.getString("nombre"));
+                comprobar = true;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        if (comprobar) {
+            return categoria;
+        } else {
+            return null;
+        }
+    }
+
+    public boolean SolicitudModificar(int idCategoria, String nombre) {
+        Categoria categoria = new Categoria(idCategoria, nombre);
+        GenericoDAO catDAO = new GenericoDAO();
+        String objeto = convertirGson(categoria);
+        return catDAO.modificar(objeto, tabla, "idCategoria", idCategoria);
     }
 
     public boolean SolicitudEliminar(int idCategoria) {

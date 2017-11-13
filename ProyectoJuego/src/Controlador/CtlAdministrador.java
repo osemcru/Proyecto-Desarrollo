@@ -56,7 +56,7 @@ public class CtlAdministrador {
         Administrador administrador = new Administrador(idCodigo, nickname, clave, nombre, apellido, correo, idTipoUsuario);
         GenericoDAO adminDAO = new GenericoDAO();
         String objeto = convertirGson(administrador);
-        return adminDAO.modificar(objeto, tabla);
+        return adminDAO.modificar(objeto, tabla, "idCodigo", idCodigo);
     }
 
     public boolean SolicitudEliminar(int idCodigo) {

@@ -21,11 +21,10 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
     CtlUsuario controlador;
 
     public FrmRegistrarUsuario() {
-        setLocationRelativeTo(this);
         initComponents();
-
-        setResizable(false);
         controlador = new CtlUsuario();
+         setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**

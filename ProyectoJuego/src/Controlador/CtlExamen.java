@@ -47,11 +47,11 @@ public class CtlExamen {
         return examen;
     }
 
-    public boolean SolicitudModificar(int participantes, int idUsuario) {
-        Examen examen = new Examen(participantes, idUsuario);
+    public boolean SolicitudModificar(int idExamen, int participantes, int idUsuario) {
+        Examen examen = new Examen(idExamen, participantes, idUsuario);
         GenericoDAO examenDAO = new GenericoDAO();
         String objeto = convertirGson(examen);
-        return examenDAO.modificar(objeto, tabla);
+        return examenDAO.modificar(objeto, tabla, "idExamen", idExamen);
     }
 
     public boolean SolicitudEliminar(int idExamen) {

@@ -27,8 +27,8 @@ public class CtlPregunta {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(int idPregunta, String descripcion, int idCategoria, int idExamen) {
-        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, idExamen);
+    public boolean SolicitudGuardar(String descripcion, int idCategoria, int idExamen) {
+        Pregunta pregunta = new Pregunta(descripcion, idCategoria, idExamen);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
         return preguntaDAO.guardar(objeto, tabla);
@@ -54,7 +54,7 @@ public class CtlPregunta {
         Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, idExamen);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
-        return preguntaDAO.modificar(objeto, tabla);
+        return preguntaDAO.modificar(objeto, tabla, "idPregunta", idPregunta);
     }
 
     public boolean SolicitudEliminar(int idPregunta) {
@@ -64,13 +64,13 @@ public class CtlPregunta {
         return preguntaDAO.eliminar(objeto, tabla, idPregunta);
     }
 
-    public DefaultTableModel solicitudListar() {
-        GenericoDAO usuarioDAO = new GenericoDAO();
+    public DefaultTableModel SolicitudListar() {
+        GenericoDAO preguntaDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
         String nombreColumnas[] = {"idPregunta", "descripcion", "idCategoria", "idExamen"};
         modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
 
-        ResultSet atributos = usuarioDAO.listar(tabla);
+        ResultSet atributos = preguntaDAO.listar(tabla);
         try {
             while (atributos.next()) {
                 modelTabla.addRow(new Object[]{
@@ -85,9 +85,23 @@ public class CtlPregunta {
         }
         return modelTabla;
     }
-    
+
     public void SolicitudCargarInformacion(JComboBox<String> cbCategorias) {
         GenericoDAO DAO = new GenericoDAO();
         DAO.cargarInformacion(cbCategorias, "categoria", "nombre");
+    }
+
+    public int SolicitudUltimaIDPregunta() {
+        GenericoDAO preguntaDAO = new GenericoDAO();
+        ResultSet atributos = preguntaDAO.listar(tabla);
+        int idPregunta = 0;
+        try {
+            while (atributos.next()) {
+                idPregunta = Integer.parseInt(atributos.getString("idPregunta"));
+            }
+        } catch (Exception e) {
+
+        }
+        return idPregunta;
     }
 }

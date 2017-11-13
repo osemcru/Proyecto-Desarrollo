@@ -23,6 +23,12 @@ public class Pregunta {
         this.examen = examen;
     }
 
+    public Pregunta(String descripcion, int categoria, int examen) {
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.examen = examen;
+    }
+
     public Pregunta() {
     }
 

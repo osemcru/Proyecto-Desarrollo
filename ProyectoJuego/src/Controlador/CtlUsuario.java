@@ -60,7 +60,7 @@ public class CtlUsuario {
         Usuario usuario = new Usuario(idCodigo, nickname, clave, nombre, apellido, correo, semestre, idTipoUsuario);
         GenericoDAO usuarioDAO = new GenericoDAO();
         String objeto = convertirGson(usuario);
-        return usuarioDAO.modificar(objeto, tabla);
+        return usuarioDAO.modificar(objeto, tabla, "idCodigo", idCodigo);
     }
 
     public boolean SolicitudEliminar(int idCodigo) {
