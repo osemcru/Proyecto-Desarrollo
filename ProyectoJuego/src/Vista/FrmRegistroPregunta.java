@@ -52,7 +52,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        jbAtras1 = new javax.swing.JButton();
+        jbAtras = new javax.swing.JButton();
         BtnModificarPregunta = new javax.swing.JButton();
         BtnEliminarPregunta = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
@@ -127,21 +127,21 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jLabel10.setText("Preguntas");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, 70));
 
-        jbAtras1.setBackground(new java.awt.Color(0, 51, 51));
-        jbAtras1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
-        jbAtras1.setForeground(new java.awt.Color(255, 255, 255));
-        jbAtras1.setText("Atras");
-        jbAtras1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jbAtras.setBackground(new java.awt.Color(0, 51, 51));
+        jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        jbAtras.setForeground(new java.awt.Color(255, 255, 255));
+        jbAtras.setText("Atras");
+        jbAtras.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jbAtras1MouseReleased(evt);
+                jbAtrasMouseReleased(evt);
             }
         });
-        jbAtras1.addActionListener(new java.awt.event.ActionListener() {
+        jbAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbAtras1ActionPerformed(evt);
+                jbAtrasActionPerformed(evt);
             }
         });
-        getContentPane().add(jbAtras1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        getContentPane().add(jbAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         BtnModificarPregunta.setBackground(new java.awt.Color(0, 51, 51));
         BtnModificarPregunta.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -342,20 +342,18 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
+    private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
 new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
      
-    }//GEN-LAST:event_jbAtras1MouseReleased
+    }//GEN-LAST:event_jbAtrasMouseReleased
 
-<<<<<<< HEAD
-=======
-    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
+
+    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jbAtras1ActionPerformed
+    }                                        
 
->>>>>>> 2d07224aee9953b4d644fd6e9176706fd7bfa39d
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         //        try {
         //            String nickname = txtNickName.getText();
@@ -436,9 +434,10 @@ new FrmAdministrador(administrador).setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_ChbDActionPerformed
 
-    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jbAtras1ActionPerformed
+    private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
+       new FrmAdministrador(administrador).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbAtrasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -469,6 +468,6 @@ new FrmAdministrador(administrador).setVisible(true);
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JButton jbAtras1;
+    private javax.swing.JButton jbAtras;
     // End of variables declaration//GEN-END:variables
 }
