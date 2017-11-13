@@ -54,10 +54,9 @@ CREATE TABLE pregunta(
   idPregunta INT NOT NULL AUTO_INCREMENT,
   descripcion VARCHAR(250) NOT NULL,
   categoria INT NOT NULL,
-  examen INT NOT NULL,
+  tipoPregunta INT NOT NULL,
   constraint pk_pregunta PRIMARY KEY (idPregunta),
-  constraint fk_pregunta_categoria FOREIGN KEY (categoria) REFERENCES categoria (idCategoria),
-  constraint fk_pregunta_examen FOREIGN KEY (examen) REFERENCES examen (idExamen)
+  constraint fk_pregunta_categoria FOREIGN KEY (categoria) REFERENCES categoria (idCategoria)
 );
 
 CREATE TABLE examenPregunta(
