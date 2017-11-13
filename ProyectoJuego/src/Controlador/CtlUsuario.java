@@ -41,6 +41,7 @@ public class CtlUsuario {
         String objeto = convertirGson(usuario);
         ResultSet atributos = usuarioDAO.buscar(objeto, tabla, idCodigo);
         try {
+             while (atributos.next()) {
             usuario.setIdCodigo(Integer.parseInt(atributos.getString("idCodigo")));
             usuario.setNickname(atributos.getString("nickname"));
             usuario.setClave(atributos.getString("clave"));
@@ -48,6 +49,7 @@ public class CtlUsuario {
             usuario.setApellido(atributos.getString("apellido"));
             usuario.setCorreo(atributos.getString("correo"));
             usuario.setSemestre(Integer.parseInt(atributos.getString("semestre")));
+             }
         } catch (Exception e) {
             return null;
         }

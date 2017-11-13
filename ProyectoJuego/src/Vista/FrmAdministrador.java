@@ -157,6 +157,9 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
+         new FrmGestionUsuarios(administrador).setVisible(true);
+        this.dispose();
+        
     }//GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnPreguntas1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntas1ActionPerformed
