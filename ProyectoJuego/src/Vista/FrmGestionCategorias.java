@@ -269,15 +269,20 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         try {
 
             String nombre = txtNombreCategoria.getText();
-            ArrayList<Categoria> categoria = ctlCategoria.SolicitudBuscar(nombre);
 
-            if (categoria.size() > 0) {
-                JOptionPane.showMessageDialog(null, "La categoria ha sido encontrada");
-                for (int i = 0; i < categoria.size(); i++) {
-                    TblCategorias.setModel(ctlCategoria.ListarBusqueda(categoria));
+            if (!nombre.equals("")) {
+                ArrayList<Categoria> categoria = ctlCategoria.SolicitudBuscar(nombre);
+
+                if (categoria.size() > 0) {
+                    JOptionPane.showMessageDialog(null, "La categoria ha sido encontrada");
+                    for (int i = 0; i < categoria.size(); i++) {
+                        TblCategorias.setModel(ctlCategoria.ListarBusqueda(categoria));
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
+                JOptionPane.showMessageDialog(null, "Escribe un nombre");
             }
         } catch (Exception e) {
 
@@ -297,10 +302,10 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Modificado exitosamente");
                 limpiar();
             } else {
-                JOptionPane.showMessageDialog(this, "Error al modificar");
+                JOptionPane.showMessageDialog(this, "No se encontro la categoria a modificar");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
+            JOptionPane.showMessageDialog(null, "Error al cargar los datos");
         }
         listar();
 
@@ -308,13 +313,16 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
 
     private void BtnEliminarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarCategoriaActionPerformed
         // TODO add your handling code here:
-
-        categoriaID = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la categoria:"));
-        if (ctlCategoria.SolicitudEliminar(categoriaID)) {
-            JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
-            limpiar();
-        } else {
-            JOptionPane.showMessageDialog(this, "Error al eliminar");
+        try {
+            categoriaID = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la categoria:"));
+            if (ctlCategoria.SolicitudEliminar(categoriaID)) {
+                JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(this, "No se encontro categoria a eliminar");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Valores invalidos");
         }
         listar();
 
@@ -322,10 +330,9 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
         // TODO add your handling code here:
-         new FrmAdministrador(administrador).setVisible(true);
+        new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
-    
-        
+
     }//GEN-LAST:event_jbAtrasActionPerformed
 
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
@@ -351,8 +358,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
 
     private void BtnIrPreguntasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIrPreguntasActionPerformed
         // TODO add your handling code here:
-        
-         new FrmRegistroPregunta(administrador).setVisible(true);
+
+        new FrmRegistroPregunta(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BtnIrPreguntasActionPerformed
 
