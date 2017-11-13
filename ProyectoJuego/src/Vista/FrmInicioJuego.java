@@ -5,22 +5,22 @@
  */
 package Vista;
 
+import Controlador.CtlUsuario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Cristian Cruz
  */
 public class FrmInicioJuego extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmInicioJuego
-     */
     public FrmInicioJuego() {
         initComponents();
-        
         setLocationRelativeTo(this);
         setResizable(false);
         
     }
+    private int rep=0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,6 +46,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         tfA2 = new javax.swing.JTextField();
         tfA3 = new javax.swing.JTextField();
         tfA4 = new javax.swing.JTextField();
+        jbSiguiente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -77,22 +78,22 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("A)");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 40, -1));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 40, -1));
 
         jLabel17.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("B)");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 40, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 40, -1));
 
         jLabel11.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("C)");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 40, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 40, -1));
 
         jLabel14.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("D)");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 40, -1));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 40, -1));
 
         ChbA.setBackground(new java.awt.Color(0, 153, 255));
         ChbA.addActionListener(new java.awt.event.ActionListener() {
@@ -100,13 +101,13 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 ChbAActionPerformed(evt);
             }
         });
-        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, -1, 20));
+        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 153, 255));
-        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, -1));
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 153, 255));
-        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 20, 20));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 153, 255));
         ChbD.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +115,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 ChbDActionPerformed(evt);
             }
         });
-        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, -1, -1));
+        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
         tfPregunta.setBackground(new java.awt.Color(0, 0, 0));
         tfPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
@@ -132,7 +133,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfPreguntaActionPerformed(evt);
             }
         });
-        getContentPane().add(tfPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 620, -1));
+        getContentPane().add(tfPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 620, -1));
 
         tfA1.setBackground(new java.awt.Color(0, 0, 0));
         tfA1.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -150,7 +151,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfA1ActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 450, -1));
+        getContentPane().add(tfA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 450, -1));
 
         tfA2.setBackground(new java.awt.Color(0, 0, 0));
         tfA2.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -168,7 +169,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfA2ActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 450, -1));
+        getContentPane().add(tfA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 450, -1));
 
         tfA3.setBackground(new java.awt.Color(0, 0, 0));
         tfA3.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -186,7 +187,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfA3ActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 450, -1));
+        getContentPane().add(tfA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 450, -1));
 
         tfA4.setBackground(new java.awt.Color(0, 0, 0));
         tfA4.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -204,7 +205,18 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfA4ActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 450, -1));
+        getContentPane().add(tfA4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 450, -1));
+
+        jbSiguiente.setBackground(new java.awt.Color(0, 51, 51));
+        jbSiguiente.setFont(new java.awt.Font("Monotype Corsiva", 3, 30)); // NOI18N
+        jbSiguiente.setForeground(new java.awt.Color(204, 255, 255));
+        jbSiguiente.setText("Siguiente");
+        jbSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSiguienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Juego.jpg"))); // NOI18N
@@ -269,6 +281,17 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfA4ActionPerformed
 
+    private void jbSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSiguienteActionPerformed
+   
+        new FrmInicioJuego().setVisible(true);
+        this.dispose();
+
+        
+       
+       
+        
+    }//GEN-LAST:event_jbSiguienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -286,6 +309,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JButton jbSiguiente;
     private javax.swing.JTextField tfA1;
     private javax.swing.JTextField tfA2;
     private javax.swing.JTextField tfA3;
