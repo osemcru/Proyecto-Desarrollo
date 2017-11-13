@@ -36,7 +36,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         Chb2 = new javax.swing.JCheckBox();
         Chb3 = new javax.swing.JCheckBox();
         Chb4 = new javax.swing.JCheckBox();
-        BtnSiguiente = new javax.swing.JButton();
         LbCategoria = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -48,7 +47,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         LbPregunta.setForeground(new java.awt.Color(255, 255, 255));
         LbPregunta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         LbPregunta.setOpaque(true);
-        getContentPane().add(LbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 400, 90));
+        getContentPane().add(LbPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 400, 90));
 
         Chb1.setBackground(new java.awt.Color(0, 0, 0));
         Chb1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -58,7 +57,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 Chb1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Chb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 20, 30));
+        getContentPane().add(Chb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 20, 20));
 
         Chb2.setBackground(new java.awt.Color(0, 0, 0));
         Chb2.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -68,7 +67,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 Chb2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Chb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 20, 30));
+        getContentPane().add(Chb2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 20, 20));
 
         Chb3.setBackground(new java.awt.Color(0, 0, 0));
         Chb3.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
@@ -78,22 +77,17 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         Chb4.setBackground(new java.awt.Color(0, 0, 0));
         Chb4.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
         Chb4.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(Chb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 20, 30));
-
-        BtnSiguiente.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        BtnSiguiente.setForeground(new java.awt.Color(255, 0, 0));
-        BtnSiguiente.setText("SIGUIENTE");
-        getContentPane().add(BtnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, -1, 32));
+        getContentPane().add(Chb4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 20, 20));
 
         LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
         LbCategoria.setText("jLabel2");
         LbCategoria.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 0)));
         LbCategoria.setOpaque(true);
-        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 220, 30));
+        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 220, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/light-1443836_960_720.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 500));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Juego.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,7 +106,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnSiguiente;
     private javax.swing.JCheckBox Chb1;
     private javax.swing.JCheckBox Chb2;
     private javax.swing.JCheckBox Chb3;

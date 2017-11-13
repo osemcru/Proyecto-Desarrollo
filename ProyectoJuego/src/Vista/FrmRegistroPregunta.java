@@ -107,13 +107,13 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, -1));
 
         ChbA.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, -1, 20));
+        getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, -1));
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 20, 20));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 204, 204));
         ChbD.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 ChbDActionPerformed(evt);
             }
         });
-        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
+        getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 65)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
