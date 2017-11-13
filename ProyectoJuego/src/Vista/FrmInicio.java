@@ -27,13 +27,14 @@ public class FrmInicio extends javax.swing.JFrame {
     public FrmInicio() {
         initComponents();
         setLocationRelativeTo(this);
+        setResizable(false);
         ctlAdmin = new CtlAdministrador();
         ctlUser = new CtlUsuario();
         jLOjos.setVisible(false);
         jLOjos1.setVisible(false);
         jLOjos2.setVisible(false);
         jLOjos3.setVisible(false);
-        setResizable(false);
+        
 
     }
 
