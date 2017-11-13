@@ -27,8 +27,8 @@ public class CtlPregunta {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(String descripcion, int idCategoria, int idExamen) {
-        Pregunta pregunta = new Pregunta(descripcion, idCategoria, idExamen);
+    public boolean SolicitudGuardar(int idPregunta, String descripcion, int idCategoria, int tipoPregunta) {
+        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, tipoPregunta);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
         return preguntaDAO.guardar(objeto, tabla);
@@ -43,15 +43,15 @@ public class CtlPregunta {
             pregunta.setIdPregunta(Integer.parseInt(atributos.getString("idPregunta")));
             pregunta.setDescripcion(atributos.getString("descripcion"));
             pregunta.setCategoria(Integer.parseInt(atributos.getString("idCategoria")));
-            pregunta.setExamen(Integer.parseInt(atributos.getString("idExamen")));
+            pregunta.setTipoPregunta(Integer.parseInt(atributos.getString("tipoPregunta")));
         } catch (Exception e) {
             return null;
         }
         return pregunta;
     }
 
-    public boolean SolicitudModificar(int idPregunta, String descripcion, int idCategoria, int idExamen) {
-        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, idExamen);
+    public boolean SolicitudModificar(int idPregunta, String descripcion, int idCategoria, int tipoPregunta) {
+        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, tipoPregunta);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
         return preguntaDAO.modificar(objeto, tabla, "idPregunta", idPregunta);
@@ -67,7 +67,7 @@ public class CtlPregunta {
     public DefaultTableModel SolicitudListar() {
         GenericoDAO preguntaDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
-        String nombreColumnas[] = {"idPregunta", "descripcion", "idCategoria", "idExamen"};
+        String nombreColumnas[] = {"idPregunta", "descripcion", "idCategoria", "Tipo Pregunta"};
         modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
 
         ResultSet atributos = preguntaDAO.listar(tabla);
@@ -76,8 +76,8 @@ public class CtlPregunta {
                 modelTabla.addRow(new Object[]{
                     atributos.getString("idPregunta"),
                     atributos.getString("descripcion"),
-                    atributos.getString("idCategoria"),
-                    atributos.getString("idExamen")
+                    atributos.getString("categoria"),
+                    atributos.getString("tipoPregunta")
                 });
             }
         } catch (Exception e) {

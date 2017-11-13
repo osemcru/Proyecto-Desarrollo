@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
  * @author Julian
  */
 public class FrmRegistroPregunta extends javax.swing.JFrame {
-    
+
     CtlCategoria ctlCategoria;
     Administrador administrador;
     CtlPregunta ctlPregunta;
@@ -34,6 +34,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         ctlPregunta = new CtlPregunta();
         ctlSolucion = new CtlSolucion();
         ctlPregunta.SolicitudCargarInformacion(cbCategoriaPregunta);
+        limpiar();
+        listar();
         setLocationRelativeTo(this);
         setResizable(false);
     }
@@ -48,7 +50,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TblPreguntas = new javax.swing.JTable();
         cbTipoPregunta = new javax.swing.JComboBox<>();
         cbCategoriaPregunta = new javax.swing.JComboBox<>();
         ChbA = new javax.swing.JCheckBox();
@@ -78,9 +80,9 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setBackground(new java.awt.Color(0, 102, 153));
-        jTable1.setFont(new java.awt.Font("Monotype Corsiva", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblPreguntas.setBackground(new java.awt.Color(0, 102, 153));
+        TblPreguntas.setFont(new java.awt.Font("Monotype Corsiva", 0, 12)); // NOI18N
+        TblPreguntas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -91,8 +93,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 "IdPregunta", "Descripcion", "idCategoria ", "idExamen"
             }
         ));
-        jTable1.setOpaque(false);
-        jScrollPane1.setViewportView(jTable1);
+        TblPreguntas.setOpaque(false);
+        jScrollPane1.setViewportView(TblPreguntas);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 460, 130));
 
@@ -100,6 +102,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         cbTipoPregunta.setFont(new java.awt.Font("Monotype Corsiva", 0, 20)); // NOI18N
         cbTipoPregunta.setForeground(new java.awt.Color(204, 255, 255));
         cbTipoPregunta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion...", "Unica Respuesta", "Multiple Respuesta" }));
+        cbTipoPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoPreguntaActionPerformed(evt);
+            }
+        });
         getContentPane().add(cbTipoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 220, -1));
 
         cbCategoriaPregunta.setBackground(new java.awt.Color(204, 255, 255));
@@ -109,12 +116,27 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         getContentPane().add(cbCategoriaPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 220, -1));
 
         ChbA.setBackground(new java.awt.Color(0, 204, 204));
+        ChbA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbAActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 204, 204));
+        ChbB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbBActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 204, 204));
+        ChbC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbCActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 204, 204));
@@ -397,36 +419,45 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 || cbTipoPregunta.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Completa todos los campos");
         } else {
-            
+
             Categoria categoria = ctlCategoria.SolicitudBuscarUno((String) cbCategoriaPregunta.getSelectedItem());
+            System.out.println(categoria.getIdCategoria());
             int idCategoria = categoria.getIdCategoria();
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();
-            
-            if (ctlPregunta.SolicitudGuardar(descripcion, tipoPregunta, idCategoria)) {
-                
-                int idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
-                
+            int idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+
+            if (ctlPregunta.SolicitudGuardar(idPregunta + 1, descripcion, idCategoria, tipoPregunta)) {
+
+                idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+
                 String nombreA = TxtA.getText();
                 int estadoA = (ChbA.isSelected()) ? 1 : 0;
-                
+
                 String nombreB = TxtB.getText();
                 int estadoB = (ChbB.isSelected()) ? 1 : 0;
-                
+
                 String nombreC = TxtC.getText();
                 int estadoC = (ChbC.isSelected()) ? 1 : 0;
-                
+
                 String nombreD = TxtD.getText();
                 int estadoD = (ChbD.isSelected()) ? 1 : 0;
-                
-                if (ctlSolucion.SolicitudGuardar(nombreA, estadoA, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(nombreB, estadoB, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(nombreC, estadoC, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(nombreD, estadoD, idPregunta)) {
-                    
+
+                int idSolucion = ctlSolucion.SolicitudUltimaIDSolucion();
+
+                if (ctlSolucion.SolicitudGuardar(idSolucion + 1, nombreA, estadoA, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(idSolucion + 2, nombreB, estadoB, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(idSolucion + 3, nombreC, estadoC, idPregunta)
+                        && ctlSolucion.SolicitudGuardar(idSolucion + 4, nombreD, estadoD, idPregunta)) {
+
                     JOptionPane.showMessageDialog(this, "Guardado exitosamente");
                     limpiar();
+                    listar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar las soluciones");
                 }
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al registrar la pregunta");
             }
         }
     }//GEN-LAST:event_BtnRegistrarPreguntaActionPerformed
@@ -473,6 +504,11 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+        if (cbTipoPregunta.getSelectedIndex() == 1) {
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
+            ChbA.setSelected(false);
+        }
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
@@ -483,7 +519,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void TxtPreguntaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtPreguntaKeyTyped
         // TODO add your handling code here:
         String pregunta = TxtPregunta.getText();
-        
+
         if (pregunta.length() > 250) {
             evt.consume();
         }
@@ -492,7 +528,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void TxtAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtAKeyTyped
         // TODO add your handling code here:
         String solucion = TxtA.getText();
-        
+
         if (solucion.length() > 50) {
             evt.consume();
         }
@@ -501,7 +537,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void TxtBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtBKeyTyped
         // TODO add your handling code here:
         String solucion = TxtB.getText();
-        
+
         if (solucion.length() > 50) {
             evt.consume();
         }
@@ -510,7 +546,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void TxtCKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtCKeyTyped
         // TODO add your handling code here:
         String solucion = TxtC.getText();
-        
+
         if (solucion.length() > 50) {
             evt.consume();
         }
@@ -519,24 +555,88 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void TxtDKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtDKeyTyped
         // TODO add your handling code here:
         String solucion = TxtD.getText();
-        
+
         if (solucion.length() > 50) {
             evt.consume();
         }
     }//GEN-LAST:event_TxtDKeyTyped
-    
+
+    private void cbTipoPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoPreguntaActionPerformed
+        // TODO add your handling code here:
+        if (cbTipoPregunta.getSelectedIndex() == 1 || cbTipoPregunta.getSelectedIndex() == 2) {
+            TxtA.setEnabled(true);
+            TxtB.setEnabled(true);
+            TxtC.setEnabled(true);
+            TxtD.setEnabled(true);
+
+            ChbA.setEnabled(true);
+            ChbB.setEnabled(true);
+            ChbC.setEnabled(true);
+            ChbD.setEnabled(true);
+        } else if (cbTipoPregunta.getSelectedIndex() == 0) {
+            TxtA.setEnabled(false);
+            TxtB.setEnabled(false);
+            TxtC.setEnabled(false);
+            TxtD.setEnabled(false);
+
+            ChbA.setEnabled(false);
+            ChbB.setEnabled(false);
+            ChbC.setEnabled(false);
+            ChbD.setEnabled(false);
+        }
+    }//GEN-LAST:event_cbTipoPreguntaActionPerformed
+
+    private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
+        // TODO add your handling code here:
+        if (cbTipoPregunta.getSelectedIndex() == 1) {
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
+            ChbD.setSelected(false);
+        }
+    }//GEN-LAST:event_ChbAActionPerformed
+
+    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
+        // TODO add your handling code here:
+        if (cbTipoPregunta.getSelectedIndex() == 1) {
+            ChbA.setSelected(false);
+            ChbC.setSelected(false);
+            ChbD.setSelected(false);
+        }
+    }//GEN-LAST:event_ChbBActionPerformed
+
+    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
+        // TODO add your handling code here:
+        if (cbTipoPregunta.getSelectedIndex() == 1) {
+            ChbB.setSelected(false);
+            ChbA.setSelected(false);
+            ChbD.setSelected(false);
+        }
+    }//GEN-LAST:event_ChbCActionPerformed
+
     public void limpiar() {
         TxtPregunta.setText("");
         TxtA.setText("");
         TxtB.setText("");
         TxtC.setText("");
         TxtD.setText("");
+        TxtA.setEnabled(false);
+        TxtB.setEnabled(false);
+        TxtC.setEnabled(false);
+        TxtD.setEnabled(false);
         cbCategoriaPregunta.setSelectedIndex(0);
         cbTipoPregunta.setSelectedIndex(0);
         ChbA.setSelected(false);
         ChbB.setSelected(false);
         ChbC.setSelected(false);
         ChbD.setSelected(false);
+        ChbA.setEnabled(false);
+        ChbB.setEnabled(false);
+        ChbC.setEnabled(false);
+        ChbD.setEnabled(false);
+    }
+
+    public void listar() {
+        TblPreguntas.setModel(ctlPregunta.SolicitudListar());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -548,6 +648,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JCheckBox ChbB;
     private javax.swing.JCheckBox ChbC;
     private javax.swing.JCheckBox ChbD;
+    private javax.swing.JTable TblPreguntas;
     private javax.swing.JTextField TxtA;
     private javax.swing.JTextField TxtB;
     private javax.swing.JTextField TxtC;
@@ -565,7 +666,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbAtras;
     // End of variables declaration//GEN-END:variables
 }
