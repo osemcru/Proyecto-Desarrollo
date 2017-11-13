@@ -344,15 +344,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
-
-        new FrmInicio().setVisible(true);
+new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
+     
     }//GEN-LAST:event_jbAtras1MouseReleased
-
-    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
-         new FrmAdministrador(administrador).setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jbAtras1ActionPerformed
 
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         //        try {
@@ -433,6 +428,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ChbDActionPerformed
+
+    private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbAtras1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

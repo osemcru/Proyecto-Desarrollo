@@ -191,7 +191,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
     private void jbAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras2ActionPerformed
-        // TODO add your handling code here:
+      new FrmAdministrador(administrador).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbAtras2ActionPerformed
 
     private void BtnBuscarCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarCategoriaActionPerformed
