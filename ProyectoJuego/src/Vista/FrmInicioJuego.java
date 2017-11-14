@@ -14,6 +14,7 @@ import Modelo.Solucion;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import Modelo.Usuario;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 /**
@@ -35,7 +36,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     ArrayList<Integer> listaPreguntas;
     ArrayList<Integer> mostradas;
     int[] correctas;
-    ArrayList<Integer> acertadas;
+    int acertadas;
 
     public FrmInicioJuego(Usuario user, int idExamen, ArrayList<Integer> preguntas) {
         initComponents();
@@ -47,7 +48,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         listaPreguntas = preguntas;
         correctas = new int[4];
         mostradas = new ArrayList<>();
-        acertadas = new ArrayList<>();
+        acertadas = 0;
         setLocationRelativeTo(this);
         setResizable(false);
         LbCategoria.setEnabled(false);
@@ -76,7 +77,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         ChbA = new javax.swing.JCheckBox();
-        ChbB = new javax.swing.JCheckBox();
         ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         tfPregunta = new javax.swing.JTextField();
@@ -87,6 +87,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jbSiguiente = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         LbTipoPregunta = new javax.swing.JTextField();
+        ChbB = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -150,19 +151,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
-
-        ChbB.setBackground(new java.awt.Color(0, 153, 255));
-        ChbB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ChbBMouseReleased(evt);
-            }
-        });
-        ChbB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChbBActionPerformed(evt);
-            }
-        });
-        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 153, 255));
         ChbC.addActionListener(new java.awt.event.ActionListener() {
@@ -304,6 +292,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(LbTipoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 220, -1));
 
+        ChbB.setBackground(new java.awt.Color(0, 153, 255));
+        ChbB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbBActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, 20));
+
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Juego.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 540));
@@ -431,8 +427,18 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             respondidas++;
         }
 
-//        new FrmInicioJuego(usuario, ID, listaPreguntas).setVisible(true);
-//        this.dispose();
+        if (respondidas == cont) {
+            acertadas++;
+        }
+        rep++;
+
+        if (rep == 9) {
+            new FrmJuegoPuntuacion().setVisible(true);
+            this.dispose();
+        } else {
+            limpiarChb();
+            cargarPregunta();
+        }
 
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
@@ -472,17 +478,16 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         sonido("Deslizar");
     }//GEN-LAST:event_ChbCActionPerformed
 
-    private void ChbBMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChbBMouseReleased
+    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
         // TODO add your handling code here:
-        sonido2("Deslizar");
 
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
-            ChbA.setSelected(false);
             ChbC.setSelected(false);
+            ChbA.setSelected(false);
             ChbD.setSelected(false);
         }
         sonido("Deslizar");
-    }//GEN-LAST:event_ChbBMouseReleased
+    }//GEN-LAST:event_ChbBActionPerformed
 
     private void cargarPregunta() {
 
@@ -546,6 +551,12 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     }
 
+    private void limpiarChb() {
+        ChbA.setSelected(false);
+        ChbB.setSelected(false);
+        ChbC.setSelected(false);
+        ChbD.setSelected(false);
+    }
     /**
      * @param args the command line arguments
      */
