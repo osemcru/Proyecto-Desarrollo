@@ -76,8 +76,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         ChbA = new javax.swing.JCheckBox();
-        ChbBB = new javax.swing.JCheckBox();
-        ChbCC = new javax.swing.JCheckBox();
+        ChbB = new javax.swing.JCheckBox();
+        ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         tfPregunta = new javax.swing.JTextField();
         tfD = new javax.swing.JTextField();
@@ -151,21 +151,26 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
 
-        ChbBB.setBackground(new java.awt.Color(0, 153, 255));
-        ChbBB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChbBBActionPerformed(evt);
+        ChbB.setBackground(new java.awt.Color(0, 153, 255));
+        ChbB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ChbBMouseReleased(evt);
             }
         });
-        getContentPane().add(ChbBB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
+        ChbB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbBActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
-        ChbCC.setBackground(new java.awt.Color(0, 153, 255));
-        ChbCC.addActionListener(new java.awt.event.ActionListener() {
+        ChbC.setBackground(new java.awt.Color(0, 153, 255));
+        ChbC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChbCCActionPerformed(evt);
+                ChbCActionPerformed(evt);
             }
         });
-        getContentPane().add(ChbCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 20, 20));
+        getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 153, 255));
         ChbD.addActionListener(new java.awt.event.ActionListener() {
@@ -342,32 +347,26 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         sonido2("Deslizar");
-=======
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
-            ChbBB.setSelected(false);
-            ChbCC.setSelected(false);
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
             ChbA.setSelected(false);
         }
         sonido("Deslizar");
->>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
-        
+
         sonido2("Deslizar");
-=======
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
-            ChbBB.setSelected(false);
-            ChbCC.setSelected(false);
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
             ChbD.setSelected(false);
         }
 
         sonido("Deslizar");
->>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -418,8 +417,18 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             }
         }
 
+        int respondidas = 0;
         if (ChbA.isSelected() && correctas[0] == 1) {
-
+            respondidas++;
+        }
+        if (ChbB.isSelected() && correctas[1] == 1) {
+            respondidas++;
+        }
+        if (ChbC.isSelected() && correctas[2] == 1) {
+            respondidas++;
+        }
+        if (ChbD.isSelected() && correctas[3] == 1) {
+            respondidas++;
         }
 
 //        new FrmInicioJuego(usuario, ID, listaPreguntas).setVisible(true);
@@ -453,45 +462,27 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LbTipoPreguntaActionPerformed
 
-    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {                                     
+    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
         // TODO add your handling code here:
-
-    }                                    
-
-    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        // TODO add your handling code here:
-<<<<<<< HEAD
-        sonido2("Deslizar");
+        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
+            ChbB.setSelected(false);
+            ChbA.setSelected(false);
+            ChbD.setSelected(false);
+        }
+        sonido("Deslizar");
     }//GEN-LAST:event_ChbCActionPerformed
-=======
 
-    }                                    
-
-    private void ChbCCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCCActionPerformed
+    private void ChbBMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChbBMouseReleased
         // TODO add your handling code here:
-        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
-            ChbBB.setSelected(false);
-            ChbA.setSelected(false);
-            ChbD.setSelected(false);
-        }
-        sonido("Deslizar");
-    }//GEN-LAST:event_ChbCCActionPerformed
->>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
-
-    private void ChbBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBBActionPerformed
-        // TODO add your handling code here:
-<<<<<<< HEAD
         sonido2("Deslizar");
-    }//GEN-LAST:event_ChbBActionPerformed
-=======
+
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbA.setSelected(false);
-            ChbCC.setSelected(false);
+            ChbC.setSelected(false);
             ChbD.setSelected(false);
         }
         sonido("Deslizar");
-    }//GEN-LAST:event_ChbBBActionPerformed
->>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
+    }//GEN-LAST:event_ChbBMouseReleased
 
     private void cargarPregunta() {
 
@@ -561,8 +552,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox ChbA;
-    private javax.swing.JCheckBox ChbBB;
-    private javax.swing.JCheckBox ChbCC;
+    private javax.swing.JCheckBox ChbB;
+    private javax.swing.JCheckBox ChbC;
     private javax.swing.JCheckBox ChbD;
     private javax.swing.JTextField LbCategoria;
     private javax.swing.JTextField LbTipoPregunta;
