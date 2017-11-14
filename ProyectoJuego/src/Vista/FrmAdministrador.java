@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.CtlAdministrador;
 import Modelo.Administrador;
 import Modelo.Conexion;
 import Modelo.Usuario;
@@ -30,10 +31,12 @@ public class FrmAdministrador extends javax.swing.JFrame {
      */
     Administrador administrador;
     Conexion conn;
+    CtlAdministrador ad;
 
     public FrmAdministrador(Administrador admin) {
         initComponents();
         setResizable(false);
+        ad = new CtlAdministrador();
         setLocationRelativeTo(this);
         conn = new Conexion();
         tfUsuario.setEditable(false);
@@ -265,18 +268,18 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void btnPartisPorceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartisPorceActionPerformed
         try {
-
-            conn.conectar();
-            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\EstuPorc.jrxml";
-            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
-            JasperViewer.viewReport(mostrarReporte);
-            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
-
+            ad.generarreporte("EstuPorc");
+//            conn.conectar();
+//            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\EstuPorc.jasper";
+//            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+//            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+//            JasperViewer.viewReport(mostrarReporte);
+//            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
             Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
         }
-        conn.desconectar();
 
     }//GEN-LAST:event_btnPartisPorceActionPerformed
 
