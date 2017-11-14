@@ -459,12 +459,12 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void BtnBuscarPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarPregunta1ActionPerformed
         // TODO add your handling code here:
         try {
-
+            limpiar();
             idPregunta = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa la ID de la pregunta"));
             Pregunta pregunta = ctlPregunta.SolicitudBuscar(idPregunta);
 
             if (pregunta != null) {
-                limpiar();
+
                 TxtPregunta.setText(pregunta.getDescripcion());
                 cbTipoPregunta.setSelectedIndex(pregunta.getTipoPregunta());
                 cbCategoriaPregunta.setSelectedIndex(0);
