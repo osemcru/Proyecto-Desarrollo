@@ -11,6 +11,8 @@ import DAO.GenericoDAO;
 import Modelo.Administrador;
 import Modelo.Categoria;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -24,6 +26,9 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     GenericoDAO DAOCategoria;
     CtlCategoria ctlCategoria;
     Administrador administrador;
+     public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
     
     public FrmGestionCategorias(Administrador admin) {
         initComponents();
@@ -34,6 +39,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         listar();
         setLocationRelativeTo(this);
         setResizable(false);
+        
+       
     }
 
     /**
@@ -59,6 +66,14 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TblCategorias.setBackground(new java.awt.Color(0, 102, 153));
@@ -179,6 +194,20 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+      public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
+    
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
 
     }//GEN-LAST:event_TblCategoriasMouseClicked
@@ -275,6 +304,16 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     private void txtNombreCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreCategoriaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreCategoriaActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("shadowleggy gang");
+    }//GEN-LAST:event_formWindowOpened
     
     private void listar() {
         TblCategorias.setModel(ctlCategoria.SolicitudListar());

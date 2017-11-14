@@ -23,6 +23,7 @@ import java.util.ArrayList;
 public class FrmInicioJuego extends javax.swing.JFrame {
 
     public Clip clip;
+    public Clip clip2;
     public String ruta = "/Sonidos/";
     Thread t;
 
@@ -318,6 +319,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     }
 
+    public void sonido2(String archivo) {
+
+        try {
+            clip2 = AudioSystem.getClip();
+            clip2.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip2.start();
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
     private void LbCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbCategoriaMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_LbCategoriaMouseEntered
@@ -328,16 +342,24 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        sonido2("Deslizar");
+=======
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbBB.setSelected(false);
             ChbCC.setSelected(false);
             ChbA.setSelected(false);
         }
         sonido("Deslizar");
+>>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        
+        sonido2("Deslizar");
+=======
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbBB.setSelected(false);
             ChbCC.setSelected(false);
@@ -345,6 +367,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         }
 
         sonido("Deslizar");
+>>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -419,6 +442,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         clip.stop();
+        clip2.stop();
     }//GEN-LAST:event_formWindowClosed
 
     private void LbTipoPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbTipoPreguntaMouseEntered
@@ -436,6 +460,10 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {                                     
         // TODO add your handling code here:
+<<<<<<< HEAD
+        sonido2("Deslizar");
+    }//GEN-LAST:event_ChbCActionPerformed
+=======
 
     }                                    
 
@@ -448,9 +476,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         }
         sonido("Deslizar");
     }//GEN-LAST:event_ChbCCActionPerformed
+>>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
 
     private void ChbBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBBActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
+        sonido2("Deslizar");
+    }//GEN-LAST:event_ChbBActionPerformed
+=======
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbA.setSelected(false);
             ChbCC.setSelected(false);
@@ -458,6 +491,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         }
         sonido("Deslizar");
     }//GEN-LAST:event_ChbBBActionPerformed
+>>>>>>> a22f842cfc95b584994c4a8250f0ee99ce38ae0f
 
     private void cargarPregunta() {
 
