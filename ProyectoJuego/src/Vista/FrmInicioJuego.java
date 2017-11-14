@@ -6,9 +6,11 @@
 package Vista;
 
 import Controlador.CtlCategoria;
+import Controlador.CtlExamen;
 import Controlador.CtlPregunta;
 import Controlador.CtlSolucion;
 import Modelo.Categoria;
+import Modelo.Examen;
 import Modelo.Pregunta;
 import Modelo.Solucion;
 import javax.sound.sampled.AudioSystem;
@@ -16,6 +18,7 @@ import javax.sound.sampled.Clip;
 import Modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,6 +34,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     CtlPregunta ctlPregunta;
     CtlSolucion ctlSolucion;
     CtlCategoria ctlCategoria;
+    CtlExamen ctlExamen;
     Usuario usuario;
     int ID;
     ArrayList<Integer> listaPreguntas;
@@ -44,6 +48,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         ctlPregunta = new CtlPregunta();
         ctlSolucion = new CtlSolucion();
         ctlCategoria = new CtlCategoria();
+        ctlExamen = new CtlExamen();
         ID = idExamen;
         listaPreguntas = preguntas;
         correctas = new int[4];
@@ -60,6 +65,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         tfD.setEnabled(false);
     }
     private int rep = 0;
+    private int numUsuario = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -349,7 +355,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbC.setSelected(false);
             ChbA.setSelected(false);
         }
-        sonido("Deslizar");
+        
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
@@ -362,7 +368,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbD.setSelected(false);
         }
 
-        sonido("Deslizar");
+       
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -433,8 +439,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         rep++;
 
         if (rep == 9) {
-            new FrmJuegoPuntuacion().setVisible(true);
-            this.dispose();
+            numUsuario++;
+            Examen examen = ctlExamen.SolicitudBuscar(ID);
+            if (numUsuario == examen.getParticipantes()) {
+                JOptionPane.showMessageDialog(this, "Se acerto " + acertadas + " de 10");
+                new FrmJuegoPuntuacion().setVisible(true);
+                this.dispose();
+            }
+
         } else {
             limpiarChb();
             cargarPregunta();
@@ -475,7 +487,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbA.setSelected(false);
             ChbD.setSelected(false);
         }
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbCActionPerformed
 
     private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
@@ -486,7 +498,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbA.setSelected(false);
             ChbD.setSelected(false);
         }
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbBActionPerformed
 
     private void cargarPregunta() {
