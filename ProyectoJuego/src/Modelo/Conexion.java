@@ -38,6 +38,13 @@ public class Conexion {
             System.out.println(e.getMessage());
         }
     }
+     public Connection getConn() {
+        return conexionDB;
+    }
+
+    public void setConn(Connection conexionDB) {
+        this.conexionDB = conexionDB;
+    }
 
     /**
      * Desconecta la conexion de la base de datos
