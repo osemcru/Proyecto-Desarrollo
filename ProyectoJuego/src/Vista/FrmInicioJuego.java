@@ -137,9 +137,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 153, 255));
+        ChbB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbBActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 153, 255));
+        ChbC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbCActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 153, 255));
@@ -304,10 +314,13 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+        sonido("Deslizar");
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
+        
+        sonido("Deslizar");
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -382,6 +395,16 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private void LbTipoPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LbTipoPreguntaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LbTipoPreguntaActionPerformed
+
+    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
+        // TODO add your handling code here:
+        sonido("Deslizar");
+    }//GEN-LAST:event_ChbCActionPerformed
+
+    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
+        // TODO add your handling code here:
+        sonido("Deslizar");
+    }//GEN-LAST:event_ChbBActionPerformed
 
     private void cargarPregunta() {
 
