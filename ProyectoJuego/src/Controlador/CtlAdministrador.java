@@ -18,22 +18,24 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CtlAdministrador {
 
-    String tabla = "administrador";
-    public Administrador logueado;
+    String tabla = "administrador"; //variable que contiene el nombre de esta tabla
+    public Administrador logueado; //indica el estado del administrador cuando se ha logueado
 
-    public String convertirGson(Administrador administrador) {
+    public String convertirGson(Administrador administrador) { //Este metodo convierte el administrador en un gson para llevarlo al dao generico
         Gson gson = new Gson();
         String objeto = gson.toJson(administrador);
         return objeto;
     }
 
+/*Este metodo permite guardar por medio del Dao permitiendo asi que sea generico con el gson
+*/
     public boolean SolicitudGuardar(String nickname, String clave, int idCodigo, String nombre, String apellido, String correo, int idTipoUsuario) {
         Administrador administrador = new Administrador(idCodigo, nickname, clave, nombre, apellido, correo, idTipoUsuario);
         GenericoDAO adminDAO = new GenericoDAO();
         String objeto = convertirGson(administrador);
         return adminDAO.guardar(objeto, tabla);
     }
-
+//Este metodo permite buscar el objeto gson 
     public Administrador SolicitudBuscar(int idCodigo) {
         Administrador administrador = new Administrador(idCodigo, "", "", "", "", "", 1);
         GenericoDAO adminDAO = new GenericoDAO();
@@ -51,21 +53,21 @@ public class CtlAdministrador {
         }
         return administrador;
     }
-
+//Este metodo permite modificar el objeto que esta como gson
     public boolean SolicitudModificar(String nickname, String clave, int idCodigo, String nombre, String apellido, String correo, int semestre, int idTipoUsuario) {
         Administrador administrador = new Administrador(idCodigo, nickname, clave, nombre, apellido, correo, idTipoUsuario);
         GenericoDAO adminDAO = new GenericoDAO();
         String objeto = convertirGson(administrador);
         return adminDAO.modificar(objeto, tabla, "idCodigo", idCodigo);
     }
-
+//Este metodo permite eliminar el objeto que esta como gson
     public boolean SolicitudEliminar(int idCodigo) {
         Administrador administrador = new Administrador();
         GenericoDAO adminDAO = new GenericoDAO();
         String objeto = convertirGson(administrador);
         return adminDAO.eliminar(objeto, tabla, idCodigo);
     }
-
+//Este metodo me permite listar en la tabla este administrador
     public DefaultTableModel solicitudListar() {
         GenericoDAO administradorDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
@@ -90,7 +92,7 @@ public class CtlAdministrador {
         }
         return modelTabla;
     }
-
+//Este metodo me permite iniciar sesion con un administrador
     public Administrador SolicitudIniciarSesion(String nickname, String clave) {
         Administrador administrador = new Administrador(0, "", "", "", "", "", 1);
         GenericoDAO adminDAO = new GenericoDAO();
@@ -103,7 +105,7 @@ public class CtlAdministrador {
             return null;
         }
     }
-
+//Este metodo confirma el momento en el que se loguea el administrador
     public Administrador SolicitudLogueago() {
         if (logueado != null) {
             return logueado;

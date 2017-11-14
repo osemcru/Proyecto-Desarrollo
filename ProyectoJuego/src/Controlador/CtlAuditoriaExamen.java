@@ -18,22 +18,22 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CtlAuditoriaExamen {
  
-    String tabla = "auditoriaExamen";
+    String tabla = "auditoriaExamen"; //Esta variable indica el nombre de la tabla
     
-    public String convertirGson(AuditoriaExamen auditoriaExamen) {
+    public String convertirGson(AuditoriaExamen auditoriaExamen) { //Este metodo permite convertir un objeto a gson
         Gson gson = new Gson();
         String objeto = gson.toJson(auditoriaExamen);
         return objeto;
     }
  
-    public boolean SolicitudGuardar(int porcentaje, int examen) {
+    public boolean SolicitudGuardar(int porcentaje, int examen) { //Este metodo permite guardar el objeto convertido en gson
         AuditoriaExamen auditoriaExamen = new AuditoriaExamen(porcentaje, examen);
         GenericoDAO adiExamDAO = new GenericoDAO(); 
         String objeto = convertirGson(auditoriaExamen);
         return adiExamDAO.guardar(objeto, tabla);
     }
 
-    public AuditoriaExamen SolicitudBuscar(int idAuditoriaExamen) {
+    public AuditoriaExamen SolicitudBuscar(int idAuditoriaExamen) {  //Este metodo permite buscar en la auditoria los datos 
         AuditoriaExamen auditoriaExamen = new AuditoriaExamen(0, 0, 0);
         GenericoDAO adiExamDAO = new GenericoDAO();
         String objeto = convertirGson(auditoriaExamen);
