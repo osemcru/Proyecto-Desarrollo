@@ -6,7 +6,12 @@
 package Vista;
 
 import Controlador.CtlUsuario;
+<<<<<<< HEAD
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+=======
 import Modelo.Usuario;
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
 import javax.swing.JOptionPane;
 
 /**
@@ -15,9 +20,17 @@ import javax.swing.JOptionPane;
  */
 public class FrmInicioJuego extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+     public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
+    
+    public FrmInicioJuego() {
+=======
     Usuario usuario;
 
     public FrmInicioJuego(Usuario user) {
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
         initComponents();
         usuario = user;
         setLocationRelativeTo(this);
@@ -62,6 +75,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -260,6 +281,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
     private void LbCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbCategoriaMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_LbCategoriaMouseEntered
@@ -324,6 +358,23 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
+<<<<<<< HEAD
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        String [] Aleatorio = new String[2];
+        Aleatorio[0] = "musica de duda";
+        Aleatorio[1] = "Ambler";
+      int numRam = (int) (Math.random()*2);
+        
+        sonido(Aleatorio[numRam]);
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+=======
     private void LbTipoPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbTipoPreguntaMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_LbTipoPreguntaMouseEntered
@@ -335,6 +386,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private void cargarPregunta() {
 
     }
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
     /**
      * @param args the command line arguments
      */

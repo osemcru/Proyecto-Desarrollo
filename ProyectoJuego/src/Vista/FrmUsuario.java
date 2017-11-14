@@ -5,7 +5,10 @@
  */
 package Vista;
 
+import Controlador.CtlExamen;
 import Modelo.Usuario;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,12 +20,14 @@ public class FrmUsuario extends javax.swing.JFrame {
      * Creates new form FrmPrincipal
      */
     Usuario usuario;
+    CtlExamen ctlExamen;
 
     public FrmUsuario(Usuario user) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
         usuario = user;
+        ctlExamen = new CtlExamen();
         tfUsuario.setEditable(false);
         tfUsuario.setText(user.getNombre() + "");
     }
@@ -116,8 +121,6 @@ public class FrmUsuario extends javax.swing.JFrame {
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
 
-        new FrmInicio().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
@@ -150,6 +153,33 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbMostrarHistorialActionPerformed
 
     private void jbMostrarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarJuegosActionPerformed
+
+        int participantes = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa el numero de usuarios"
+                + " que participaran en el juego"));
+
+        int idExamen = ctlExamen.SolicitudUltimaIDExamen();
+        if (ctlExamen.SolicitudGuardar(idExamen + 1, participantes, usuario.getIdCodigo())) {
+            ArrayList<Integer> agregados = new ArrayList<>();
+            boolean existente;
+            int pregunta;
+            for (int i = 0; i < 10; i++) {
+                existente = false;
+                pregunta = ctlExamen.SolicitudPreguntaAleatoria();
+                for (int j = 0; j < agregados.size(); j++) {
+                    if (pregunta == agregados.get(j)) {
+                        existente = true;
+                    }
+                }
+                if (existente) {
+                    i--;
+                } else {
+                    agregados.add(pregunta);
+                    if (ctlExamen.SolicitudGuardarIntermedia(idExamen, pregunta)) {
+                        System.out.println("Pregunta ID: " + pregunta);
+                    }
+                }
+            }
+        }
         new FrmInicioJuego(usuario).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
