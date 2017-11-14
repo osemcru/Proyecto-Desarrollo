@@ -79,8 +79,7 @@ public class Conexion {
         } catch (Exception e) {
       JOptionPane.showMessageDialog(null, "Se ha producido un error en la consulta");
       
-     
-    }
+   }
 
 }
 }
