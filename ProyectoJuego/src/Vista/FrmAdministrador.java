@@ -6,6 +6,17 @@
 package Vista;
 
 import Modelo.Administrador;
+import Modelo.Conexion;
+import Modelo.Usuario;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -17,6 +28,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
      * Creates new form FrmPrincipal
      */
     Administrador administrador;
+    Conexion conn;
 
     public FrmAdministrador(Administrador admin) {
         initComponents();
@@ -43,6 +55,10 @@ public class FrmAdministrador extends javax.swing.JFrame {
         btnJuegos = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
         btnPreguntas1 = new javax.swing.JButton();
+        btnPeorJugador = new javax.swing.JButton();
+        btnMejorJugador = new javax.swing.JButton();
+        btnPartisPorce = new javax.swing.JButton();
+        btnPorcentajeAciertos1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -91,7 +107,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnPreguntasActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, -1, 40));
+        getContentPane().add(btnPreguntas, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, -1, 40));
 
         btnJuegos.setBackground(new java.awt.Color(0, 51, 51));
         btnJuegos.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -102,7 +118,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnJuegosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 180, 40));
+        getContentPane().add(btnJuegos, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 180, 40));
 
         btnUsuarios.setBackground(new java.awt.Color(0, 51, 51));
         btnUsuarios.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -113,7 +129,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, 240, 40));
+        getContentPane().add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 240, 40));
 
         btnPreguntas1.setBackground(new java.awt.Color(0, 51, 51));
         btnPreguntas1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -124,7 +140,51 @@ public class FrmAdministrador extends javax.swing.JFrame {
                 btnPreguntas1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 100, -1, 40));
+        getContentPane().add(btnPreguntas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, -1, 40));
+
+        btnPeorJugador.setBackground(new java.awt.Color(0, 51, 51));
+        btnPeorJugador.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        btnPeorJugador.setForeground(new java.awt.Color(204, 255, 255));
+        btnPeorJugador.setText("Datos del Jugador con el menor puntaje");
+        btnPeorJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPeorJugadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPeorJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, 40));
+
+        btnMejorJugador.setBackground(new java.awt.Color(0, 51, 51));
+        btnMejorJugador.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        btnMejorJugador.setForeground(new java.awt.Color(204, 255, 255));
+        btnMejorJugador.setText("Datos del Jugador con el mayor puntaje");
+        btnMejorJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMejorJugadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMejorJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, -1, 40));
+
+        btnPartisPorce.setBackground(new java.awt.Color(0, 51, 51));
+        btnPartisPorce.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        btnPartisPorce.setForeground(new java.awt.Color(204, 255, 255));
+        btnPartisPorce.setText("participantes y sus porcentajes");
+        btnPartisPorce.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPartisPorceActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPartisPorce, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, -1, 40));
+
+        btnPorcentajeAciertos1.setBackground(new java.awt.Color(0, 51, 51));
+        btnPorcentajeAciertos1.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        btnPorcentajeAciertos1.setForeground(new java.awt.Color(204, 255, 255));
+        btnPorcentajeAciertos1.setText("Porcentaje de Aciertos de cada Pregunta");
+        btnPorcentajeAciertos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPorcentajeAciertos1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPorcentajeAciertos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, -1, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, -1));
@@ -168,9 +228,81 @@ public class FrmAdministrador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnPreguntas1ActionPerformed
 
+    private void btnPeorJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeorJugadorActionPerformed
+        try {
+
+                    conn.conectar();
+                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PeorEst.jrxml";
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+                    JasperViewer.viewReport(mostrarReporte);
+                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PeorJugador.pdf");
+
+                } catch (JRException ex) {
+                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                conn.desconectar();
+    }//GEN-LAST:event_btnPeorJugadorActionPerformed
+
+    private void btnMejorJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMejorJugadorActionPerformed
+        try {
+
+                    conn.conectar();
+                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\MejorEstu.jrxml";
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+                    JasperViewer.viewReport(mostrarReporte);
+                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\MejorJugador.pdf");
+
+                } catch (JRException ex) {
+                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                conn.desconectar();
+    }//GEN-LAST:event_btnMejorJugadorActionPerformed
+
+    private void btnPartisPorceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartisPorceActionPerformed
+        try {
+
+                    conn.conectar();
+                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\EstuPorc.jrxml";
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+                    JasperViewer.viewReport(mostrarReporte);
+                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
+
+                } catch (JRException ex) {
+                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                conn.desconectar();
+    }//GEN-LAST:event_btnPartisPorceActionPerformed
+
+    private void btnPorcentajeAciertos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeAciertos1ActionPerformed
+         try {
+
+                    conn.conectar();
+                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PregunPorcen.jrxml";
+                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+                    JasperViewer.viewReport(mostrarReporte);
+                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PreguntasPorcentaje.pdf");
+
+                } catch (JRException ex) {
+                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                conn.desconectar();
+    }//GEN-LAST:event_btnPorcentajeAciertos1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJuegos;
+    private javax.swing.JButton btnMejorJugador;
+    private javax.swing.JButton btnPartisPorce;
+    private javax.swing.JButton btnPeorJugador;
+    private javax.swing.JButton btnPorcentajeAciertos1;
     private javax.swing.JButton btnPreguntas;
     private javax.swing.JButton btnPreguntas1;
     private javax.swing.JButton btnUsuarios;

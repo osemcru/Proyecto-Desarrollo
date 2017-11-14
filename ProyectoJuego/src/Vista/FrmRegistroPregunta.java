@@ -415,36 +415,35 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     public void sonido(String archivo) {
+    public void sonido(String archivo) {
 
         try {
             clip = AudioSystem.getClip();
             clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
             clip.loop(clip.LOOP_CONTINUOUSLY);
-            
+
         } catch (Exception e) {
 
         }
 
     }
-     public void sonido2(String archivo) {
+
+    public void sonido2(String archivo) {
 
         try {
             clip2 = AudioSystem.getClip();
             clip2.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
             clip2.start();
-            
+
         } catch (Exception e) {
 
         }
 
     }
-     
-     
-    
-    
+
+
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-   
+
     }//GEN-LAST:event_jbAtrasMouseReleased
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
@@ -820,14 +819,18 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
-        clip.stop();
-        clip2.stop();
+        try {
+            clip.stop();
+            clip2.stop();
+        } catch (Exception e) {
+
+        }
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         sonido("Jaunty Gumption");
-        
+
     }//GEN-LAST:event_formWindowOpened
 
     public void limpiar() {
