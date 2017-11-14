@@ -111,9 +111,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel10.setText("Tipo de pregunta");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
 
-        LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
+        LbCategoria.setBackground(new java.awt.Color(204, 255, 255));
         LbCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        LbCategoria.setForeground(new java.awt.Color(255, 255, 255));
         LbCategoria.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         LbCategoria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
         LbCategoria.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -173,9 +172,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(ChbD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
-        tfPregunta.setBackground(new java.awt.Color(0, 0, 0));
+        tfPregunta.setBackground(new java.awt.Color(204, 255, 255));
         tfPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
-        tfPregunta.setForeground(new java.awt.Color(255, 255, 255));
         tfPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfPregunta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
         tfPregunta.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -191,9 +189,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(tfPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 710, -1));
 
-        tfD.setBackground(new java.awt.Color(0, 0, 0));
+        tfD.setBackground(new java.awt.Color(204, 255, 255));
         tfD.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfD.setForeground(new java.awt.Color(255, 255, 255));
         tfD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfD.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
         tfD.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -209,9 +206,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(tfD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 450, -1));
 
-        tfC.setBackground(new java.awt.Color(0, 0, 0));
+        tfC.setBackground(new java.awt.Color(204, 255, 255));
         tfC.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfC.setForeground(new java.awt.Color(255, 255, 255));
         tfC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfC.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
         tfC.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -227,9 +223,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(tfC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 450, -1));
 
-        tfB.setBackground(new java.awt.Color(0, 0, 0));
+        tfB.setBackground(new java.awt.Color(204, 255, 255));
         tfB.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfB.setForeground(new java.awt.Color(255, 255, 255));
         tfB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfB.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
         tfB.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -245,9 +240,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         });
         getContentPane().add(tfB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 450, -1));
 
-        tfA.setBackground(new java.awt.Color(0, 0, 0));
+        tfA.setBackground(new java.awt.Color(204, 255, 255));
         tfA.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfA.setForeground(new java.awt.Color(255, 255, 255));
         tfA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
         tfA.setCaretColor(new java.awt.Color(51, 255, 255));
@@ -279,9 +273,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         jLabel13.setText("Categoria");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 30));
 
-        LbTipoPregunta.setBackground(new java.awt.Color(0, 0, 0));
+        LbTipoPregunta.setBackground(new java.awt.Color(204, 255, 255));
         LbTipoPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        LbTipoPregunta.setForeground(new java.awt.Color(255, 255, 255));
         LbTipoPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         LbTipoPregunta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
         LbTipoPregunta.setCaretColor(new java.awt.Color(51, 255, 255));

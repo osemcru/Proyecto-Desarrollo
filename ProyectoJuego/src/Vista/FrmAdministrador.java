@@ -31,10 +31,11 @@ public class FrmAdministrador extends javax.swing.JFrame {
     Administrador administrador;
     Conexion conn;
 
-    public FrmAdministrador (Administrador admin) {
+    public FrmAdministrador(Administrador admin) {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(this);
+        conn = new Conexion();
         tfUsuario.setEditable(false);
         administrador = admin;
         tfUsuario.setText(admin.getNombre() + "");
@@ -199,7 +200,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
 
-       
+
     }//GEN-LAST:event_jbAtras1MouseReleased
 
     private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed
@@ -232,67 +233,67 @@ public class FrmAdministrador extends javax.swing.JFrame {
     private void btnPeorJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeorJugadorActionPerformed
         try {
 
-                    conn.conectar();
-                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PeorEst.jrxml";
-                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
-                    JasperViewer.viewReport(mostrarReporte);
-                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PeorJugador.pdf");
+            conn.conectar();
+            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PeorEst.jrxml";
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+            JasperViewer.viewReport(mostrarReporte);
+            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PeorJugador.pdf");
 
-                } catch (JRException ex) {
-                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
-               }
-            conn.desconectar();
-       
+        } catch (JRException ex) {
+            Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conn.desconectar();
+
     }//GEN-LAST:event_btnPeorJugadorActionPerformed
 
     private void btnMejorJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMejorJugadorActionPerformed
         try {
 
-                    conn.conectar();
-                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\MejorEstu.jrxml";
-                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
-                    JasperViewer.viewReport(mostrarReporte);
-                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\MejorJugador.pdf");
+            conn.conectar();
+            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\MejorEstu.jrxml";
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+            JasperViewer.viewReport(mostrarReporte);
+            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\MejorJugador.pdf");
 
-                } catch (JRException ex) {
-                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            conn.desconectar();
+        } catch (JRException ex) {
+            Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conn.desconectar();
     }//GEN-LAST:event_btnMejorJugadorActionPerformed
 
     private void btnPartisPorceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartisPorceActionPerformed
         try {
 
-                    conn.conectar();
-                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\EstuPorc.jrxml";
-                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
-                    JasperViewer.viewReport(mostrarReporte);
-                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
+            conn.conectar();
+            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\EstuPorc.jrxml";
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+            JasperViewer.viewReport(mostrarReporte);
+            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
 
-                } catch (JRException ex) {
-                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            conn.desconectar();
-        
+        } catch (JRException ex) {
+            Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conn.desconectar();
+
     }//GEN-LAST:event_btnPartisPorceActionPerformed
 
     private void btnPorcentajeAciertos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeAciertos1ActionPerformed
-         try {
+        try {
 
-                    conn.conectar();
-                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PregunPorcen.jrxml";
-                    JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
-                    JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
-                    JasperViewer.viewReport(mostrarReporte);
-                    JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PreguntasPorcentaje.pdf");
+            conn.conectar();
+            String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PregunPorcen.jrxml";
+            JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
+            JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
+            JasperViewer.viewReport(mostrarReporte);
+            JasperExportManager.exportReportToPdfFile(mostrarReporte, "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PreguntasPorcentaje.pdf");
 
-                } catch (JRException ex) {
-                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
-                } 
-            conn.desconectar();
+        } catch (JRException ex) {
+            Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        conn.desconectar();
     }//GEN-LAST:event_btnPorcentajeAciertos1ActionPerformed
 
 
