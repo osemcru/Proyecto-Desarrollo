@@ -27,8 +27,8 @@ public class CtlPregunta {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(int idPregunta, String descripcion, int idCategoria, int tipoPregunta) {
-        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, tipoPregunta);
+    public boolean SolicitudGuardar(int idPregunta, String descripcion, int categoria, int tipoPregunta) {
+        Pregunta pregunta = new Pregunta(idPregunta, descripcion, categoria, tipoPregunta);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
         return preguntaDAO.guardar(objeto, tabla);
@@ -40,18 +40,20 @@ public class CtlPregunta {
         String objeto = convertirGson(pregunta);
         ResultSet atributos = preguntaDAO.buscar(objeto, tabla, idPregunta);
         try {
-            pregunta.setIdPregunta(Integer.parseInt(atributos.getString("idPregunta")));
-            pregunta.setDescripcion(atributos.getString("descripcion"));
-            pregunta.setCategoria(Integer.parseInt(atributos.getString("idCategoria")));
-            pregunta.setTipoPregunta(Integer.parseInt(atributos.getString("tipoPregunta")));
+            while (atributos.next()) {
+                pregunta.setIdPregunta(Integer.parseInt(atributos.getString("idPregunta")));
+                pregunta.setDescripcion(atributos.getString("descripcion"));
+                pregunta.setCategoria(Integer.parseInt(atributos.getString("categoria")));
+                pregunta.setTipoPregunta(Integer.parseInt(atributos.getString("tipoPregunta")));
+            }
         } catch (Exception e) {
             return null;
         }
         return pregunta;
     }
 
-    public boolean SolicitudModificar(int idPregunta, String descripcion, int idCategoria, int tipoPregunta) {
-        Pregunta pregunta = new Pregunta(idPregunta, descripcion, idCategoria, tipoPregunta);
+    public boolean SolicitudModificar(int idPregunta, String descripcion, int categoria, int tipoPregunta) {
+        Pregunta pregunta = new Pregunta(idPregunta, descripcion, categoria, tipoPregunta);
         GenericoDAO preguntaDAO = new GenericoDAO();
         String objeto = convertirGson(pregunta);
         return preguntaDAO.modificar(objeto, tabla, "idPregunta", idPregunta);

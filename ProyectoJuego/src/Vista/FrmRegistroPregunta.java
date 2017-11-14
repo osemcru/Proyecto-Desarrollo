@@ -10,6 +10,9 @@ import Controlador.CtlPregunta;
 import Controlador.CtlSolucion;
 import Modelo.Administrador;
 import Modelo.Categoria;
+import Modelo.Pregunta;
+import Modelo.Solucion;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +25,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     Administrador administrador;
     CtlPregunta ctlPregunta;
     CtlSolucion ctlSolucion;
+    int idPregunta = 0;
+    int seleccionados = 0;
 
     /**
      *
@@ -75,6 +80,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         TxtA = new javax.swing.JTextField();
         TxtC = new javax.swing.JTextField();
         TxtPregunta = new javax.swing.JTextField();
+        jbCancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -370,6 +376,22 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         });
         getContentPane().add(TxtPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 460, -1));
 
+        jbCancelar.setBackground(new java.awt.Color(0, 51, 51));
+        jbCancelar.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
+        jbCancelar.setForeground(new java.awt.Color(255, 255, 255));
+        jbCancelar.setText("Cancelar");
+        jbCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jbCancelarMouseReleased(evt);
+            }
+        });
+        jbCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 500, -1, -1));
+
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo4.jpg"))); // NOI18N
@@ -406,6 +428,64 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void BtnBuscarPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarPregunta1ActionPerformed
         // TODO add your handling code here:
+        try {
+
+            int id = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa la ID de la pregunta"));
+            Pregunta pregunta = ctlPregunta.SolicitudBuscar(id);
+
+            if (pregunta != null) {
+                TxtPregunta.setText(pregunta.getDescripcion());
+                cbTipoPregunta.setSelectedIndex(pregunta.getTipoPregunta());
+                cbCategoriaPregunta.setSelectedIndex(0);
+                jbCancelar.setEnabled(true);
+
+                Solucion solucion = new Solucion();
+                int contador = 1;
+
+                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+
+                TxtA.setText(solucion.getNombre());
+                if (solucion.getEstado() == 1) {
+                    ChbA.setSelected(true);
+                    seleccionados++;
+                }
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+
+                TxtB.setText(solucion.getNombre());
+                if (solucion.getEstado() == 1) {
+                    ChbB.setSelected(true);
+                    seleccionados++;
+                }
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+
+                TxtC.setText(solucion.getNombre());
+                if (solucion.getEstado() == 1) {
+                    ChbC.setSelected(true);
+                    seleccionados++;
+                }
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+
+                TxtD.setText(solucion.getNombre());
+                if (solucion.getEstado() == 1) {
+                    ChbD.setSelected(true);
+                    seleccionados++;
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "La pregunta no ha sido encontrada");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar los datos");
+        }
     }//GEN-LAST:event_BtnBuscarPregunta1ActionPerformed
 
     private void BtnEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPreguntaActionPerformed
@@ -416,7 +496,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
                 || TxtC.getText().isEmpty() || TxtD.getText().isEmpty() || cbCategoriaPregunta.getSelectedIndex() == 0
-                || cbTipoPregunta.getSelectedIndex() == 0) {
+                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && ChbB.isSelected()
+                && ChbC.isSelected() && ChbD.isSelected()) {
             JOptionPane.showMessageDialog(null, "Completa todos los campos");
         } else {
 
@@ -425,39 +506,42 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             int idCategoria = categoria.getIdCategoria();
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();
-            int idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+            idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 2) {
+                if (ctlPregunta.SolicitudGuardar(idPregunta + 1, descripcion, idCategoria, tipoPregunta)) {
 
-            if (ctlPregunta.SolicitudGuardar(idPregunta + 1, descripcion, idCategoria, tipoPregunta)) {
+                    idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
 
-                idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+                    String nombreA = TxtA.getText();
+                    int estadoA = (ChbA.isSelected()) ? 1 : 0;
 
-                String nombreA = TxtA.getText();
-                int estadoA = (ChbA.isSelected()) ? 1 : 0;
+                    String nombreB = TxtB.getText();
+                    int estadoB = (ChbB.isSelected()) ? 1 : 0;
 
-                String nombreB = TxtB.getText();
-                int estadoB = (ChbB.isSelected()) ? 1 : 0;
+                    String nombreC = TxtC.getText();
+                    int estadoC = (ChbC.isSelected()) ? 1 : 0;
 
-                String nombreC = TxtC.getText();
-                int estadoC = (ChbC.isSelected()) ? 1 : 0;
+                    String nombreD = TxtD.getText();
+                    int estadoD = (ChbD.isSelected()) ? 1 : 0;
 
-                String nombreD = TxtD.getText();
-                int estadoD = (ChbD.isSelected()) ? 1 : 0;
+                    int idSolucion = ctlSolucion.SolicitudUltimaIDSolucion();
 
-                int idSolucion = ctlSolucion.SolicitudUltimaIDSolucion();
+                    if (ctlSolucion.SolicitudGuardar(idSolucion + 1, nombreA, estadoA, idPregunta)
+                            && ctlSolucion.SolicitudGuardar(idSolucion + 2, nombreB, estadoB, idPregunta)
+                            && ctlSolucion.SolicitudGuardar(idSolucion + 3, nombreC, estadoC, idPregunta)
+                            && ctlSolucion.SolicitudGuardar(idSolucion + 4, nombreD, estadoD, idPregunta)) {
 
-                if (ctlSolucion.SolicitudGuardar(idSolucion + 1, nombreA, estadoA, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(idSolucion + 2, nombreB, estadoB, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(idSolucion + 3, nombreC, estadoC, idPregunta)
-                        && ctlSolucion.SolicitudGuardar(idSolucion + 4, nombreD, estadoD, idPregunta)) {
-
-                    JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-                    limpiar();
-                    listar();
+                        JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+                        limpiar();
+                        listar();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al registrar las soluciones");
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Error al registrar las soluciones");
+                    JOptionPane.showMessageDialog(null, "Error al registrar la pregunta");
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "Error al registrar la pregunta");
+                JOptionPane.showMessageDialog(null, "Selecciona mas de una respuesta para las multiples");
             }
         }
     }//GEN-LAST:event_BtnRegistrarPreguntaActionPerformed
@@ -508,7 +592,12 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
             ChbA.setSelected(false);
+        } else if (!ChbD.isSelected()) {
+            seleccionados--;
+        } else {
+            seleccionados++;
         }
+
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
@@ -592,6 +681,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
             ChbD.setSelected(false);
+        } else if (!ChbA.isSelected()) {
+            seleccionados--;
+        } else {
+            seleccionados++;
         }
     }//GEN-LAST:event_ChbAActionPerformed
 
@@ -601,6 +694,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             ChbA.setSelected(false);
             ChbC.setSelected(false);
             ChbD.setSelected(false);
+        } else if (!ChbB.isSelected()) {
+            seleccionados--;
+        } else {
+            seleccionados++;
         }
     }//GEN-LAST:event_ChbBActionPerformed
 
@@ -610,8 +707,20 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             ChbB.setSelected(false);
             ChbA.setSelected(false);
             ChbD.setSelected(false);
+        } else if (!ChbC.isSelected()) {
+            seleccionados--;
+        } else {
+            seleccionados++;
         }
     }//GEN-LAST:event_ChbCActionPerformed
+
+    private void jbCancelarMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbCancelarMouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbCancelarMouseReleased
+
+    private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbCancelarActionPerformed
 
     public void limpiar() {
         TxtPregunta.setText("");
@@ -633,6 +742,13 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         ChbB.setEnabled(false);
         ChbC.setEnabled(false);
         ChbD.setEnabled(false);
+
+        idPregunta = 0;
+        seleccionados = 0;
+
+        BtnEliminarPregunta.setEnabled(false);
+        BtnModificarPregunta.setEnabled(false);
+        jbCancelar.setVisible(false);
     }
 
     public void listar() {
@@ -667,5 +783,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbAtras;
+    private javax.swing.JButton jbCancelar;
     // End of variables declaration//GEN-END:variables
 }
