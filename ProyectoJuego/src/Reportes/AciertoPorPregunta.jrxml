@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1b9b406-93d2-40b3-8a4e-7a61f3be340a">
+	<property name="ireport.zoom" value="1.2100000000000093"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Heading 4" fontSize="12" isBold="true" isItalic="true"/>
+	<style name="Heading 3" fontSize="14" isBold="true"/>
+	<subDataset name="PieChartDataset" uuid="6ebcf3e8-f879-4e63-a41e-6042922c6130"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     usuario.`nickname` AS usuario_nickname,
+     usuario.`correo` AS usuario_correo,
+     usuario.`semestre` AS usuario_semestre,
+     auditoriaexamen.`porcentaje` AS auditoriaexamen_porcentaje,
+     examen.`idExamen` AS examen_idExamen
+FROM
+     `usuario` usuario INNER JOIN `examen` examen ON usuario.`idCodigo` = examen.`usuario`
+     INNER JOIN `auditoriaexamen` auditoriaexamen ON examen.`idExamen` = auditoriaexamen.`examen`]]>
+	</queryString>
+	<field name="usuario_nickname" class="java.lang.String"/>
+	<field name="usuario_correo" class="java.lang.String"/>
+	<field name="usuario_semestre" class="java.lang.Integer"/>
+	<field name="auditoriaexamen_porcentaje" class="java.lang.Integer"/>
+	<field name="examen_idExamen" class="java.lang.Integer"/>
+	<group name="examen_idExamen">
+		<groupExpression><![CDATA[$F{examen_idExamen}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="479" y="2" width="32" height="19" forecolor="#FFFFFF" uuid="5595f83c-8675-4780-8a98-aa013663f6e2"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{auditoriaexamen_porcentaje}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="344" y="2" width="32" height="19" forecolor="#FFFFFF" uuid="15856958-b114-4385-993b-ff2ee612a30e"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{usuario_semestre}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="120" y="2" width="201" height="19" forecolor="#FFFFFF" uuid="cd88082b-368f-4c6a-9fb2-27c10edd9530"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{usuario_correo}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="4" y="2" width="116" height="19" forecolor="#FFFFFF" uuid="499fc9bc-a401-415f-b971-9ccfffd9adca"/>
+					<textElement verticalAlignment="Top">
+						<font fontName="Arial" size="16" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{usuario_nickname}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="-20" width="597" height="822" uuid="26107606-ca2f-4867-b7a9-b7ef851c3385"/>
+				<imageExpression><![CDATA["C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Imagenes\\012097093-binary-code.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="109" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="23" width="597" height="65" forecolor="#006699" backcolor="#006699" uuid="791b5da4-0402-47ae-bfe1-ee15843db06d"/>
+				<staticText>
+					<reportElement style="Title" x="50" y="0" width="504" height="65" uuid="5dbf83c9-bb12-41ac-8cfd-4dd281e64709"/>
+					<textElement textAlignment="Right">
+						<font size="50" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Aciertos por Preguntas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="4" y="0" width="68" height="20" uuid="54a50721-6df7-4a31-9bfb-1a3f0bd52281"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="157" y="0" width="68" height="20" uuid="bf6996d9-6dfb-454e-a651-abb240903a75"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Correo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="309" y="0" width="80" height="20" uuid="c3fd2f5d-d887-4beb-b6b5-dea4b6e81fae"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Semestre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="445" y="0" width="110" height="20" uuid="29ed1929-a497-42c5-815f-08c7127f8dc4"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[% de Acierto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="9" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#006699" uuid="076d8774-7f76-4b8b-b085-42ed8c6038fb"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="445" y="0" width="108" height="13" forecolor="#FFFFFF" uuid="467f4750-fbbf-45ce-b02b-1c01164e6774"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="4" y="0" width="195" height="13" forecolor="#FFFFFF" uuid="a3ed0c0c-0fbd-4162-9ab2-624b02e599d2"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="243" y="0" width="133" height="13" forecolor="#FFFFFF" uuid="c6d79ebf-3882-444d-87a2-ecf4572050c4"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
