@@ -116,8 +116,6 @@ public class FrmUsuario extends javax.swing.JFrame {
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
 
-        new FrmInicio().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed

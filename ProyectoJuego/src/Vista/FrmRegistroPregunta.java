@@ -12,6 +12,8 @@ import Modelo.Administrador;
 import Modelo.Categoria;
 import Modelo.Pregunta;
 import Modelo.Solucion;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +29,9 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     int idPregunta = 0;
     int[] soluciones = new int[4];
     int seleccionados = 0;
+    public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
 
     /**
      *
@@ -84,6 +89,14 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TblPreguntas.setBackground(new java.awt.Color(0, 102, 153));
@@ -401,10 +414,22 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-        new FrmAdministrador(administrador).setVisible(true);
-        this.dispose();
+     public void sonido(String archivo) {
 
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
+    
+    private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
+   
     }//GEN-LAST:event_jbAtrasMouseReleased
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
@@ -774,6 +799,17 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
         limpiar();
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("Jaunty Gumption");
+        
+    }//GEN-LAST:event_formWindowOpened
 
     public void limpiar() {
         TxtPregunta.setText("");
