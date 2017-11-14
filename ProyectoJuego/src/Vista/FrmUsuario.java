@@ -157,9 +157,10 @@ public class FrmUsuario extends javax.swing.JFrame {
         int participantes = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa el numero de usuarios"
                 + " que participaran en el juego"));
 
-        int idExamen = ctlExamen.SolicitudUltimaIDExamen();
+        int idExamen = ctlExamen.SolicitudUltimaIDExamen() + 1;
+        ArrayList<Integer> agregados = new ArrayList<>();
         if (ctlExamen.SolicitudGuardar(idExamen + 1, participantes, usuario.getIdCodigo())) {
-            ArrayList<Integer> agregados = new ArrayList<>();
+
             boolean existente;
             int pregunta;
             for (int i = 0; i < 10; i++) {
@@ -180,7 +181,7 @@ public class FrmUsuario extends javax.swing.JFrame {
                 }
             }
         }
-        new FrmInicioJuego(usuario).setVisible(true);
+        new FrmInicioJuego(usuario, idExamen, agregados).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
 

@@ -83,7 +83,8 @@ public class GenericoDAO extends Conexion {
     }
 
     public ResultSet buscarAleatoriamente(String tabla) {
-        String consulta = "select * from " + tabla + " where order by rand() limit 1";
+        String consulta = "select * from " + tabla + " order by rand() limit 1";
+        System.out.println(consulta);
         super.ejecutarRetorno(consulta);
         return resultadoDB;
     }

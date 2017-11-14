@@ -74,6 +74,28 @@ public class CtlCategoria {
         }
     }
 
+    public Categoria SolicitudBuscarUnoPorID(int id) {
+        Categoria categoria = new Categoria("");
+        GenericoDAO catDAO = new GenericoDAO();
+        String objeto = convertirGson(categoria);
+        ResultSet atributos = catDAO.buscarVarios("idCategoria", tabla, id);
+        boolean comprobar = false;
+        try {
+            while (atributos.next()) {
+                categoria.setIdCategoria(Integer.parseInt(atributos.getString("idCategoria")));
+                categoria.setNombre(atributos.getString("nombre"));
+                comprobar = true;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        if (comprobar) {
+            return categoria;
+        } else {
+            return null;
+        }
+    }
+
     public boolean SolicitudModificar(int idCategoria, String nombre) {
         Categoria categoria = new Categoria(idCategoria, nombre);
         GenericoDAO catDAO = new GenericoDAO();

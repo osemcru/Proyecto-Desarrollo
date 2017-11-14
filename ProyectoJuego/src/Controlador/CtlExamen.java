@@ -34,7 +34,7 @@ public class CtlExamen {
 
     public boolean SolicitudGuardarIntermedia(int examen, int pregunta) {
         GenericoDAO examenDAO = new GenericoDAO();
-        return examenDAO.guardarTablaIntermedia(tabla, "examen", "pregunta", examen, pregunta);
+        return examenDAO.guardarTablaIntermedia("examenpregunta", "examen", "pregunta", examen, pregunta);
     }
 
     public Examen SolicitudBuscar(int idExamen) {
