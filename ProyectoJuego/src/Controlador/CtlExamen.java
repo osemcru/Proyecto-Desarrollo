@@ -43,9 +43,11 @@ public class CtlExamen {
         String objeto = convertirGson(examen);
         ResultSet atributos = examenDAO.buscar(objeto, tabla, idExamen);
         try {
-            examen.setIdExamen(Integer.parseInt(atributos.getString("idExamen")));
-            examen.setParticipantes(Integer.parseInt(atributos.getString("participantes")));
-            examen.setUsuario(Integer.parseInt(atributos.getString("idUsuario")));
+            while (atributos.next()) {
+                examen.setIdExamen(Integer.parseInt(atributos.getString("idExamen")));
+                examen.setParticipantes(Integer.parseInt(atributos.getString("participantes")));
+                examen.setUsuario(Integer.parseInt(atributos.getString("usuario")));
+            }
         } catch (Exception e) {
             return null;
         }
