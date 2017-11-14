@@ -7,6 +7,16 @@
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistrarUsuario.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionAdmin.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+=======
+<<<<<<< HEAD
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmUsuario.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/DAO/GenericoDAO.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistrarUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Controlador/CtlUsuario.java</file>
@@ -24,6 +34,7 @@
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/DAO/GenericoDAO.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
 >>>>>>> 1b28a255b747f7bcaf77cc14145f604a54fb077b
+>>>>>>> e4d2b9308196c7e22bef2c5de97139a64de501a9
         </group>
     </open-files>
 </project-private>
