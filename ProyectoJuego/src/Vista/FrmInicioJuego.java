@@ -8,7 +8,6 @@ package Vista;
 import Controlador.CtlCategoria;
 import Controlador.CtlPregunta;
 import Controlador.CtlSolucion;
-import Controlador.CtlUsuario;
 import Modelo.Categoria;
 import Modelo.Pregunta;
 import Modelo.Solucion;
@@ -16,7 +15,6 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import Modelo.Usuario;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,6 +33,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     int ID;
     ArrayList<Integer> listaPreguntas;
     ArrayList<Integer> mostradas;
+    int[] correctas;
+    ArrayList<Integer> acertadas;
 
     public FrmInicioJuego(Usuario user, int idExamen, ArrayList<Integer> preguntas) {
         initComponents();
@@ -44,7 +44,9 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         ctlCategoria = new CtlCategoria();
         ID = idExamen;
         listaPreguntas = preguntas;
+        correctas = new int[4];
         mostradas = new ArrayList<>();
+        acertadas = new ArrayList<>();
         setLocationRelativeTo(this);
         setResizable(false);
         LbCategoria.setEnabled(false);
@@ -386,6 +388,16 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_tfAActionPerformed
 
     private void jbSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSiguienteActionPerformed
+        int cont = 0;
+        for (int i = 0; i < correctas.length; i++) {
+            if (correctas[i] == 1) {
+                cont++;
+            }
+        }
+
+        if (ChbA.isSelected() && correctas[0] == 1) {
+
+        }
 
 //        new FrmInicioJuego(usuario, ID, listaPreguntas).setVisible(true);
 //        this.dispose();
@@ -479,24 +491,28 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 int contador = 1;
 
                 solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+                correctas[0] = solucion.getEstado();
 
                 tfA.setText(solucion.getNombre());
 
                 contador++;
 
                 solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+                correctas[1] = solucion.getEstado();
 
                 tfB.setText(solucion.getNombre());
 
                 contador++;
 
                 solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+                correctas[2] = solucion.getEstado();
 
                 tfC.setText(solucion.getNombre());
 
                 contador++;
 
                 solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+                correctas[3] = solucion.getEstado();
 
                 tfD.setText(solucion.getNombre());
                 break;
@@ -504,6 +520,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         }
 
     }
+
     /**
      * @param args the command line arguments
      */
