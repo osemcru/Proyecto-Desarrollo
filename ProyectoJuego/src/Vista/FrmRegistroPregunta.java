@@ -464,6 +464,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             Pregunta pregunta = ctlPregunta.SolicitudBuscar(idPregunta);
 
             if (pregunta != null) {
+                limpiar();
                 TxtPregunta.setText(pregunta.getDescripcion());
                 cbTipoPregunta.setSelectedIndex(pregunta.getTipoPregunta());
                 cbCategoriaPregunta.setSelectedIndex(0);
