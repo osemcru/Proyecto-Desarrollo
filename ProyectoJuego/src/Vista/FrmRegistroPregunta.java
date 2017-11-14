@@ -409,8 +409,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
         if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
                 || TxtC.getText().isEmpty() || TxtD.getText().isEmpty() || cbCategoriaPregunta.getSelectedIndex() == 0
-                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && ChbB.isSelected()
-                && ChbC.isSelected() && ChbD.isSelected()) {
+                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && !ChbB.isSelected()
+                && !ChbC.isSelected() && !ChbD.isSelected()) {
             JOptionPane.showMessageDialog(null, "Completa todos los campos");
         } else {
 
@@ -469,7 +469,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 cbCategoriaPregunta.setSelectedIndex(0);
                 jbCancelar.setEnabled(true);
 
-                Solucion solucion = new Solucion();
+                Solucion solucion;
                 int contador = 1;
 
                 solucion = ctlSolucion.SolicitudBuscar(idPregunta, contador);
@@ -547,8 +547,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
                 || TxtC.getText().isEmpty() || TxtD.getText().isEmpty() || cbCategoriaPregunta.getSelectedIndex() == 0
-                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && ChbB.isSelected()
-                && ChbC.isSelected() && ChbD.isSelected()) {
+                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && !ChbB.isSelected()
+                && !ChbC.isSelected() && !ChbD.isSelected()) {
             JOptionPane.showMessageDialog(null, "Completa todos los campos");
         } else {
 
