@@ -56,6 +56,12 @@ public class GenericoDAO extends Conexion {
             }
 
         }
+        System.out.println(consulta);
+        return super.ejecutar(consulta);
+    }
+
+    public boolean guardarTablaIntermedia(String tabla, String id1, String id2, Object valor1, Object valor2) {
+        String consulta = "insert into " + tabla + " (" + id1 + "," + id2 + ") values ('" + valor1 + "','" + valor2 + "')";
         return super.ejecutar(consulta);
     }
 
@@ -69,9 +75,16 @@ public class GenericoDAO extends Conexion {
         super.ejecutarRetorno(consulta);
         return resultadoDB;
     }
-    
+
     public ResultSet buscarVarios(String objeto, String tabla, Object id) {
         String consulta = "select * from " + tabla + " where " + objeto + "='" + id + "'";
+        super.ejecutarRetorno(consulta);
+        return resultadoDB;
+    }
+
+    public ResultSet buscarAleatoriamente(String tabla) {
+        String consulta = "select * from " + tabla + " order by rand() limit 1";
+        System.out.println(consulta);
         super.ejecutarRetorno(consulta);
         return resultadoDB;
     }
@@ -114,9 +127,9 @@ public class GenericoDAO extends Conexion {
         String consulta = "delete from " + tabla + " where " + listCampos.get(0) + "='" + variable + "';";
         return super.ejecutar(consulta);
     }
-    
+
     public boolean eliminarSecundario(String objeto, String tabla, Object variable) {
-        
+
         String consulta = "delete from " + tabla + " where " + objeto + "='" + variable + "';";
         return super.ejecutar(consulta);
     }

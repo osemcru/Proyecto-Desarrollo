@@ -198,8 +198,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
 
     private void jbAtras1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtras1MouseReleased
 
-        new FrmInicio().setVisible(true);
-        this.dispose();
+       
     }//GEN-LAST:event_jbAtras1MouseReleased
 
     private void jbAtras1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras1ActionPerformed

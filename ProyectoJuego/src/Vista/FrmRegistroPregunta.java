@@ -12,6 +12,8 @@ import Modelo.Administrador;
 import Modelo.Categoria;
 import Modelo.Pregunta;
 import Modelo.Solucion;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,6 +29,10 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     int idPregunta = 0;
     int[] soluciones = new int[4];
     int seleccionados = 0;
+    public Clip clip;
+    public Clip clip2;
+    public String ruta = "/Sonidos/";
+    Thread t;
 
     /**
      *
@@ -84,6 +90,14 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TblPreguntas.setBackground(new java.awt.Color(0, 102, 153));
@@ -401,9 +415,34 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+    public void sonido2(String archivo) {
+
+        try {
+            clip2 = AudioSystem.getClip();
+            clip2.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip2.start();
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-        new FrmAdministrador(administrador).setVisible(true);
-        this.dispose();
 
     }//GEN-LAST:event_jbAtrasMouseReleased
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
@@ -554,7 +593,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         } else {
 
             Categoria categoria = ctlCategoria.SolicitudBuscarUno((String) cbCategoriaPregunta.getSelectedItem());
-            System.out.println(categoria.getIdCategoria());
             int idCategoria = categoria.getIdCategoria();
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();
@@ -640,6 +678,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+        sonido2("Deslizar");
         if (cbTipoPregunta.getSelectedIndex() == 1) {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
@@ -729,6 +768,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
+        sonido2("Deslizar");
         if (cbTipoPregunta.getSelectedIndex() == 1) {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
@@ -742,6 +782,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
         // TODO add your handling code here:
+        sonido2("Deslizar");
         if (cbTipoPregunta.getSelectedIndex() == 1) {
             ChbA.setSelected(false);
             ChbC.setSelected(false);
@@ -755,6 +796,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
         // TODO add your handling code here:
+        sonido2("Deslizar");
         if (cbTipoPregunta.getSelectedIndex() == 1) {
             ChbB.setSelected(false);
             ChbA.setSelected(false);
@@ -774,6 +816,22 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
         limpiar();
     }//GEN-LAST:event_jbCancelarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        try {
+            clip.stop();
+            clip2.stop();
+        } catch (Exception e) {
+
+        }
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("Jaunty Gumption");
+
+    }//GEN-LAST:event_formWindowOpened
 
     public void limpiar() {
         TxtPregunta.setText("");
