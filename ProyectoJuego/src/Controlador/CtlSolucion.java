@@ -10,6 +10,7 @@ import Modelo.Solucion;
 
 import com.google.gson.Gson;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,19 +34,26 @@ public class CtlSolucion {
         return solucionDAO.guardar(objeto, tabla);
     }
 
-    public Solucion SolicitudBuscar(int pregunta) {
+    public Solucion SolicitudBuscar(int pregunta, int contador) {
         Solucion solucion = new Solucion(0, "", 0, 0);
         GenericoDAO solucionDAO = new GenericoDAO();
         String objeto = convertirGson(solucion);
-        ResultSet atributos = solucionDAO.buscar(objeto, tabla, pregunta);
+        ResultSet atributos = solucionDAO.buscarVarios("pregunta", tabla, pregunta);
+        int cont = 0;
         try {
-            solucion.setIdSolucion(Integer.parseInt(atributos.getString("idSolucion")));
-            solucion.setNombre(atributos.getString("nombre"));
-            solucion.setEstado(Integer.parseInt(atributos.getString("estado")));
-            solucion.setPregunta(Integer.parseInt(atributos.getString("pregunta")));
+            while (atributos.next() && cont < contador) {
+
+                solucion.setIdSolucion(Integer.parseInt(atributos.getString("idSolucion")));
+                solucion.setNombre(atributos.getString("nombre"));
+                solucion.setEstado(Integer.parseInt(atributos.getString("estado")));
+                solucion.setPregunta(Integer.parseInt(atributos.getString("pregunta")));
+
+                cont++;
+            }
         } catch (Exception e) {
             return null;
         }
+        System.out.println(solucion.getNombre());
         return solucion;
     }
 
@@ -84,7 +92,6 @@ public class CtlSolucion {
 //        }
 //        return modelTabla;
 //    }
-    
     public int SolicitudUltimaIDSolucion() {
         GenericoDAO solucionDAO = new GenericoDAO();
         ResultSet atributos = solucionDAO.listar(tabla);
