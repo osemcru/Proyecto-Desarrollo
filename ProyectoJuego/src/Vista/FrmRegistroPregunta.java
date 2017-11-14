@@ -594,7 +594,6 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         } else {
 
             Categoria categoria = ctlCategoria.SolicitudBuscarUno((String) cbCategoriaPregunta.getSelectedItem());
-            System.out.println(categoria.getIdCategoria());
             int idCategoria = categoria.getIdCategoria();
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();

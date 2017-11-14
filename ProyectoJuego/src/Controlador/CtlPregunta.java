@@ -45,7 +45,6 @@ public class CtlPregunta {
                 pregunta.setDescripcion(atributos.getString("descripcion"));
                 pregunta.setCategoria(Integer.parseInt(atributos.getString("categoria")));
                 pregunta.setTipoPregunta(Integer.parseInt(atributos.getString("tipoPregunta")));
-                System.out.println("pregunta: " + pregunta.getDescripcion());
             }
         } catch (Exception e) {
             return null;

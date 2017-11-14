@@ -19,7 +19,7 @@ public class CtlExamen {
 
     String tabla = "examen";
 
-    public String convertirGson(Examen examen) {
+    public String convertirGson(Object examen) {
         Gson gson = new Gson();
         String objeto = gson.toJson(examen);
         return objeto;
@@ -30,6 +30,11 @@ public class CtlExamen {
         GenericoDAO examenDAO = new GenericoDAO();
         String objeto = convertirGson(examen);
         return examenDAO.guardar(objeto, tabla);
+    }
+
+    public boolean SolicitudGuardarIntermedia(int examen, int pregunta) {
+        GenericoDAO examenDAO = new GenericoDAO();
+        return examenDAO.guardarTablaIntermedia(tabla, "examen", "pregunta", examen, pregunta);
     }
 
     public Examen SolicitudBuscar(int idExamen) {
@@ -61,13 +66,13 @@ public class CtlExamen {
         return examenDAO.eliminar(objeto, tabla, idExamen);
     }
 
-    public DefaultTableModel solicitudListar() {
-        GenericoDAO usuarioDAO = new GenericoDAO();
+    public DefaultTableModel SolicitudListar() {
+        GenericoDAO examenDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
         String nombreColumnas[] = {"IdExamen", "Participantes", "Codigo Usuario"};
         modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
 
-        ResultSet atributos = usuarioDAO.listar(tabla);
+        ResultSet atributos = examenDAO.listar(tabla);
         try {
             while (atributos.next()) {
                 modelTabla.addRow(new Object[]{
@@ -80,5 +85,33 @@ public class CtlExamen {
 
         }
         return modelTabla;
+    }
+
+    public int SolicitudUltimaIDExamen() {
+        GenericoDAO examenDAO = new GenericoDAO();
+        ResultSet atributos = examenDAO.listar(tabla);
+        int idExamen = 0;
+        try {
+            while (atributos.next()) {
+                idExamen = Integer.parseInt(atributos.getString("idExamen"));
+            }
+        } catch (Exception e) {
+
+        }
+        return idExamen;
+    }
+
+    public int SolicitudPreguntaAleatoria() {
+        GenericoDAO examenDAO = new GenericoDAO();
+        ResultSet atributos = examenDAO.buscarAleatoriamente("pregunta");
+        int idPregunta = 0;
+        try {
+            while (atributos.next()) {
+                idPregunta = Integer.parseInt(atributos.getString("idPregunta"));
+            }
+        } catch (Exception e) {
+
+        }
+        return idPregunta;
     }
 }
