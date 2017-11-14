@@ -454,6 +454,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             if (ctlUsuario.SolicitudEliminar(codigo)) {
                 JOptionPane.showMessageDialog(this, "Se ha eliminado correctamente el usuario");
                 limpiar();
+                listar();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al eliminar los datos");
@@ -538,6 +539,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             if (ctlUsuario.SolicitudModificar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
                 JOptionPane.showMessageDialog(this, "Modificado exitosamente");
                 limpiar();
+                listar();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al modificar");
             }

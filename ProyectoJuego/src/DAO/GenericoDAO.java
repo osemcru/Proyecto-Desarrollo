@@ -69,6 +69,12 @@ public class GenericoDAO extends Conexion {
         super.ejecutarRetorno(consulta);
         return resultadoDB;
     }
+    
+    public ResultSet buscarVarios(String objeto, String tabla, Object id) {
+        String consulta = "select * from " + tabla + " where " + objeto + "='" + id + "'";
+        super.ejecutarRetorno(consulta);
+        return resultadoDB;
+    }
 
     public boolean modificar(String objeto, String tabla, String variable, Object contenido) {
         String consulta = "update " + tabla + " set ";
@@ -96,7 +102,6 @@ public class GenericoDAO extends Conexion {
             }
         }
         consulta += " where " + variable + "='" + contenido + "';";
-        System.out.println(consulta);
         return super.ejecutar(consulta);
     }
 
@@ -107,6 +112,12 @@ public class GenericoDAO extends Conexion {
 
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "delete from " + tabla + " where " + listCampos.get(0) + "='" + variable + "';";
+        return super.ejecutar(consulta);
+    }
+    
+    public boolean eliminarSecundario(String objeto, String tabla, Object variable) {
+        
+        String consulta = "delete from " + tabla + " where " + objeto + "='" + variable + "';";
         return super.ejecutar(consulta);
     }
 
