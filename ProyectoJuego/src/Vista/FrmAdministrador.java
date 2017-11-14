@@ -232,7 +232,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
         try {
 
                     conn.conectar();
-                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PeorEstu.jrxml";
+                    String dir = "C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Reportes\\PeorEst.jrxml";
                     JasperReport reporteJasper = JasperCompileManager.compileReport(dir);
                     JasperPrint mostrarReporte = JasperFillManager.fillReport(reporteJasper, null, conn.getConn());
                     JasperViewer.viewReport(mostrarReporte);
