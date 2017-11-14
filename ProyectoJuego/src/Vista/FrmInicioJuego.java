@@ -6,8 +6,12 @@
 package Vista;
 
 import Controlador.CtlUsuario;
+<<<<<<< HEAD
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+=======
+import Modelo.Usuario;
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
 import javax.swing.JOptionPane;
 
 /**
@@ -16,17 +20,30 @@ import javax.swing.JOptionPane;
  */
 public class FrmInicioJuego extends javax.swing.JFrame {
 
+<<<<<<< HEAD
      public Clip clip;
     public String ruta = "/Sonidos/";
     Thread t;
     
     public FrmInicioJuego() {
+=======
+    Usuario usuario;
+
+    public FrmInicioJuego(Usuario user) {
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
         initComponents();
+        usuario = user;
         setLocationRelativeTo(this);
         setResizable(false);
-        
+        LbCategoria.setEnabled(false);
+        LbTipoPregunta.setEnabled(false);
+        tfPregunta.setEnabled(false);
+        tfA.setEnabled(false);
+        tfB.setEnabled(false);
+        tfC.setEnabled(false);
+        tfD.setEnabled(false);
     }
-    private int rep=0;
+    private int rep = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,11 +65,13 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         ChbC = new javax.swing.JCheckBox();
         ChbD = new javax.swing.JCheckBox();
         tfPregunta = new javax.swing.JTextField();
-        tfA1 = new javax.swing.JTextField();
-        tfA2 = new javax.swing.JTextField();
-        tfA3 = new javax.swing.JTextField();
-        tfA4 = new javax.swing.JTextField();
+        tfD = new javax.swing.JTextField();
+        tfC = new javax.swing.JTextField();
+        tfB = new javax.swing.JTextField();
+        tfA = new javax.swing.JTextField();
         jbSiguiente = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        LbTipoPregunta = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -68,8 +87,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Categoria");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, -1, 30));
+        jLabel10.setText("Tipo de pregunta");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, 30));
 
         LbCategoria.setBackground(new java.awt.Color(0, 0, 0));
         LbCategoria.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
@@ -87,7 +106,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 LbCategoriaActionPerformed(evt);
             }
         });
-        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 220, -1));
+        getContentPane().add(LbCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, 300, -1));
 
         jLabel12.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,79 +166,79 @@ public class FrmInicioJuego extends javax.swing.JFrame {
                 tfPreguntaActionPerformed(evt);
             }
         });
-        getContentPane().add(tfPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 620, -1));
+        getContentPane().add(tfPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 710, -1));
 
-        tfA1.setBackground(new java.awt.Color(0, 0, 0));
-        tfA1.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfA1.setForeground(new java.awt.Color(255, 255, 255));
-        tfA1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfA1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
-        tfA1.setCaretColor(new java.awt.Color(51, 255, 255));
-        tfA1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tfD.setBackground(new java.awt.Color(0, 0, 0));
+        tfD.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        tfD.setForeground(new java.awt.Color(255, 255, 255));
+        tfD.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfD.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
+        tfD.setCaretColor(new java.awt.Color(51, 255, 255));
+        tfD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tfA1MouseEntered(evt);
+                tfDMouseEntered(evt);
             }
         });
-        tfA1.addActionListener(new java.awt.event.ActionListener() {
+        tfD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfA1ActionPerformed(evt);
+                tfDActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 450, -1));
+        getContentPane().add(tfD, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 450, -1));
 
-        tfA2.setBackground(new java.awt.Color(0, 0, 0));
-        tfA2.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfA2.setForeground(new java.awt.Color(255, 255, 255));
-        tfA2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfA2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
-        tfA2.setCaretColor(new java.awt.Color(51, 255, 255));
-        tfA2.addMouseListener(new java.awt.event.MouseAdapter() {
+        tfC.setBackground(new java.awt.Color(0, 0, 0));
+        tfC.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        tfC.setForeground(new java.awt.Color(255, 255, 255));
+        tfC.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfC.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
+        tfC.setCaretColor(new java.awt.Color(51, 255, 255));
+        tfC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tfA2MouseEntered(evt);
+                tfCMouseEntered(evt);
             }
         });
-        tfA2.addActionListener(new java.awt.event.ActionListener() {
+        tfC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfA2ActionPerformed(evt);
+                tfCActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 450, -1));
+        getContentPane().add(tfC, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 450, -1));
 
-        tfA3.setBackground(new java.awt.Color(0, 0, 0));
-        tfA3.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfA3.setForeground(new java.awt.Color(255, 255, 255));
-        tfA3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfA3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
-        tfA3.setCaretColor(new java.awt.Color(51, 255, 255));
-        tfA3.addMouseListener(new java.awt.event.MouseAdapter() {
+        tfB.setBackground(new java.awt.Color(0, 0, 0));
+        tfB.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        tfB.setForeground(new java.awt.Color(255, 255, 255));
+        tfB.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfB.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
+        tfB.setCaretColor(new java.awt.Color(51, 255, 255));
+        tfB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tfA3MouseEntered(evt);
+                tfBMouseEntered(evt);
             }
         });
-        tfA3.addActionListener(new java.awt.event.ActionListener() {
+        tfB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfA3ActionPerformed(evt);
+                tfBActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 450, -1));
+        getContentPane().add(tfB, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 450, -1));
 
-        tfA4.setBackground(new java.awt.Color(0, 0, 0));
-        tfA4.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        tfA4.setForeground(new java.awt.Color(255, 255, 255));
-        tfA4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tfA4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
-        tfA4.setCaretColor(new java.awt.Color(51, 255, 255));
-        tfA4.addMouseListener(new java.awt.event.MouseAdapter() {
+        tfA.setBackground(new java.awt.Color(0, 0, 0));
+        tfA.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        tfA.setForeground(new java.awt.Color(255, 255, 255));
+        tfA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfA.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 255), 2, true));
+        tfA.setCaretColor(new java.awt.Color(51, 255, 255));
+        tfA.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                tfA4MouseEntered(evt);
+                tfAMouseEntered(evt);
             }
         });
-        tfA4.addActionListener(new java.awt.event.ActionListener() {
+        tfA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfA4ActionPerformed(evt);
+                tfAActionPerformed(evt);
             }
         });
-        getContentPane().add(tfA4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 450, -1));
+        getContentPane().add(tfA, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 450, -1));
 
         jbSiguiente.setBackground(new java.awt.Color(0, 51, 51));
         jbSiguiente.setFont(new java.awt.Font("Monotype Corsiva", 3, 30)); // NOI18N
@@ -231,6 +250,29 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jbSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Categoria");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, -1, 30));
+
+        LbTipoPregunta.setBackground(new java.awt.Color(0, 0, 0));
+        LbTipoPregunta.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        LbTipoPregunta.setForeground(new java.awt.Color(255, 255, 255));
+        LbTipoPregunta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        LbTipoPregunta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 255), 2));
+        LbTipoPregunta.setCaretColor(new java.awt.Color(51, 255, 255));
+        LbTipoPregunta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LbTipoPreguntaMouseEntered(evt);
+            }
+        });
+        LbTipoPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LbTipoPreguntaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(LbTipoPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 220, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Juego.jpg"))); // NOI18N
@@ -276,49 +318,47 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPreguntaActionPerformed
 
-    private void tfA1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfA1MouseEntered
+    private void tfDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfDMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA1MouseEntered
+    }//GEN-LAST:event_tfDMouseEntered
 
-    private void tfA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfA1ActionPerformed
+    private void tfDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA1ActionPerformed
+    }//GEN-LAST:event_tfDActionPerformed
 
-    private void tfA2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfA2MouseEntered
+    private void tfCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfCMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA2MouseEntered
+    }//GEN-LAST:event_tfCMouseEntered
 
-    private void tfA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfA2ActionPerformed
+    private void tfCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA2ActionPerformed
+    }//GEN-LAST:event_tfCActionPerformed
 
-    private void tfA3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfA3MouseEntered
+    private void tfBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfBMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA3MouseEntered
+    }//GEN-LAST:event_tfBMouseEntered
 
-    private void tfA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfA3ActionPerformed
+    private void tfBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA3ActionPerformed
+    }//GEN-LAST:event_tfBActionPerformed
 
-    private void tfA4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfA4MouseEntered
+    private void tfAMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfAMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA4MouseEntered
+    }//GEN-LAST:event_tfAMouseEntered
 
-    private void tfA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfA4ActionPerformed
+    private void tfAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfA4ActionPerformed
+    }//GEN-LAST:event_tfAActionPerformed
 
     private void jbSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSiguienteActionPerformed
-   
-        new FrmInicioJuego().setVisible(true);
+
+        new FrmInicioJuego(usuario).setVisible(true);
         this.dispose();
 
-        
-       
-       
-        
+
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
+<<<<<<< HEAD
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         String [] Aleatorio = new String[2];
@@ -334,10 +374,22 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         clip.stop();
     }//GEN-LAST:event_formWindowClosed
 
+=======
+    private void LbTipoPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbTipoPreguntaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LbTipoPreguntaMouseEntered
+
+    private void LbTipoPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LbTipoPreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LbTipoPreguntaActionPerformed
+
+    private void cargarPregunta() {
+
+    }
+>>>>>>> 66dd1f6b6d26547fae578dc463400ff04fd09495
     /**
      * @param args the command line arguments
      */
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox ChbA;
@@ -345,17 +397,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private javax.swing.JCheckBox ChbC;
     private javax.swing.JCheckBox ChbD;
     private javax.swing.JTextField LbCategoria;
+    private javax.swing.JTextField LbTipoPregunta;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JButton jbSiguiente;
-    private javax.swing.JTextField tfA1;
-    private javax.swing.JTextField tfA2;
-    private javax.swing.JTextField tfA3;
-    private javax.swing.JTextField tfA4;
+    private javax.swing.JTextField tfA;
+    private javax.swing.JTextField tfB;
+    private javax.swing.JTextField tfC;
+    private javax.swing.JTextField tfD;
     private javax.swing.JTextField tfPregunta;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,10 +25,10 @@ public class CtlExamen {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(int idExamen, int participantes, int idUsuario) {
-        Examen examne = new Examen(idExamen, participantes, idUsuario);
+    public boolean SolicitudGuardar(int idExamen, int participantes, int usuario) {
+        Examen examen = new Examen(idExamen, participantes, usuario);
         GenericoDAO examenDAO = new GenericoDAO();
-        String objeto = convertirGson(examne);
+        String objeto = convertirGson(examen);
         return examenDAO.guardar(objeto, tabla);
     }
 
@@ -47,8 +47,8 @@ public class CtlExamen {
         return examen;
     }
 
-    public boolean SolicitudModificar(int idExamen, int participantes, int idUsuario) {
-        Examen examen = new Examen(idExamen, participantes, idUsuario);
+    public boolean SolicitudModificar(int idExamen, int participantes, int usuario) {
+        Examen examen = new Examen(idExamen, participantes, usuario);
         GenericoDAO examenDAO = new GenericoDAO();
         String objeto = convertirGson(examen);
         return examenDAO.modificar(objeto, tabla, "idExamen", idExamen);
@@ -64,7 +64,7 @@ public class CtlExamen {
     public DefaultTableModel solicitudListar() {
         GenericoDAO usuarioDAO = new GenericoDAO();
         DefaultTableModel modelTabla;
-        String nombreColumnas[] = {"IdExamen", "Participantes", "IdUsuario"};
+        String nombreColumnas[] = {"IdExamen", "Participantes", "Codigo Usuario"};
         modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
 
         ResultSet atributos = usuarioDAO.listar(tabla);
@@ -73,7 +73,7 @@ public class CtlExamen {
                 modelTabla.addRow(new Object[]{
                     atributos.getString("idExamen"),
                     atributos.getString("participantes"),
-                    atributos.getString("idUsuario")
+                    atributos.getString("usuario")
                 });
             }
         } catch (Exception e) {

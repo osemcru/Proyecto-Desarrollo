@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 import DAO.GenericoDAO;
 import Modelo.Administrador;
 import Modelo.Categoria;
-import Modelo.Usuario;
 import java.util.ArrayList;
 
 /**
