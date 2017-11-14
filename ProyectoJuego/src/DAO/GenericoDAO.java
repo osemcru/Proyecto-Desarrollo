@@ -71,7 +71,6 @@ public class GenericoDAO extends Conexion {
     }
     
     public ResultSet buscarVarios(String objeto, String tabla, Object id) {
-        
         String consulta = "select * from " + tabla + " where " + objeto + "='" + id + "'";
         super.ejecutarRetorno(consulta);
         return resultadoDB;
@@ -103,7 +102,6 @@ public class GenericoDAO extends Conexion {
             }
         }
         consulta += " where " + variable + "='" + contenido + "';";
-        System.out.println(consulta);
         return super.ejecutar(consulta);
     }
 

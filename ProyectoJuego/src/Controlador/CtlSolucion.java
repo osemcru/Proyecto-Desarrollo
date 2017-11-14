@@ -50,7 +50,6 @@ public class CtlSolucion {
         } catch (Exception e) {
             return null;
         }
-        System.out.println(solucion.getNombre());
         return solucion;
     }
 
