@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 public class FrmInicioJuego extends javax.swing.JFrame {
 
     public Clip clip;
+    public Clip clip2;
     public String ruta = "/Sonidos/";
     Thread t;
 
@@ -297,6 +298,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     }
 
+    public void sonido2(String archivo) {
+
+        try {
+            clip2 = AudioSystem.getClip();
+            clip2.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip2.start();
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
     private void LbCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbCategoriaMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_LbCategoriaMouseEntered
@@ -307,13 +321,13 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
         
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -377,6 +391,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         clip.stop();
+        clip2.stop();
     }//GEN-LAST:event_formWindowClosed
 
     private void LbTipoPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LbTipoPreguntaMouseEntered
@@ -389,12 +404,12 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
         // TODO add your handling code here:
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbCActionPerformed
 
     private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
         // TODO add your handling code here:
-        sonido("Deslizar");
+        sonido2("Deslizar");
     }//GEN-LAST:event_ChbBActionPerformed
 
     private void cargarPregunta() {
