@@ -16,7 +16,6 @@ import Modelo.Solucion;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import Modelo.Usuario;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -360,14 +359,12 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
-
         sonido2("Deslizar");
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
             ChbD.setSelected(false);
         }
-
        
     }//GEN-LAST:event_ChbAActionPerformed
 
