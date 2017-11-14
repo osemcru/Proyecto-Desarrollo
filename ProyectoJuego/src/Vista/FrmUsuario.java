@@ -53,7 +53,7 @@ public class FrmUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Orator Std", 0, 60)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 204, 255));
         jLabel2.setText("Bienvenido");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 50));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, 50));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -121,7 +121,7 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-     new FrmInicio().setVisible(true);
+        new FrmInicio().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
@@ -130,7 +130,7 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_tfUsuarioActionPerformed
 
     private void jbMostrarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarHistorialActionPerformed
- //        try {
+        //        try {
         //            String nickname = txtNickName.getText();
         //            String clave = txtClave.getText();
         //            String nombre = txtNombre.getText();
@@ -150,7 +150,7 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbMostrarHistorialActionPerformed
 
     private void jbMostrarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarJuegosActionPerformed
-       new FrmInicioJuego().setVisible(true);
+        new FrmInicioJuego(usuario).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
 
