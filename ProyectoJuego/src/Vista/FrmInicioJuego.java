@@ -5,10 +5,17 @@
  */
 package Vista;
 
+import Controlador.CtlCategoria;
+import Controlador.CtlPregunta;
+import Controlador.CtlSolucion;
 import Controlador.CtlUsuario;
+import Modelo.Categoria;
+import Modelo.Pregunta;
+import Modelo.Solucion;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import Modelo.Usuario;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,11 +28,23 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     public String ruta = "/Sonidos/";
     Thread t;
 
+    CtlPregunta ctlPregunta;
+    CtlSolucion ctlSolucion;
+    CtlCategoria ctlCategoria;
     Usuario usuario;
+    int ID;
+    ArrayList<Integer> listaPreguntas;
+    ArrayList<Integer> mostradas;
 
-    public FrmInicioJuego(Usuario user) {
+    public FrmInicioJuego(Usuario user, int idExamen, ArrayList<Integer> preguntas) {
         initComponents();
         usuario = user;
+        ctlPregunta = new CtlPregunta();
+        ctlSolucion = new CtlSolucion();
+        ctlCategoria = new CtlCategoria();
+        ID = idExamen;
+        listaPreguntas = preguntas;
+        mostradas = new ArrayList<>();
         setLocationRelativeTo(this);
         setResizable(false);
         LbCategoria.setEnabled(false);
@@ -130,9 +149,19 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         getContentPane().add(ChbA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 20));
 
         ChbB.setBackground(new java.awt.Color(0, 153, 255));
+        ChbB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbBActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
         ChbC.setBackground(new java.awt.Color(0, 153, 255));
+        ChbC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChbCActionPerformed(evt);
+            }
+        });
         getContentPane().add(ChbC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 20, 20));
 
         ChbD.setBackground(new java.awt.Color(0, 153, 255));
@@ -297,10 +326,20 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
+            ChbA.setSelected(false);
+        }
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
+        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
+            ChbB.setSelected(false);
+            ChbC.setSelected(false);
+            ChbD.setSelected(false);
+        }
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -345,9 +384,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void jbSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSiguienteActionPerformed
 
-        new FrmInicioJuego(usuario).setVisible(true);
-        this.dispose();
-
+//        new FrmInicioJuego(usuario, ID, listaPreguntas).setVisible(true);
+//        this.dispose();
 
     }//GEN-LAST:event_jbSiguienteActionPerformed
 
@@ -359,6 +397,8 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         int numRam = (int) (Math.random() * 2);
 
         sonido(Aleatorio[numRam]);
+
+        cargarPregunta();
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
@@ -374,7 +414,79 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LbTipoPreguntaActionPerformed
 
+    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
+        // TODO add your handling code here:
+        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
+            ChbA.setSelected(false);
+            ChbC.setSelected(false);
+            ChbD.setSelected(false);
+        }
+    }//GEN-LAST:event_ChbBActionPerformed
+
+    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
+        // TODO add your handling code here:
+        if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
+            ChbB.setSelected(false);
+            ChbA.setSelected(false);
+            ChbD.setSelected(false);
+        }
+    }//GEN-LAST:event_ChbCActionPerformed
+
     private void cargarPregunta() {
+
+        int escoger;
+        Pregunta pregunta;
+        boolean existente;
+        for (int i = 0; i < listaPreguntas.size(); i++) {
+            existente = false;
+            escoger = listaPreguntas.get((int) (Math.random() * 9));
+            for (int j = 0; j < mostradas.size(); j++) {
+                if (escoger == mostradas.get(j)) {
+                    existente = true;
+                }
+            }
+            if (existente) {
+                i--;
+            } else {
+                mostradas.add(escoger);
+                pregunta = ctlPregunta.SolicitudBuscar(escoger);
+
+                tfPregunta.setText(pregunta.getDescripcion());
+                if (pregunta.getTipoPregunta() == 1) {
+                    LbTipoPregunta.setText("Unica Respuesta");
+                } else if (pregunta.getTipoPregunta() == 2) {
+                    LbTipoPregunta.setText("Multiple Respuesta");
+                }
+                Categoria categoria = ctlCategoria.SolicitudBuscarUnoPorID(pregunta.getCategoria());
+                LbCategoria.setText(categoria.getNombre());
+
+                Solucion solucion;
+                int contador = 1;
+
+                solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+
+                tfA.setText(solucion.getNombre());
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+
+                tfB.setText(solucion.getNombre());
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+
+                tfC.setText(solucion.getNombre());
+
+                contador++;
+
+                solucion = ctlSolucion.SolicitudBuscar(pregunta.getIdPregunta(), contador);
+
+                tfD.setText(solucion.getNombre());
+                break;
+            }
+        }
 
     }
     /**
