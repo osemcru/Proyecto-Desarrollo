@@ -326,20 +326,29 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
     private void ChbDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbDActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
             ChbA.setSelected(false);
         }
+=======
+        sonido("Deslizar");
+>>>>>>> 00002312a8a0adfdd4a0129792d57fd8a4ba1823
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
             ChbB.setSelected(false);
             ChbC.setSelected(false);
             ChbD.setSelected(false);
         }
+=======
+        
+        sonido("Deslizar");
+>>>>>>> 00002312a8a0adfdd4a0129792d57fd8a4ba1823
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -414,6 +423,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LbTipoPreguntaActionPerformed
 
+<<<<<<< HEAD
     private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
         // TODO add your handling code here:
         if (LbTipoPregunta.getText().equals("Unica Respuesta")) {
@@ -432,6 +442,18 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ChbCActionPerformed
 
+=======
+    private void ChbCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbCActionPerformed
+        // TODO add your handling code here:
+        sonido("Deslizar");
+    }//GEN-LAST:event_ChbCActionPerformed
+
+    private void ChbBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbBActionPerformed
+        // TODO add your handling code here:
+        sonido("Deslizar");
+    }//GEN-LAST:event_ChbBActionPerformed
+
+>>>>>>> 00002312a8a0adfdd4a0129792d57fd8a4ba1823
     private void cargarPregunta() {
 
         int escoger;
