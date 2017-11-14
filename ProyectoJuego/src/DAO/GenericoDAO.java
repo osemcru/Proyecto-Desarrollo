@@ -56,6 +56,7 @@ public class GenericoDAO extends Conexion {
             }
 
         }
+        System.out.println(consulta);
         return super.ejecutar(consulta);
     }
 

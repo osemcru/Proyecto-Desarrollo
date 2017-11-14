@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CtlSolucion {
 
-    String tabla = "pregunta";
+    String tabla = "solucion";
 
     public String convertirGson(Solucion solucion) {
         Gson gson = new Gson();
@@ -26,8 +26,8 @@ public class CtlSolucion {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(String nombre, int estado, int pregunta) {
-        Solucion solucion = new Solucion(nombre, estado, pregunta);
+    public boolean SolicitudGuardar(int idSolucion, String nombre, int estado, int pregunta) {
+        Solucion solucion = new Solucion(idSolucion, nombre, estado, pregunta);
         GenericoDAO solucionDAO = new GenericoDAO();
         String objeto = convertirGson(solucion);
         return solucionDAO.guardar(objeto, tabla);
@@ -63,25 +63,39 @@ public class CtlSolucion {
         return solucionDAO.eliminar(objeto, tabla, pregunta);
     }
 
-    public DefaultTableModel SolicitudListar() {
-        GenericoDAO usuarioDAO = new GenericoDAO();
-        DefaultTableModel modelTabla;
-        String nombreColumnas[] = {"IdSolucion", "Nombre", "Estado", "IdPregunta"};
-        modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
-
-        ResultSet atributos = usuarioDAO.listar(tabla);
+//    public DefaultTableModel SolicitudListar() {
+//        GenericoDAO solucionDAO = new GenericoDAO();
+//        DefaultTableModel modelTabla;
+//        String nombreColumnas[] = {"IdSolucion", "Nombre", "Estado", "IdPregunta"};
+//        modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
+//
+//        ResultSet atributos = solucionDAO.listar(tabla);
+//        try {
+//            while (atributos.next()) {
+//                modelTabla.addRow(new Object[]{
+//                    atributos.getString("idSolucion"),
+//                    atributos.getString("nombre"),
+//                    atributos.getString("estado"),
+//                    atributos.getString("pregunta")
+//                });
+//            }
+//        } catch (Exception e) {
+//
+//        }
+//        return modelTabla;
+//    }
+    
+    public int SolicitudUltimaIDSolucion() {
+        GenericoDAO solucionDAO = new GenericoDAO();
+        ResultSet atributos = solucionDAO.listar(tabla);
+        int idSolucion = 0;
         try {
             while (atributos.next()) {
-                modelTabla.addRow(new Object[]{
-                    atributos.getString("idSolucion"),
-                    atributos.getString("nombre"),
-                    atributos.getString("estado"),
-                    atributos.getString("pregunta")
-                });
+                idSolucion = Integer.parseInt(atributos.getString("idSolucion"));
             }
         } catch (Exception e) {
 
         }
-        return modelTabla;
+        return idSolucion;
     }
 }
