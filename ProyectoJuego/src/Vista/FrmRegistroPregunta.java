@@ -12,7 +12,6 @@ import Modelo.Administrador;
 import Modelo.Categoria;
 import Modelo.Pregunta;
 import Modelo.Solucion;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +25,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
     CtlPregunta ctlPregunta;
     CtlSolucion ctlSolucion;
     int idPregunta = 0;
+    int[] soluciones = new int[4];
     int seleccionados = 0;
 
     /**
@@ -407,31 +407,61 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbAtrasMouseReleased
     private void BtnModificarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnModificarPreguntaActionPerformed
-        //        try {
-        //            String nickname = txtNickName.getText();
-        //            String clave = txtClave.getText();
-        //            String nombre = txtNombre.getText();
-        //            String apellido = txtApellido.getText();
-        //            int codigo = Integer.p  arseInt(txtCodigo.getText());
-        //            String correo = txtCorreo.getText();
-        //            int semestre = Integer.parseInt(txtSemestre.getText());
-        //
-        //            if (controlador.SolicitudGuardar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
-        //                JOptionPane.showMessageDialog(this, "Guardado exitosamente");
-        //            } else {
-        //                JOptionPane.showMessageDialog(this, "Error al guardar");
-        //            }
-        //        } catch (Exception e) {
-        //            JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
-        //        }
+        if (TxtPregunta.getText().isEmpty() || TxtA.getText().isEmpty() || TxtB.getText().isEmpty()
+                || TxtC.getText().isEmpty() || TxtD.getText().isEmpty() || cbCategoriaPregunta.getSelectedIndex() == 0
+                || cbTipoPregunta.getSelectedIndex() == 0 || !ChbA.isSelected() && ChbB.isSelected()
+                && ChbC.isSelected() && ChbD.isSelected()) {
+            JOptionPane.showMessageDialog(null, "Completa todos los campos");
+        } else {
+
+            Categoria categoria = ctlCategoria.SolicitudBuscarUno((String) cbCategoriaPregunta.getSelectedItem());
+            System.out.println(categoria.getIdCategoria());
+            int idCategoria = categoria.getIdCategoria();
+            int tipoPregunta = cbTipoPregunta.getSelectedIndex();
+            String descripcion = TxtPregunta.getText();
+            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 2) {
+                if (ctlPregunta.SolicitudModificar(idPregunta, descripcion, idCategoria, tipoPregunta)) {
+
+                    idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
+
+                    String nombreA = TxtA.getText();
+                    int estadoA = (ChbA.isSelected()) ? 1 : 0;
+
+                    String nombreB = TxtB.getText();
+                    int estadoB = (ChbB.isSelected()) ? 1 : 0;
+
+                    String nombreC = TxtC.getText();
+                    int estadoC = (ChbC.isSelected()) ? 1 : 0;
+
+                    String nombreD = TxtD.getText();
+                    int estadoD = (ChbD.isSelected()) ? 1 : 0;
+
+                    if (ctlSolucion.SolicitudModificar(soluciones[0], nombreA, estadoA, idPregunta)
+                            && ctlSolucion.SolicitudModificar(soluciones[1], nombreB, estadoB, idPregunta)
+                            && ctlSolucion.SolicitudModificar(soluciones[2], nombreC, estadoC, idPregunta)
+                            && ctlSolucion.SolicitudModificar(soluciones[3], nombreD, estadoD, idPregunta)) {
+
+                        JOptionPane.showMessageDialog(this, "Guardado exitosamente");
+                        limpiar();
+                        listar();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error al registrar las soluciones");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Error al registrar la pregunta");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Selecciona mas de una respuesta para las multiples");
+            }
+        }
     }//GEN-LAST:event_BtnModificarPreguntaActionPerformed
 
     private void BtnBuscarPregunta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarPregunta1ActionPerformed
         // TODO add your handling code here:
         try {
 
-            int id = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa la ID de la pregunta"));
-            Pregunta pregunta = ctlPregunta.SolicitudBuscar(id);
+            idPregunta = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa la ID de la pregunta"));
+            Pregunta pregunta = ctlPregunta.SolicitudBuscar(idPregunta);
 
             if (pregunta != null) {
                 TxtPregunta.setText(pregunta.getDescripcion());
@@ -442,7 +472,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 Solucion solucion = new Solucion();
                 int contador = 1;
 
-                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+                solucion = ctlSolucion.SolicitudBuscar(idPregunta, contador);
+                soluciones[0] = solucion.getIdSolucion();
 
                 TxtA.setText(solucion.getNombre());
                 if (solucion.getEstado() == 1) {
@@ -452,7 +483,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
                 contador++;
 
-                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+                solucion = ctlSolucion.SolicitudBuscar(idPregunta, contador);
+                soluciones[1] = solucion.getIdSolucion();
 
                 TxtB.setText(solucion.getNombre());
                 if (solucion.getEstado() == 1) {
@@ -462,7 +494,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
                 contador++;
 
-                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+                solucion = ctlSolucion.SolicitudBuscar(idPregunta, contador);
+                soluciones[2] = solucion.getIdSolucion();
 
                 TxtC.setText(solucion.getNombre());
                 if (solucion.getEstado() == 1) {
@@ -472,7 +505,8 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
                 contador++;
 
-                solucion = ctlSolucion.SolicitudBuscar(id, contador);
+                solucion = ctlSolucion.SolicitudBuscar(idPregunta, contador);
+                soluciones[3] = solucion.getIdSolucion();
 
                 TxtD.setText(solucion.getNombre());
                 if (solucion.getEstado() == 1) {
@@ -480,8 +514,13 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                     seleccionados++;
                 }
 
+                jbCancelar.setVisible(true);
+                BtnModificarPregunta.setEnabled(true);
+                BtnEliminarPregunta.setEnabled(true);
+
             } else {
                 JOptionPane.showMessageDialog(null, "La pregunta no ha sido encontrada");
+                limpiar();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al cargar los datos");
@@ -490,6 +529,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void BtnEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPreguntaActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_BtnEliminarPreguntaActionPerformed
 
     private void BtnRegistrarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarPreguntaActionPerformed
@@ -720,6 +760,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         // TODO add your handling code here:
+        limpiar();
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     public void limpiar() {
@@ -745,6 +786,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
         idPregunta = 0;
         seleccionados = 0;
+        soluciones = new int[4];
 
         BtnEliminarPregunta.setEnabled(false);
         BtnModificarPregunta.setEnabled(false);
