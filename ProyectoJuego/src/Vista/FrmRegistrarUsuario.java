@@ -8,6 +8,7 @@ package Vista;
 import Controlador.CtlUsuario;
 import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
+import sun.java2d.pipe.Region;
 
 /**
  *
@@ -25,6 +26,7 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
         controlador = new CtlUsuario();
          setLocationRelativeTo(this);
         setResizable(false);
+        
     }
 
     /**
@@ -56,7 +58,7 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
         jbRegistrarUsuario1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
@@ -285,7 +287,7 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
- new FrmInicio().setVisible(true);
+         new FrmInicio().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
@@ -369,12 +371,11 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
 
         new FrmInicio().setVisible(true);
         this.dispose();
-
+        
     }//GEN-LAST:event_jbRegistrarUsuario1ActionPerformed
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-        new FrmInicio().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void tfCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfCodigoKeyTyped

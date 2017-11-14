@@ -10,22 +10,32 @@ import Controlador.CtlUsuario;
 import Modelo.Administrador;
 import Modelo.Usuario;
 import java.awt.event.KeyEvent;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Krull
  */
-public class FrmInicio extends javax.swing.JFrame {
+
+
+
+
+public  class FrmInicio extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmInicio
      */
     CtlAdministrador ctlAdmin;
     CtlUsuario ctlUser;
+    public Clip clip;
+    public String ruta="/Sonidos/";
+    Thread t;
 
     public FrmInicio() {
         initComponents();
+        
         setLocationRelativeTo(this);
         setResizable(false);
         ctlAdmin = new CtlAdministrador();
@@ -34,9 +44,32 @@ public class FrmInicio extends javax.swing.JFrame {
         jLOjos1.setVisible(false);
         jLOjos2.setVisible(false);
         jLOjos3.setVisible(false);
-        
-
+        sonido("oh my god");
     }
+    
+     public
+             void sonido(String archivo){
+         
+         try {
+           
+             for (int i = 0; i < 10; i++) {
+                  t.sleep(1000);
+                  clip= AudioSystem.getClip();
+             clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+             clip.start();
+                
+            }
+                 
+             
+         } catch (Exception e) {
+             
+         }
+       
+     }
+    
+
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -65,7 +98,12 @@ public class FrmInicio extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eam3.jpg"))); // NOI18N
@@ -192,6 +230,10 @@ public class FrmInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+   
+    
+    
+    
     private void jLBotonInicioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBotonInicioMouseReleased
         jLBotonInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BInicio.png")));
         jLOjos3.setVisible(true);
@@ -273,7 +315,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jLBotonRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BResgistrar.png")));
         new FrmRegistrarUsuario().setVisible(true);
         this.dispose();
-
+ 
     }//GEN-LAST:event_jLBotonRegistrarMouseReleased
 
     private void tfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUsuarioActionPerformed
@@ -297,6 +339,11 @@ public class FrmInicio extends javax.swing.JFrame {
             jLBotonInicioMouseReleased(null);
         }
     }//GEN-LAST:event_tfPasswordKeyTyped
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+         clip.stop();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -324,6 +371,7 @@ public class FrmInicio extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -350,4 +398,9 @@ public class FrmInicio extends javax.swing.JFrame {
     private javax.swing.JPasswordField tfPassword;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
+
+   
+
+
+   
 }
