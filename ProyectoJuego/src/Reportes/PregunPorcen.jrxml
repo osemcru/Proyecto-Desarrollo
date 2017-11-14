@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="676aa1f9-523c-4522-a113-7029c580d760">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="0.9090909090909096"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="27"/>
+	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
@@ -26,25 +26,23 @@ FROM
 	<field name="pregunta_descripcion" class="java.lang.String"/>
 	<field name="auditoriapregunta_porcentaje" class="java.lang.Integer"/>
 	<background>
-		<band height="802" splitType="Stretch"/>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="-20" y="-22" width="597" height="824" uuid="f0668e44-6480-42e9-b829-d2ac432c4e70"/>
+				<imageExpression><![CDATA["C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\src\\Imagenes\\012097093-binary-code.jpg"]]></imageExpression>
+			</image>
+		</band>
 	</background>
 	<title>
 		<band height="94" splitType="Stretch">
-			<staticText>
-				<reportElement style="SubTitle" x="336" y="65" width="217" height="29" uuid="0a8e2eab-d1fc-423c-b0d2-67b0ede899e1"/>
-				<textElement textAlignment="Right">
-					<font size="22" isBold="false"/>
-				</textElement>
-				<text><![CDATA[Flower SubTitle]]></text>
-			</staticText>
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="0" width="597" height="65" forecolor="#006699" backcolor="#006699" uuid="36441dba-031f-441b-a985-d2e5d67e6f3a"/>
 				<staticText>
-					<reportElement style="Title" x="231" y="0" width="346" height="65" uuid="22f34b11-d659-4c58-8bf3-5d1e835c06a1"/>
+					<reportElement style="Title" x="46" y="0" width="489" height="65" uuid="22f34b11-d659-4c58-8bf3-5d1e835c06a1"/>
 					<textElement textAlignment="Right">
-						<font size="54" isBold="false"/>
+						<font size="48" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Flower Title]]></text>
+					<text><![CDATA[Porcentaje de Preguntas]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -57,62 +55,62 @@ FROM
 			<frame>
 				<reportElement x="227" y="0" width="328" height="20" uuid="7871b161-0869-4ba3-9c63-5e44d4df7604"/>
 				<staticText>
-					<reportElement style="Column header" positionType="Float" x="0" y="0" width="109" height="20" forecolor="#000000" uuid="c40c1f53-a883-4e7f-b0fd-87b3a84d3aa0"/>
+					<reportElement style="Column header" positionType="Float" x="234" y="0" width="94" height="20" forecolor="#000000" uuid="9806b20e-ea6d-4461-b206-b339ca96ed0f"/>
 					<textElement>
-						<font fontName="Arial" isBold="false" pdfFontName="Helvetica"/>
+						<font fontName="Arial" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
 					</textElement>
-					<text><![CDATA[pregunta_idPregunta]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="Column header" positionType="Float" x="109" y="0" width="109" height="20" forecolor="#000000" uuid="96949c72-b3e7-4a55-82c5-37029895c29a"/>
-					<textElement>
-						<font fontName="Arial" isBold="false" pdfFontName="Helvetica"/>
-					</textElement>
-					<text><![CDATA[pregunta_descripcion]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="Column header" positionType="Float" x="218" y="0" width="109" height="20" forecolor="#000000" uuid="9806b20e-ea6d-4461-b206-b339ca96ed0f"/>
-					<textElement>
-						<font fontName="Arial" isBold="false" pdfFontName="Helvetica"/>
-					</textElement>
-					<text><![CDATA[auditoriapregunta_porcentaje]]></text>
+					<text><![CDATA[% de Acierto]]></text>
 				</staticText>
 			</frame>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="4" y="0" width="109" height="20" forecolor="#000000" uuid="c40c1f53-a883-4e7f-b0fd-87b3a84d3aa0"/>
+				<textElement>
+					<font fontName="Arial" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[ID ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" positionType="Float" x="113" y="0" width="109" height="20" forecolor="#000000" uuid="96949c72-b3e7-4a55-82c5-37029895c29a"/>
+				<textElement>
+					<font fontName="Arial" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="23" splitType="Stretch">
+		<band height="26" splitType="Stretch">
 			<line>
-				<reportElement positionType="FixRelativeToBottom" x="227" y="22" width="326" height="1" uuid="96533b66-4cae-4d4e-83cd-17f698fb4dd5"/>
+				<reportElement positionType="FixRelativeToBottom" x="4" y="23" width="549" height="1" uuid="96533b66-4cae-4d4e-83cd-17f698fb4dd5"/>
 			</line>
 			<frame>
 				<reportElement x="227" y="0" width="328" height="20" uuid="21fd705a-19e7-48de-a184-6d16d719d3e5"/>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Detail" positionType="Float" x="0" y="0" width="109" height="18" uuid="80c85828-1fb4-43a7-ad74-107af8930a81"/>
+					<reportElement style="Detail" positionType="Float" x="267" y="0" width="60" height="18" uuid="265c863a-47f2-4b88-a9a1-3a36f0465221"/>
 					<textElement>
-						<font fontName="Arial" size="14" isBold="false" pdfFontName="Helvetica"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{pregunta_idPregunta}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Detail" positionType="Float" x="109" y="0" width="109" height="18" uuid="37747fce-ef6c-4dbb-b7bd-90e526014d02"/>
-					<textElement>
-						<font fontName="Arial" size="14" isBold="false" pdfFontName="Helvetica"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{pregunta_descripcion}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement style="Detail" positionType="Float" x="218" y="0" width="109" height="18" uuid="265c863a-47f2-4b88-a9a1-3a36f0465221"/>
-					<textElement>
-						<font fontName="Arial" size="14" isBold="false" pdfFontName="Helvetica"/>
+						<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{auditoriapregunta_porcentaje}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="4" y="0" width="109" height="18" uuid="80c85828-1fb4-43a7-ad74-107af8930a81"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pregunta_idPregunta}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="Detail" positionType="Float" x="113" y="0" width="348" height="18" uuid="37747fce-ef6c-4dbb-b7bd-90e526014d02"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" pdfFontName="Helvetica"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pregunta_descripcion}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch">
+		<band height="13" splitType="Stretch">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b632e630-5a48-488a-9293-22aecc073c47"/>
 				<graphicElement>
@@ -126,14 +124,14 @@ FROM
 			<frame>
 				<reportElement mode="Opaque" x="2" y="0" width="555" height="13" forecolor="#D0B48E" backcolor="#006699" uuid="c9b4ad17-2557-49e2-90a9-178fa5535a46"/>
 				<textField evaluationTime="Report">
-					<reportElement style="Column header" x="513" y="-1" width="40" height="13" forecolor="#FFFFFF" uuid="07a14cee-4c56-4f69-8317-9e0b115d7d0f"/>
+					<reportElement style="Column header" x="511" y="0" width="40" height="13" forecolor="#FFFFFF" uuid="07a14cee-4c56-4f69-8317-9e0b115d7d0f"/>
 					<textElement verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement style="Column header" x="433" y="-1" width="80" height="13" forecolor="#FFFFFF" uuid="5ac34287-78d6-4ce5-b1d5-3ceae34279b7"/>
+					<reportElement style="Column header" x="412" y="0" width="80" height="13" forecolor="#FFFFFF" uuid="5ac34287-78d6-4ce5-b1d5-3ceae34279b7"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="10" isBold="false"/>
 					</textElement>

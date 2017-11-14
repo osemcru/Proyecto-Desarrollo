@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7964f455-c47b-4656-a664-2497216d1c79">
 	<property name="ireport.zoom" value="1.7715610000000044"/>
-	<property name="ireport.x" value="190"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
 	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
@@ -16,7 +16,7 @@
 	<subDataset name="PieChartDataset" uuid="3474f6c6-3b21-4fbb-9656-bfab2e5047f8"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT
-     usuario.`nickname` AS usuario_nickname,
+     MAX(usuario.`nickname`) AS usuario_nickname,
      usuario.`idCodigo` AS usuario_idCodigo,
      usuario.`nombre` AS usuario_nombre,
      usuario.`apellido` AS usuario_apellido,
@@ -83,7 +83,7 @@ order by auditoriausuario.`porcentaje` DESC]]>
 				<textElement>
 					<font fontName="Arial" isBold="true" isUnderline="true" pdfFontName="Helvetica"/>
 				</textElement>
-				<text><![CDATA[Usuario]]></text>
+				<text><![CDATA[Nickname]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="96" y="0" width="56" height="20" forecolor="#000000" uuid="4a7e5bab-54c7-4298-a1be-c6c22dfb984f"/>
