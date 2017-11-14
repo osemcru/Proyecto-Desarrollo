@@ -10,8 +10,6 @@ import Modelo.Solucion;
 
 import com.google.gson.Gson;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -37,7 +35,6 @@ public class CtlSolucion {
     public Solucion SolicitudBuscar(int pregunta, int contador) {
         Solucion solucion = new Solucion(0, "", 0, 0);
         GenericoDAO solucionDAO = new GenericoDAO();
-        String objeto = convertirGson(solucion);
         ResultSet atributos = solucionDAO.buscarVarios("pregunta", tabla, pregunta);
         int cont = 0;
         try {
@@ -65,10 +62,8 @@ public class CtlSolucion {
     }
 
     public boolean SolicitudEliminar(int pregunta) {
-        Solucion solucion = new Solucion();
         GenericoDAO solucionDAO = new GenericoDAO();
-        String objeto = convertirGson(solucion);
-        return solucionDAO.eliminar(objeto, tabla, pregunta);
+        return solucionDAO.eliminarSecundario("pregunta", tabla, pregunta);
     }
 
 //    public DefaultTableModel SolicitudListar() {

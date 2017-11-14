@@ -116,6 +116,12 @@ public class GenericoDAO extends Conexion {
         String consulta = "delete from " + tabla + " where " + listCampos.get(0) + "='" + variable + "';";
         return super.ejecutar(consulta);
     }
+    
+    public boolean eliminarSecundario(String objeto, String tabla, Object variable) {
+        
+        String consulta = "delete from " + tabla + " where " + objeto + "='" + variable + "';";
+        return super.ejecutar(consulta);
+    }
 
     public void cargarInformacion(JComboBox<String> comboBox, String tabla, String variable) {
         String consulta = "SELECT * FROM " + tabla;

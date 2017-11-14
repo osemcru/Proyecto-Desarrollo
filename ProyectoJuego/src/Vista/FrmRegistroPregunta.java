@@ -419,7 +419,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             int idCategoria = categoria.getIdCategoria();
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();
-            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 2) {
+            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 1) {
                 if (ctlPregunta.SolicitudModificar(idPregunta, descripcion, idCategoria, tipoPregunta)) {
 
                     idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
@@ -517,6 +517,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
                 jbCancelar.setVisible(true);
                 BtnModificarPregunta.setEnabled(true);
                 BtnEliminarPregunta.setEnabled(true);
+                BtnRegistrarPregunta.setEnabled(false);
 
             } else {
                 JOptionPane.showMessageDialog(null, "La pregunta no ha sido encontrada");
@@ -529,7 +530,17 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
 
     private void BtnEliminarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPreguntaActionPerformed
         // TODO add your handling code here:
-        
+        if (ctlSolucion.SolicitudEliminar(idPregunta)) {
+            if (ctlPregunta.SolicitudEliminar(idPregunta)) {
+                JOptionPane.showMessageDialog(this, "Se ha eliminado correctamente la pregunta");
+                limpiar();
+                listar();
+            } else {
+                JOptionPane.showMessageDialog(this, "Error al eliminar los datos 2");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Error al eliminar los datos 1");
+        }
     }//GEN-LAST:event_BtnEliminarPreguntaActionPerformed
 
     private void BtnRegistrarPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarPreguntaActionPerformed
@@ -547,7 +558,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
             int tipoPregunta = cbTipoPregunta.getSelectedIndex();
             String descripcion = TxtPregunta.getText();
             idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
-            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 2) {
+            if (tipoPregunta == 2 && seleccionados > 1 || tipoPregunta == 1) {
                 if (ctlPregunta.SolicitudGuardar(idPregunta + 1, descripcion, idCategoria, tipoPregunta)) {
 
                     idPregunta = ctlPregunta.SolicitudUltimaIDPregunta();
@@ -788,6 +799,7 @@ public class FrmRegistroPregunta extends javax.swing.JFrame {
         seleccionados = 0;
         soluciones = new int[4];
 
+        BtnRegistrarPregunta.setEnabled(true);
         BtnEliminarPregunta.setEnabled(false);
         BtnModificarPregunta.setEnabled(false);
         jbCancelar.setVisible(false);
