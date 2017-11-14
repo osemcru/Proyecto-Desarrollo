@@ -8,6 +8,7 @@ package Vista;
 import Modelo.Administrador;
 import Modelo.Conexion;
 import Modelo.Usuario;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import net.sf.jasperreports.engine.JRException;
@@ -30,7 +31,7 @@ public class FrmAdministrador extends javax.swing.JFrame {
     Administrador administrador;
     Conexion conn;
 
-    public FrmAdministrador(Administrador admin) {
+    public FrmAdministrador (Administrador admin) {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(this);
@@ -239,10 +240,10 @@ public class FrmAdministrador extends javax.swing.JFrame {
                     JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PeorJugador.pdf");
 
                 } catch (JRException ex) {
-                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                conn.desconectar();
+                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+               }
+            conn.desconectar();
+       
     }//GEN-LAST:event_btnPeorJugadorActionPerformed
 
     private void btnMejorJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMejorJugadorActionPerformed
@@ -256,10 +257,9 @@ public class FrmAdministrador extends javax.swing.JFrame {
                     JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\MejorJugador.pdf");
 
                 } catch (JRException ex) {
-                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
-                conn.desconectar();
+            conn.desconectar();
     }//GEN-LAST:event_btnMejorJugadorActionPerformed
 
     private void btnPartisPorceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartisPorceActionPerformed
@@ -273,10 +273,10 @@ public class FrmAdministrador extends javax.swing.JFrame {
                     JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\EstudiantesPuntajes.pdf");
 
                 } catch (JRException ex) {
-                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
                 }
-
-                conn.desconectar();
+            conn.desconectar();
+        
     }//GEN-LAST:event_btnPartisPorceActionPerformed
 
     private void btnPorcentajeAciertos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPorcentajeAciertos1ActionPerformed
@@ -290,10 +290,9 @@ public class FrmAdministrador extends javax.swing.JFrame {
                     JasperExportManager.exportReportToPdfFile(mostrarReporte,"C:\\GitHub\\Proyecto-Desarrollo\\ProyectoJuego\\Pdfs\\PreguntasPorcentaje.pdf");
 
                 } catch (JRException ex) {
-                    Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                conn.desconectar();
+                    Logger.getLogger(FrmAdministrador.class.getName()).log(Level.SEVERE, null, ex);
+                } 
+            conn.desconectar();
     }//GEN-LAST:event_btnPorcentajeAciertos1ActionPerformed
 
 

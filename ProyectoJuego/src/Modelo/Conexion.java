@@ -49,7 +49,7 @@ public class Conexion {
     /**
      * Desconecta la conexion de la base de datos
      */
-    public void desconectar() {
+    public void desconectar()  {
         try {
             //sentenciaSQL.close();//cierra la consulta
             conexionDB.close();//cierra conexion
