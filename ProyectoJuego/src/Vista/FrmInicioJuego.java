@@ -35,11 +35,13 @@ public class FrmInicioJuego extends javax.swing.JFrame {
     CtlCategoria ctlCategoria;
     CtlExamen ctlExamen;
     Usuario usuario;
+    Examen examen;
     int ID;
     ArrayList<Integer> listaPreguntas;
     ArrayList<Integer> mostradas;
     int[] correctas;
     int acertadas;
+    int numUsuario;
 
     public FrmInicioJuego(Usuario user, int idExamen, ArrayList<Integer> preguntas) {
         initComponents();
@@ -49,10 +51,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         ctlCategoria = new CtlCategoria();
         ctlExamen = new CtlExamen();
         ID = idExamen;
+        numUsuario = 0;
         listaPreguntas = preguntas;
         correctas = new int[4];
         mostradas = new ArrayList<>();
         acertadas = 0;
+        examen = ctlExamen.SolicitudBuscar(idExamen);
+        System.out.println("Id examen: " + examen.getIdExamen());
+        System.out.println("participantes: " + examen.getParticipantes());
         setLocationRelativeTo(this);
         setResizable(false);
         LbCategoria.setEnabled(false);
@@ -64,7 +70,6 @@ public class FrmInicioJuego extends javax.swing.JFrame {
         tfD.setEnabled(false);
     }
     private int rep = 0;
-    private int numUsuario = 0;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -347,7 +352,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbC.setSelected(false);
             ChbA.setSelected(false);
         }
-        
+
     }//GEN-LAST:event_ChbDActionPerformed
 
     private void ChbAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChbAActionPerformed
@@ -358,7 +363,7 @@ public class FrmInicioJuego extends javax.swing.JFrame {
             ChbC.setSelected(false);
             ChbD.setSelected(false);
         }
-       
+
     }//GEN-LAST:event_ChbAActionPerformed
 
     private void tfPreguntaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPreguntaMouseEntered
@@ -430,10 +435,14 @@ public class FrmInicioJuego extends javax.swing.JFrame {
 
         if (rep == 9) {
             numUsuario++;
-            Examen examen = ctlExamen.SolicitudBuscar(ID);
+
+            JOptionPane.showMessageDialog(this, "Se acerto " + acertadas + " de 10");
+            System.out.println(examen.getParticipantes());
             if (numUsuario == examen.getParticipantes()) {
-                JOptionPane.showMessageDialog(this, "Se acerto " + acertadas + " de 10");
                 new FrmJuegoPuntuacion().setVisible(true);
+                this.dispose();
+            } else {
+                new FrmSesionJuego(examen, listaPreguntas).setVisible(true);
                 this.dispose();
             }
 

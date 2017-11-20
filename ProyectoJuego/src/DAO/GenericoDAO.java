@@ -73,6 +73,7 @@ public class GenericoDAO extends Conexion {
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "select * from " + tabla + " where " + listCampos.get(0) + "='" + id + "'";
         super.ejecutarRetorno(consulta);
+        System.out.println(consulta);
         return resultadoDB;
     }
 
