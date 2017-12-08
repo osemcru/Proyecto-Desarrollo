@@ -9,6 +9,8 @@ import Controlador.CtlUsuario;
 import Modelo.Administrador;
 import Modelo.Usuario;
 import java.awt.event.KeyEvent;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -22,6 +24,9 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
      */
     CtlUsuario ctlUsuario;
     Administrador administrador;
+      public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
 
     public FrmGestionUsuarios(Administrador admin) {
         initComponents();
@@ -71,6 +76,14 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tfSemestre.setBackground(new java.awt.Color(0, 0, 0));
@@ -355,6 +368,20 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+       public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
+    
     private void tfSemestreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfSemestreMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_tfSemestreMouseEntered
@@ -454,6 +481,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             if (ctlUsuario.SolicitudEliminar(codigo)) {
                 JOptionPane.showMessageDialog(this, "Se ha eliminado correctamente el usuario");
                 limpiar();
+                listar();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al eliminar los datos");
@@ -538,6 +566,7 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             if (ctlUsuario.SolicitudModificar(nickname, clave, codigo, nombre, apellido, correo, semestre, 2)) {
                 JOptionPane.showMessageDialog(this, "Modificado exitosamente");
                 limpiar();
+                listar();
             } else {
                 JOptionPane.showMessageDialog(this, "Error al modificar");
             }
@@ -545,6 +574,16 @@ public class FrmGestionUsuarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor ingrese todos los datos");
         }
     }//GEN-LAST:event_jbEditarUsuario1ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("shadowleggy gang");
+    }//GEN-LAST:event_formWindowOpened
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
 
     private void limpiar() {
         tfCodigoEditar.setText("");

@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
 import DAO.GenericoDAO;
 import Modelo.Administrador;
 import Modelo.Categoria;
-import Modelo.Usuario;
 import java.util.ArrayList;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 /**
  *
@@ -25,7 +26,10 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
     GenericoDAO DAOCategoria;
     CtlCategoria ctlCategoria;
     Administrador administrador;
-
+     public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
+    
     public FrmGestionCategorias(Administrador admin) {
         initComponents();
         administrador = admin;
@@ -35,6 +39,8 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         listar();
         setLocationRelativeTo(this);
         setResizable(false);
+        
+       
     }
 
     /**
@@ -60,6 +66,14 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TblCategorias.setBackground(new java.awt.Color(0, 102, 153));
@@ -180,12 +194,26 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+      public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
+    
     private void TblCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCategoriasMouseClicked
 
     }//GEN-LAST:event_TblCategoriasMouseClicked
 
     private void jbAtras2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtras2ActionPerformed
-      new FrmAdministrador(administrador).setVisible(true);
+        new FrmAdministrador(administrador).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtras2ActionPerformed
 
@@ -195,7 +223,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         } else {
             String nombre = txtNombreCategoria.getText();
             ArrayList<Categoria> categoria = ctlCategoria.SolicitudBuscar(nombre);
-
+            
             if (categoria.size() > 0) {
                 JOptionPane.showMessageDialog(this, "La categoria ha sido encontrada");
                 for (int i = 0; i < categoria.size(); i++) {
@@ -204,7 +232,7 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             } else {
                 JOptionPane.showMessageDialog(null, "La categoria no ha sido encontrada");
             }
-
+            
             limpiar();
         }
 
@@ -215,14 +243,14 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llena el campo");
         } else {
             String nombre = txtNombreCategoria.getText();
-
+            
             if (ctlCategoria.SolicitudGuardar(nombre)) {
                 JOptionPane.showMessageDialog(this, "Guardado exitosamente");
                 limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Error al guardar");
             }
-
+            
             listar();
         }
     }//GEN-LAST:event_BtnRegistrarCategoriaActionPerformed
@@ -232,13 +260,13 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Llena el campo");
         } else {
             String nombre = txtNombreCategoria.getText();
-
+            
             Categoria categoria = ctlCategoria.SolicitudBuscarUno(nombre);
             if (categoria != null) {
                 try {
                     JOptionPane.showMessageDialog(this, "Se ha encontrado la categoria");
                     nombre = JOptionPane.showInputDialog(this, "Ingresa el nuevo nombre para la categoria");
-                    if (ctlCategoria.SolicitudModificar(categoria.getIdCategoria(), nombre)) {
+                    if (ctlCategoria.SolicitudModificar(categoria.getIdCategoria(), nombre) || nombre.equals("")) {
                         JOptionPane.showMessageDialog(this, "Modificado exitosamente");
                         limpiar();
                     } else {
@@ -277,10 +305,20 @@ public class FrmGestionCategorias extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreCategoriaActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("shadowleggy gang");
+    }//GEN-LAST:event_formWindowOpened
+    
     private void listar() {
         TblCategorias.setModel(ctlCategoria.SolicitudListar());
     }
-
+    
     private void limpiar() {
         txtNombreCategoria.setText("");
     }

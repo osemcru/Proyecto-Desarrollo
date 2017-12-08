@@ -7,7 +7,10 @@ package Vista;
 
 import Controlador.CtlUsuario;
 import java.awt.event.KeyEvent;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
+import sun.java2d.pipe.Region;
 
 /**
  *
@@ -19,12 +22,16 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
      * Creates new form FrmRegistro
      */
     CtlUsuario controlador;
-
+ public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
+    
     public FrmRegistrarUsuario() {
         initComponents();
         controlador = new CtlUsuario();
          setLocationRelativeTo(this);
         setResizable(false);
+       
     }
 
     /**
@@ -56,7 +63,15 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
         jbRegistrarUsuario1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
@@ -284,8 +299,22 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
+
+    }
+    
+    
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
- new FrmInicio().setVisible(true);
+         new FrmInicio().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
@@ -369,12 +398,11 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
 
         new FrmInicio().setVisible(true);
         this.dispose();
-
+        
     }//GEN-LAST:event_jbRegistrarUsuario1ActionPerformed
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
-        new FrmInicio().setVisible(true);
-        this.dispose();
+        
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void tfCodigoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfCodigoKeyTyped
@@ -410,6 +438,16 @@ public class FrmRegistrarUsuario extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_tfApellidosKeyTyped
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        sonido("Silly Fun");
+    }//GEN-LAST:event_formWindowOpened
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

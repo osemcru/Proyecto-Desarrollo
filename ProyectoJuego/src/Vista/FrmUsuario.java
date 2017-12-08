@@ -5,7 +5,10 @@
  */
 package Vista;
 
+import Controlador.CtlExamen;
 import Modelo.Usuario;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,12 +20,14 @@ public class FrmUsuario extends javax.swing.JFrame {
      * Creates new form FrmPrincipal
      */
     Usuario usuario;
+    CtlExamen ctlExamen;
 
     public FrmUsuario(Usuario user) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
         usuario = user;
+        ctlExamen = new CtlExamen();
         tfUsuario.setEditable(false);
         tfUsuario.setText(user.getNombre() + "");
     }
@@ -53,7 +58,7 @@ public class FrmUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Orator Std", 0, 60)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 204, 255));
         jLabel2.setText("Bienvenido");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, 50));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, -1, 50));
 
         jbAtras.setBackground(new java.awt.Color(0, 51, 51));
         jbAtras.setFont(new java.awt.Font("Monotype Corsiva", 3, 24)); // NOI18N
@@ -116,12 +121,10 @@ public class FrmUsuario extends javax.swing.JFrame {
 
     private void jbAtrasMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAtrasMouseReleased
 
-        new FrmInicio().setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jbAtrasMouseReleased
 
     private void jbAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAtrasActionPerformed
-     new FrmInicio().setVisible(true);
+        new FrmInicio().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbAtrasActionPerformed
 
@@ -130,7 +133,7 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_tfUsuarioActionPerformed
 
     private void jbMostrarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarHistorialActionPerformed
- //        try {
+        //        try {
         //            String nickname = txtNickName.getText();
         //            String clave = txtClave.getText();
         //            String nombre = txtNombre.getText();
@@ -150,7 +153,35 @@ public class FrmUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jbMostrarHistorialActionPerformed
 
     private void jbMostrarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbMostrarJuegosActionPerformed
-       new FrmInicioJuego().setVisible(true);
+
+        int participantes = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingresa el numero de usuarios"
+                + " que participaran en el juego"));
+
+        int idExamen = ctlExamen.SolicitudUltimaIDExamen() + 1;
+        ArrayList<Integer> agregados = new ArrayList<>();
+        if (ctlExamen.SolicitudGuardar(idExamen + 1, participantes, usuario.getIdCodigo())) {
+
+            boolean existente;
+            int pregunta;
+            for (int i = 0; i < 10; i++) {
+                existente = false;
+                pregunta = ctlExamen.SolicitudPreguntaAleatoria();
+                for (int j = 0; j < agregados.size(); j++) {
+                    if (pregunta == agregados.get(j)) {
+                        existente = true;
+                    }
+                }
+                if (existente) {
+                    i--;
+                } else {
+                    agregados.add(pregunta);
+                    if (ctlExamen.SolicitudGuardarIntermedia(idExamen, pregunta)) {
+                        System.out.println("Pregunta ID: " + pregunta);
+                    }
+                }
+            }
+        }
+        new FrmInicioJuego(usuario, idExamen, agregados).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbMostrarJuegosActionPerformed
 

@@ -1,0 +1,9 @@
+Tabla= pregunta  Columna= tipoPregunta
+
+1= Unica Respuesta
+2= Multiple Respuesta
+
+Tabla= solucion  Columna= estado
+
+0= Falsa
+1= Verdadera

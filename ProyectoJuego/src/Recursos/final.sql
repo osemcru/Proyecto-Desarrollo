@@ -46,7 +46,6 @@ CREATE TABLE examen(
   idExamen INT NOT NULL AUTO_INCREMENT,
   participantes INT NOT NULL,
   usuario INT NOT NULL,
-  fecha DATE NOT NULL,
   constraint pk_examen PRIMARY KEY (idExamen),
   constraint fk_examen_usuario FOREIGN KEY (usuario) REFERENCES usuario (idCodigo)
 );
@@ -71,7 +70,7 @@ CREATE TABLE examenPregunta(
 
 CREATE TABLE solucion(
   idSolucion INT NOT NULL AUTO_INCREMENT,
-  nombre VARCHAR(45) NOT NULL,
+  nombre VARCHAR(50) NOT NULL,
   estado INT NOT NULL,
   pregunta INT NOT NULL,
   constraint pk_solucion_idSolucion PRIMARY KEY (idSolucion),
@@ -115,3 +114,69 @@ insert into tipoUsuario (descripcion) values ('Administrador');
 insert into tipoUsuario (descripcion) values ('Usuario');
 
 insert into administrador values ('admin','00000','1509','Main Yasuo','Cojo','gmail','1');
+
+insert into categoria(nombre,idCategoria) values ('Linux','1');
+insert into categoria(nombre,idCategoria) values ('Windows','2');
+insert into categoria(nombre,idCategoria) values ('Redes','3');
+insert into categoria(nombre,idCategoria) values ('SQL','4');
+insert into categoria(nombre,idCategoria) values ('Principios de Ingenieria de Software','5');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('1','Para que sirve una llave foragnea?','4','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('1','Destacar un campo','0','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('2','Conectar con un campo de otra tabla','1','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('3','Convertir un campo inrepetible','0','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('4','Nada relevante','0','1');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('2','Entornos que maneja derivadas de ubuntu','1','2');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('5','Gnome','1','2');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('6','KDE','1','2');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('7','Cinnamon','0','2');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('8','Arch','0','2');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('3','Fundador de Microsoft','2','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('9','Steve Jobs','0','3');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('10','Linus Torvalds','0','3');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('11','Mark Zuckerberg','0','3');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('12','Bill Gates','1','3');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('4','Programa para diseñar diagramas de casos de uso','5','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('13','Everest','0','4');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('14','Balsamiq Mockups','0','4');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('15','StartUML','1','4');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('16','Toggl','0','4');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('5','Componente NO necesario para una conexion local','3','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('17','Cable UTP','0','5');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('18','Direccion IP','0','5');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('19','Internet','1','5');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('20','Tarjeta de red','0','5');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('6','Sistemas Linux NO basados en Ubuntu','1','2');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('21','Zorin OS','0','6');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('22','Antergos','1','6');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('23','Elementary OS','0','6');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('24','Manjaro','1','6');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('7','Hace parte de los principios de ingenieria de software','5','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('25','Pruebas unitarias','0','7');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('26','Bases de datos','0','7');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('27','Mockups','1','7');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('28','Estructuras de datos','0','7');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('8','Sistema operativo mas odiado por su inestabilidad','2','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('29','Windows Vista','1','8');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('30','Windows 10','0','8');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('31','Windows XP','0','8');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('32','Windows  2008','0','8');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('9','Como se le define a los valores dentro de las tablas?','4','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('33','Atributos','0','9');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('34','Datos','0','9');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('35','Campos','1','9');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('36','Columnas','0','9');
+
+insert into pregunta(idPregunta,descripcion,categoria,tipoPregunta) values ('10','El entorno de escritorio Cinnamon proviene de','1','1');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('37','Ubuntu','0','10');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('38','Fedora','0','10');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('39','Red Hat','0','10');
+insert into solucion(idSolucion,nombre,estado,pregunta) values ('40','Mint','1','10');

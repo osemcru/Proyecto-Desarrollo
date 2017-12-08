@@ -19,3 +19,8 @@ ProyectoJuego/build/classes/Vista/FrmRegistroPregunta.class
 >>>>>>> f91642c41329012d24de5023b2c9e2291b37daa4
 *.xml
 *.xml
+<<<<<<< HEAD
+*.xml
+=======
+*.properties
+>>>>>>> 46d7777b3be8dc8f562a72103740e7147368b3b7

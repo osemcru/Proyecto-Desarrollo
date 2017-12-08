@@ -10,17 +10,17 @@ package Modelo;
  * @author XgioserX
  */
 public class Pregunta {
-    
-   int idPregunta;
-   String descripcion;
-   int categoria;
-   int examen;
 
-    public Pregunta(int idPregunta, String descripcion, int categoria, int examen) {
+    int idPregunta;
+    String descripcion;
+    int categoria;
+    int tipoPregunta;
+
+    public Pregunta(int idPregunta, String descripcion, int categoria, int tipoPregunta) {
         this.idPregunta = idPregunta;
         this.descripcion = descripcion;
         this.categoria = categoria;
-        this.examen = examen;
+        this.tipoPregunta = tipoPregunta;
     }
 
     public Pregunta() {
@@ -50,13 +50,12 @@ public class Pregunta {
         this.categoria = categoria;
     }
 
-    public int getExamen() {
-        return examen;
+    public int getTipoPregunta() {
+        return tipoPregunta;
     }
 
-    public void setExamen(int examen) {
-        this.examen = examen;
+    public void setTipoPregunta(int tipoPregunta) {
+        this.tipoPregunta = tipoPregunta;
     }
-   
-   
+
 }

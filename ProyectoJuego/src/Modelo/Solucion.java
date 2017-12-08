@@ -23,6 +23,12 @@ public class Solucion {
         this.pregunta = pregunta;
     }
 
+    public Solucion(String nombre, int estado, int pregunta) {
+        this.nombre = nombre;
+        this.estado = estado;
+        this.pregunta = pregunta;
+    }
+
     public Solucion() {
     }
 

@@ -41,13 +41,15 @@ public class CtlUsuario {
         String objeto = convertirGson(usuario);
         ResultSet atributos = usuarioDAO.buscar(objeto, tabla, idCodigo);
         try {
-            usuario.setIdCodigo(Integer.parseInt(atributos.getString("idCodigo")));
-            usuario.setNickname(atributos.getString("nickname"));
-            usuario.setClave(atributos.getString("clave"));
-            usuario.setNombre(atributos.getString("nombre"));
-            usuario.setApellido(atributos.getString("apellido"));
-            usuario.setCorreo(atributos.getString("correo"));
-            usuario.setSemestre(Integer.parseInt(atributos.getString("semestre")));
+            while (atributos.next()) {
+                usuario.setIdCodigo(Integer.parseInt(atributos.getString("idCodigo")));
+                usuario.setNickname(atributos.getString("nickname"));
+                usuario.setClave(atributos.getString("clave"));
+                usuario.setNombre(atributos.getString("nombre"));
+                usuario.setApellido(atributos.getString("apellido"));
+                usuario.setCorreo(atributos.getString("correo"));
+                usuario.setSemestre(Integer.parseInt(atributos.getString("semestre")));
+            }
         } catch (Exception e) {
             return null;
         }
@@ -58,7 +60,7 @@ public class CtlUsuario {
         Usuario usuario = new Usuario(idCodigo, nickname, clave, nombre, apellido, correo, semestre, idTipoUsuario);
         GenericoDAO usuarioDAO = new GenericoDAO();
         String objeto = convertirGson(usuario);
-        return usuarioDAO.modificar(objeto, tabla);
+        return usuarioDAO.modificar(objeto, tabla, "idCodigo", idCodigo);
     }
 
     public boolean SolicitudEliminar(int idCodigo) {

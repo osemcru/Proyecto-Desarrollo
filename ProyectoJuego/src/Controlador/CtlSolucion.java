@@ -10,7 +10,6 @@ import Modelo.Solucion;
 
 import com.google.gson.Gson;
 import java.sql.ResultSet;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CtlSolucion {
 
-    String tabla = "pregunta";
+    String tabla = "solucion";
 
     public String convertirGson(Solucion solucion) {
         Gson gson = new Gson();
@@ -26,62 +25,78 @@ public class CtlSolucion {
         return objeto;
     }
 
-    public boolean SolicitudGuardar(int idSolucion, String nombre, int estado, int idPregunta) {
-        Solucion solucion = new Solucion(idSolucion, nombre, estado, idPregunta);
+    public boolean SolicitudGuardar(int idSolucion, String nombre, int estado, int pregunta) {
+        Solucion solucion = new Solucion(idSolucion, nombre, estado, pregunta);
         GenericoDAO solucionDAO = new GenericoDAO();
         String objeto = convertirGson(solucion);
         return solucionDAO.guardar(objeto, tabla);
     }
 
-    public Solucion SolicitudBuscar(int idPregunta) {
+    public Solucion SolicitudBuscar(int pregunta, int contador) {
         Solucion solucion = new Solucion(0, "", 0, 0);
         GenericoDAO solucionDAO = new GenericoDAO();
-        String objeto = convertirGson(solucion);
-        ResultSet atributos = solucionDAO.buscar(objeto, tabla, idPregunta);
+        ResultSet atributos = solucionDAO.buscarVarios("pregunta", tabla, pregunta);
+        int cont = 0;
         try {
-            solucion.setIdSolucion(Integer.parseInt(atributos.getString("idSolucion")));
-            solucion.setNombre(atributos.getString("nombre"));
-            solucion.setEstado(Integer.parseInt(atributos.getString("estado")));
-            solucion.setPregunta(Integer.parseInt(atributos.getString("idPregunta")));
+            while (atributos.next() && cont < contador) {
+
+                solucion.setIdSolucion(Integer.parseInt(atributos.getString("idSolucion")));
+                solucion.setNombre(atributos.getString("nombre"));
+                solucion.setEstado(Integer.parseInt(atributos.getString("estado")));
+                solucion.setPregunta(Integer.parseInt(atributos.getString("pregunta")));
+
+                cont++;
+            }
         } catch (Exception e) {
             return null;
         }
         return solucion;
     }
 
-    public boolean SolicitudModificar(int idPregunta, String descripcion, int idCategoria, int idExamen) {
-        Solucion solucion = new Solucion(idPregunta, descripcion, idCategoria, idExamen);
+    public boolean SolicitudModificar(int idSolucion, String nombre, int estado, int pregunta) {
+        Solucion solucion = new Solucion(idSolucion, nombre, estado, pregunta);
         GenericoDAO solucionDAO = new GenericoDAO();
         String objeto = convertirGson(solucion);
-        return solucionDAO.modificar(objeto, tabla);
+        return solucionDAO.modificar(objeto, tabla, "idSolucion", idSolucion);
     }
 
-    public boolean SolicitudEliminar(int idPregunta) {
-        Solucion solucion = new Solucion();
+    public boolean SolicitudEliminar(int pregunta) {
         GenericoDAO solucionDAO = new GenericoDAO();
-        String objeto = convertirGson(solucion);
-        return solucionDAO.eliminar(objeto, tabla, idPregunta);
+        return solucionDAO.eliminarSecundario("pregunta", tabla, pregunta);
     }
 
-    public DefaultTableModel solicitudListar() {
-        GenericoDAO usuarioDAO = new GenericoDAO();
-        DefaultTableModel modelTabla;
-        String nombreColumnas[] = {"IdSolucion", "Nombre", "Estado", "IdPregunta"};
-        modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
-
-        ResultSet atributos = usuarioDAO.listar(tabla);
+//    public DefaultTableModel SolicitudListar() {
+//        GenericoDAO solucionDAO = new GenericoDAO();
+//        DefaultTableModel modelTabla;
+//        String nombreColumnas[] = {"IdSolucion", "Nombre", "Estado", "IdPregunta"};
+//        modelTabla = new DefaultTableModel(new Object[][]{}, nombreColumnas);
+//
+//        ResultSet atributos = solucionDAO.listar(tabla);
+//        try {
+//            while (atributos.next()) {
+//                modelTabla.addRow(new Object[]{
+//                    atributos.getString("idSolucion"),
+//                    atributos.getString("nombre"),
+//                    atributos.getString("estado"),
+//                    atributos.getString("pregunta")
+//                });
+//            }
+//        } catch (Exception e) {
+//
+//        }
+//        return modelTabla;
+//    }
+    public int SolicitudUltimaIDSolucion() {
+        GenericoDAO solucionDAO = new GenericoDAO();
+        ResultSet atributos = solucionDAO.listar(tabla);
+        int idSolucion = 0;
         try {
             while (atributos.next()) {
-                modelTabla.addRow(new Object[]{
-                    atributos.getString("idSolucion"),
-                    atributos.getString("nombre"),
-                    atributos.getString("estado"),
-                    atributos.getString("idPregunta")
-                });
+                idSolucion = Integer.parseInt(atributos.getString("idSolucion"));
             }
         } catch (Exception e) {
 
         }
-        return modelTabla;
+        return idSolucion;
     }
 }

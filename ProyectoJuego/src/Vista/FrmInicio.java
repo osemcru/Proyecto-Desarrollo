@@ -10,6 +10,8 @@ import Controlador.CtlUsuario;
 import Modelo.Administrador;
 import Modelo.Usuario;
 import java.awt.event.KeyEvent;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,9 +25,13 @@ public class FrmInicio extends javax.swing.JFrame {
      */
     CtlAdministrador ctlAdmin;
     CtlUsuario ctlUser;
+    public Clip clip;
+    public String ruta = "/Sonidos/";
+    Thread t;
 
     public FrmInicio() {
         initComponents();
+
         setLocationRelativeTo(this);
         setResizable(false);
         ctlAdmin = new CtlAdministrador();
@@ -34,7 +40,20 @@ public class FrmInicio extends javax.swing.JFrame {
         jLOjos1.setVisible(false);
         jLOjos2.setVisible(false);
         jLOjos3.setVisible(false);
-        
+       
+
+    }
+
+    public void sonido(String archivo) {
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + archivo + ".wav")));
+            clip.loop(clip.LOOP_CONTINUOUSLY);
+            
+        } catch (Exception e) {
+
+        }
 
     }
 
@@ -65,7 +84,15 @@ public class FrmInicio extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/eam3.jpg"))); // NOI18N
@@ -192,6 +219,7 @@ public class FrmInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jLBotonInicioMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLBotonInicioMouseReleased
         jLBotonInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/BInicio.png")));
         jLOjos3.setVisible(true);
@@ -298,6 +326,17 @@ public class FrmInicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tfPasswordKeyTyped
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        clip.stop();
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+         sonido("Musica1");
+        
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -323,6 +362,7 @@ public class FrmInicio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FrmInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -350,4 +390,5 @@ public class FrmInicio extends javax.swing.JFrame {
     private javax.swing.JPasswordField tfPassword;
     private javax.swing.JTextField tfUsuario;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -20,7 +20,7 @@ import javax.swing.JComboBox;
  * @author Cristian Cruz
  */
 public class GenericoDAO extends Conexion {
-    
+
     public boolean guardar(String objeto, String tabla) {
 
         JsonParser parser = new JsonParser();
@@ -56,6 +56,12 @@ public class GenericoDAO extends Conexion {
             }
 
         }
+        System.out.println(consulta);
+        return super.ejecutar(consulta);
+    }
+
+    public boolean guardarTablaIntermedia(String tabla, String id1, String id2, Object valor1, Object valor2) {
+        String consulta = "insert into " + tabla + " (" + id1 + "," + id2 + ") values ('" + valor1 + "','" + valor2 + "')";
         return super.ejecutar(consulta);
     }
 
@@ -67,10 +73,24 @@ public class GenericoDAO extends Conexion {
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "select * from " + tabla + " where " + listCampos.get(0) + "='" + id + "'";
         super.ejecutarRetorno(consulta);
+        System.out.println(consulta);
         return resultadoDB;
     }
 
-    public boolean modificar(String objeto, String tabla) {
+    public ResultSet buscarVarios(String objeto, String tabla, Object id) {
+        String consulta = "select * from " + tabla + " where " + objeto + "='" + id + "'";
+        super.ejecutarRetorno(consulta);
+        return resultadoDB;
+    }
+
+    public ResultSet buscarAleatoriamente(String tabla) {
+        String consulta = "select * from " + tabla + " order by rand() limit 1";
+        System.out.println(consulta);
+        super.ejecutarRetorno(consulta);
+        return resultadoDB;
+    }
+
+    public boolean modificar(String objeto, String tabla, String variable, Object contenido) {
         String consulta = "update " + tabla + " set ";
 
         JsonParser parser = new JsonParser();
@@ -95,7 +115,7 @@ public class GenericoDAO extends Conexion {
                 consulta += ",";
             }
         }
-        consulta += " where " + listCampos.get(0) + "='" + listValores.get(0) + "';";
+        consulta += " where " + variable + "='" + contenido + "';";
         return super.ejecutar(consulta);
     }
 
@@ -106,6 +126,12 @@ public class GenericoDAO extends Conexion {
 
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "delete from " + tabla + " where " + listCampos.get(0) + "='" + variable + "';";
+        return super.ejecutar(consulta);
+    }
+
+    public boolean eliminarSecundario(String objeto, String tabla, Object variable) {
+
+        String consulta = "delete from " + tabla + " where " + objeto + "='" + variable + "';";
         return super.ejecutar(consulta);
     }
 
@@ -136,7 +162,7 @@ public class GenericoDAO extends Conexion {
 
         ArrayList<String> listCampos = new ArrayList(keys);
         String consulta = "select * from " + tabla + " where " + variable1 + "='" + nickname + "' and " + variable2 + "='" + clave + "';";
-      super.ejecutarRetorno(consulta);
+        super.ejecutarRetorno(consulta);
         ArrayList<String> dao = new ArrayList<>();
         try {
             if (resultadoDB.next()) {

@@ -2,13 +2,40 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group/>
+=======
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlCategoria.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlPregunta.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionUsuarios.java</file>
-            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmGestionCategorias.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Controlador/CtlExamen.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmSesionJuego.java</file>
+            <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmUsuario.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/DAO/GenericoDAO.java</file>
             <file>file:/C:/GitHub/Proyecto-Juego/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+=======
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/AuditoriaPregunta.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicio.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Conexion.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/nbproject/build-impl.xml</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmGestionAdmin.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmInicioJuego.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/DAO/GenericoDAO.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmAdministrador.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Controlador/CtlAdministrador.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Vista/FrmRegistroPregunta.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Administrador.java</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/test/Pruebas.java</file>
+<<<<<<< HEAD
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Modelo/Examen.java</file>
+=======
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Reportes/PeorEst.jrxml</file>
+            <file>file:/C:/GitHub/Proyecto-Desarrollo/ProyectoJuego/src/Reportes/PregunPorcen.jrxml</file>
+>>>>>>> 90e4ee54a6429c659fc7d7060d998d3c50aa081f
+>>>>>>> a86e2a91925084c1ab2db2aecd54b6b6eaee9fd4
         </group>
+>>>>>>> 46d7777b3be8dc8f562a72103740e7147368b3b7
     </open-files>
 </project-private>
